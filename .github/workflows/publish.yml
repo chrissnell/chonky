@@ -1,4 +1,4 @@
-name: Publish to GitHub Packages
+name: Release and Publish
 
 on:
   push:
@@ -9,10 +9,12 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       packages: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: pnpm/action-setup@v4
         with:
@@ -34,9 +36,37 @@ jobs:
         run: |
           VERSION="${GITHUB_REF_NAME#v}"
           cd packages/chonky-ui
-          npm version "$VERSION" --no-git-tag-version
+          npm version "$VERSION" --no-git-tag-version --allow-same-version
 
       - name: Publish
         run: pnpm --filter chonky-ui publish --no-git-checks --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate release notes
+        id: notes
+        run: |
+          PREV_TAG=$(git tag --sort=-v:refname | grep '^v' | sed -n '2p')
+          if [ -n "$PREV_TAG" ]; then
+            NOTES=$(git log --pretty=format:'- %s' "$PREV_TAG".."$GITHUB_REF_NAME" -- . ':!.github' | grep -v '^- release:')
+          else
+            NOTES=$(git log --pretty=format:'- %s' "$GITHUB_REF_NAME" -- . ':!.github' | grep -v '^- release:')
+          fi
+          {
+            echo 'RELEASE_NOTES<<EOF'
+            echo "$NOTES"
+            echo 'EOF'
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: ${{ github.ref_name }}
+          body: |
+            ## What's Changed
+
+            ${{ steps.notes.outputs.RELEASE_NOTES }}
+
+            ---
+            Published to [GitHub Packages](https://github.com/${{ github.repository }}/pkgs/npm/chonky-ui) as `@chrissnell/chonky-ui@${{ github.ref_name }}`
