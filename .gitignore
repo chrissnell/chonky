@@ -1,0 +1,8 @@
+node_modules
+dist
+.svelte-kit
+scratch/
+.context/
+.claude/
+*.tgz
+.DS_Store

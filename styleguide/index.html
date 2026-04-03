@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>the chonky style guide</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>the chonky style guide</h1>
+    <label class="toggle" id="theme-toggle">
+      <input type="checkbox" id="theme-cb">
+      <span class="track"><span class="thumb"></span></span>
+      <span class="toggle-label" id="theme-label">light</span>
+    </label>
+  </div>
+
+  <!-- Colors -->
+  <div class="box">
+    <h2>colors</h2>
+    <div class="swatch-grid">
+      <div class="swatch" style="background:var(--color-bg)"><span class="swatch-label muted">bg</span></div>
+      <div class="swatch" style="background:var(--color-surface)"><span class="swatch-label muted">surface</span></div>
+      <div class="swatch" style="background:var(--color-surface-raised)"><span class="swatch-label muted">raised</span></div>
+      <div class="swatch" style="background:var(--color-primary)"><span class="swatch-label" style="color:var(--color-primary-fg)">primary</span></div>
+      <div class="swatch" style="background:var(--color-accent)"><span class="swatch-label" style="color:var(--color-success-fg)">accent</span></div>
+      <div class="swatch" style="background:var(--color-danger)"><span class="swatch-label" style="color:var(--color-danger-fg)">danger</span></div>
+      <div class="swatch" style="background:var(--color-warning)"><span class="swatch-label" style="color:var(--color-warning-fg)">warning</span></div>
+      <div class="swatch" style="background:var(--color-info)"><span class="swatch-label" style="color:var(--color-info-fg)">info</span></div>
+    </div>
+  </div>
+
+  <!-- Typography -->
+  <div class="box">
+    <h2>typography</h2>
+    <p style="font-size:var(--text-2xl);font-weight:700">heading 2xl (1.4rem)</p>
+    <p style="font-size:var(--text-xl);font-weight:700">heading xl (1.1rem)</p>
+    <p style="font-size:var(--text-lg);font-weight:700">heading lg (1rem)</p>
+    <p style="font-size:var(--text-base)">body base (0.9rem)</p>
+    <p style="font-size:var(--text-sm);color:var(--color-text-muted)">body small (0.8rem)</p>
+    <p style="font-size:var(--text-xs);color:var(--color-text-dim)">caption (0.72rem)</p>
+    <p style="font-size:var(--text-sm)">all Inconsolata &mdash; monospace everywhere</p>
+  </div>
+
+  <!-- Buttons -->
+  <div class="box">
+    <h2>buttons</h2>
+    <div class="row">
+      <button class="btn">default</button>
+      <button class="btn btn-primary">primary</button>
+      <button class="btn btn-accent">accent</button>
+      <button class="btn btn-danger">danger</button>
+      <button class="btn btn-ghost">ghost</button>
+    </div>
+    <div class="row">
+      <button class="btn" disabled>disabled</button>
+      <button class="btn btn-sm">small</button>
+      <button class="btn">medium</button>
+      <button class="btn btn-lg">large</button>
+    </div>
+  </div>
+
+  <!-- Badges -->
+  <div class="box">
+    <h2>badges</h2>
+    <div class="row">
+      <span class="badge badge-success">active</span>
+      <span class="badge badge-warning">pending</span>
+      <span class="badge badge-danger">error</span>
+      <span class="badge badge-info">info</span>
+      <span class="badge">default</span>
+    </div>
+  </div>
+
+  <!-- Form Controls -->
+  <div class="box">
+    <h2>form controls</h2>
+    <div class="grid-2">
+      <div>
+        <label>text input</label>
+        <input type="text" placeholder="type something...">
+        <label>with error</label>
+        <input type="text" class="input-error" placeholder="invalid input">
+        <span class="error">this field is required</span>
+      </div>
+      <div>
+        <label>select</label>
+        <select>
+          <option>option one</option>
+          <option>option two</option>
+          <option>option three</option>
+        </select>
+        <label>toggle</label>
+        <label class="toggle">
+          <input type="checkbox" checked>
+          <span class="track"><span class="thumb"></span></span>
+          <span class="toggle-label">enable feature</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Radio Buttons -->
+  <div class="box">
+    <h2>radio buttons</h2>
+    <div class="grid-2">
+      <div>
+        <label class="radio"><input type="radio" name="demo" checked><span class="radio-mark"></span> option one</label>
+        <label class="radio"><input type="radio" name="demo"><span class="radio-mark"></span> option two</label>
+        <label class="radio"><input type="radio" name="demo"><span class="radio-mark"></span> option three</label>
+      </div>
+      <div>
+        <label class="radio"><input type="radio" name="demo2" checked><span class="radio-mark"></span> enabled</label>
+        <label class="radio disabled"><input type="radio" name="demo2" disabled><span class="radio-mark"></span> disabled</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cards -->
+  <div class="box">
+    <h2>cards (boxes)</h2>
+    <div class="grid-2">
+      <div class="box">
+        <h2>basic card</h2>
+        <p class="dim">card body content with descriptive text.</p>
+      </div>
+      <div class="box">
+        <div class="box-header-row">
+          <h2 style="border:0;margin:0;padding:0">with actions</h2>
+          <button class="btn btn-sm btn-ghost">edit</button>
+        </div>
+        <p class="dim">card with action buttons in header.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Data Table -->
+  <div class="box">
+    <h2>data table</h2>
+    <table>
+      <thead>
+        <tr><th>name</th><th>type</th><th>status</th><th></th></tr>
+      </thead>
+      <tbody>
+        <tr><td>ads</td><td>deny</td><td>active</td><td class="actions"><button class="btn btn-sm">edit</button> <button class="btn btn-sm btn-danger">delete</button></td></tr>
+        <tr><td>malware</td><td>deny</td><td>active</td><td class="actions"><button class="btn btn-sm">edit</button> <button class="btn btn-sm btn-danger">delete</button></td></tr>
+        <tr><td>whitelist</td><td>allow</td><td>inactive</td><td class="actions"><button class="btn btn-sm">edit</button> <button class="btn btn-sm btn-danger">delete</button></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Empty State -->
+  <div class="box">
+    <h2>empty state</h2>
+    <div class="empty">
+      <p>no results found</p>
+      <button class="btn btn-sm">clear filters</button>
+    </div>
+  </div>
+
+  <!-- Log Viewer -->
+  <div class="box">
+    <h2>log viewer</h2>
+    <div class="log-viewer">
+      <div class="log-toolbar">
+        <span class="dot dot-on"></span>
+        <span>live</span>
+        <span class="ml-auto">15 entries</span>
+      </div>
+      <div class="log-body" id="log-body"><span class="log-ok">12:00:01.000  info   Server started on :4000</span><span class="log-dim">12:00:01.012  debug  Loading blocklist from https://example.com/list.txt</span><span class="log-warn">12:00:02.300  warn   Slow upstream response: 2.3s</span><span class="log-err">12:00:03.100  error  Failed to refresh list: connection timeout</span><span class="log-ok">12:00:04.042  info   Query google.com from 192.168.1.42 -> RESOLVED (12ms)</span><span class="log-ok">12:00:04.100  info   Query github.com from 192.168.1.10 -> RESOLVED (8ms)</span><span class="log-dim">12:00:04.200  debug  Cache hit for cdn.example.com</span><span class="log-ok">12:00:04.310  info   Query api.stripe.com from 192.168.1.42 -> RESOLVED (15ms)</span><span class="log-warn">12:00:05.100  warn   Upstream 1.1.1.1 latency: 450ms</span><span class="log-err">12:00:05.500  error  Blocklist update failed: DNS resolution error</span><span class="log-ok">12:00:06.042  info   Query example.org from 192.168.1.55 -> RESOLVED (3ms)</span><span class="log-dim">12:00:06.100  debug  Refreshing blocklist: ads.txt (24891 entries)</span><span class="log-ok">12:00:06.500  info   Query fonts.googleapis.com from 192.168.1.10 -> RESOLVED (11ms)</span><span class="log-warn">12:00:07.200  warn   Rate limit approaching for 192.168.1.99</span><span class="log-ok">12:00:07.800  info   Blocklist refresh complete: 3 lists, 148201 entries</span></div>
+    </div>
+  </div>
+
+  <!-- Apply Banner -->
+  <div class="box">
+    <h2>apply banner</h2>
+    <div class="apply">
+      <span class="apply-text">3 pending changes</span>
+      <button class="btn btn-sm btn-primary">apply</button>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="box">
+    <h2>modal</h2>
+    <button class="btn" id="modal-open">open modal</button>
+  </div>
+
+  <!-- Toast -->
+  <div class="box">
+    <h2>toast</h2>
+    <button class="btn" id="toast-trigger">show toast</button>
+  </div>
+
+  <!-- Spinner -->
+  <div class="box">
+    <h2>spinner</h2>
+    <div class="row">
+      <span class="spinner" style="width:12px;height:12px"></span>
+      <span class="spinner" style="width:16px;height:16px"></span>
+      <span class="spinner" style="width:24px;height:24px"></span>
+      <span class="spinner" style="width:32px;height:32px"></span>
+    </div>
+  </div>
+
+  <!-- Status Bar -->
+  <div class="box">
+    <h2>status bar</h2>
+    <div class="status-bar">
+      <span class="dot dot-on"></span>
+      <span>connected</span>
+      <span class="sep">/</span>
+      <span>v1.0.0</span>
+      <span class="ml-auto" style="color:var(--color-warning)">2 unsaved</span>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="box">
+    <h2>tabs</h2>
+    <div class="tab-list" role="tablist">
+      <button class="tab-trigger active" role="tab" aria-selected="true" data-tab="overview">overview</button>
+      <button class="tab-trigger" role="tab" aria-selected="false" data-tab="config">configuration</button>
+      <button class="tab-trigger" role="tab" aria-selected="false" data-tab="logs">logs</button>
+    </div>
+    <div class="tab-content" id="tab-overview" role="tabpanel">general system overview with health metrics and status indicators.</div>
+    <div class="tab-content" id="tab-config" role="tabpanel" hidden>edit upstream resolvers, blocklists, and cache settings.</div>
+    <div class="tab-content" id="tab-logs" role="tabpanel" hidden>real-time query logs with filtering and search.</div>
+  </div>
+
+  <!-- Accordion -->
+  <div class="box">
+    <h2>accordion</h2>
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false" data-accordion="acc-1">what is chonky?</button>
+      <div class="accordion-body" id="acc-1" hidden>chonky is an opinionated monospace component library for svelte 5. it wraps bits-ui with a dark-first, border-driven aesthetic.</div>
+    </div>
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false" data-accordion="acc-2">how do I install it?</button>
+      <div class="accordion-body" id="acc-2" hidden>install via npm: <code>npm install chonky-ui bits-ui</code>. then import the css in your layout: <code>import 'chonky-ui/css'</code>.</div>
+    </div>
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false" data-accordion="acc-3">does it support theming?</button>
+      <div class="accordion-body" id="acc-3" hidden>yes — light theme is the default. toggle to dark with <code>data-theme="dark"</code> on the html element. all tokens adapt automatically.</div>
+    </div>
+  </div>
+
+  <!-- Breadcrumb -->
+  <div class="box">
+    <h2>breadcrumb</h2>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li><a href="#">home</a></li>
+        <li class="breadcrumb-sep">/</li>
+        <li><a href="#">settings</a></li>
+        <li class="breadcrumb-sep">/</li>
+        <li><a href="#">dns</a></li>
+        <li class="breadcrumb-sep">/</li>
+        <li class="breadcrumb-current" aria-current="page">upstream</li>
+      </ol>
+    </nav>
+  </div>
+
+  <!-- Pagination -->
+  <div class="box">
+    <h2>pagination</h2>
+    <div class="pagination">
+      <button class="page-btn" disabled>&laquo;</button>
+      <button class="page-btn" disabled>&lsaquo;</button>
+      <button class="page-btn active">1</button>
+      <button class="page-btn">2</button>
+      <button class="page-btn">3</button>
+      <button class="page-btn">4</button>
+      <button class="page-btn">5</button>
+      <button class="page-btn">&rsaquo;</button>
+      <button class="page-btn">&raquo;</button>
+    </div>
+  </div>
+
+  <!-- Checkbox -->
+  <div class="box">
+    <h2>checkbox</h2>
+    <div class="grid-2">
+      <div>
+        <label class="checkbox"><input type="checkbox" checked><span class="checkbox-mark"></span> enable caching</label>
+        <label class="checkbox"><input type="checkbox"><span class="checkbox-mark"></span> log queries</label>
+        <label class="checkbox"><input type="checkbox" checked><span class="checkbox-mark"></span> auto-update blocklists</label>
+      </div>
+      <div>
+        <label class="checkbox"><input type="checkbox" checked><span class="checkbox-mark"></span> enabled</label>
+        <label class="checkbox disabled"><input type="checkbox" disabled><span class="checkbox-mark"></span> disabled</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slider -->
+  <div class="box">
+    <h2>slider</h2>
+    <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem">
+      <span class="dim" style="min-width:5rem">cache ttl</span>
+      <div class="slider" id="slider-demo">
+        <div class="slider-track">
+          <div class="slider-range" style="width:60%"></div>
+        </div>
+        <div class="slider-thumb" style="left:60%" tabindex="0" role="slider" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      <span class="slider-value" id="slider-value">60</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:0.5rem">
+      <span class="dim" style="min-width:5rem">rate limit</span>
+      <div class="slider" id="slider-demo-2">
+        <div class="slider-track">
+          <div class="slider-range" style="width:30%"></div>
+        </div>
+        <div class="slider-thumb" style="left:30%" tabindex="0" role="slider" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      <span class="slider-value" id="slider-value-2">30</span>
+    </div>
+  </div>
+
+  <!-- Progress -->
+  <div class="box">
+    <h2>progress</h2>
+    <div style="margin-bottom:0.75rem">
+      <span class="dim">blocklist sync — 72%</span>
+      <div class="progress" style="margin-top:0.25rem"><div class="progress-bar" style="width:72%"></div></div>
+    </div>
+    <div style="margin-bottom:0.75rem">
+      <span class="dim">cache warm-up — 100%</span>
+      <div class="progress" style="margin-top:0.25rem"><div class="progress-bar" style="width:100%"></div></div>
+    </div>
+    <div>
+      <span class="dim">update download — 15%</span>
+      <div class="progress" style="margin-top:0.25rem"><div class="progress-bar" style="width:15%"></div></div>
+    </div>
+  </div>
+
+  <!-- Meter -->
+  <div class="box">
+    <h2>meter</h2>
+    <div style="margin-bottom:0.75rem">
+      <span class="dim">cpu usage — 28%</span>
+      <div class="meter" style="margin-top:0.25rem"><div class="meter-bar high" style="width:28%"></div></div>
+    </div>
+    <div style="margin-bottom:0.75rem">
+      <span class="dim">memory usage — 64%</span>
+      <div class="meter" style="margin-top:0.25rem"><div class="meter-bar mid" style="width:64%"></div></div>
+    </div>
+    <div>
+      <span class="dim">disk usage — 91%</span>
+      <div class="meter" style="margin-top:0.25rem"><div class="meter-bar low" style="width:91%"></div></div>
+    </div>
+    <div class="meter-labels"><span>0%</span><span>50%</span><span>100%</span></div>
+  </div>
+
+  <!-- Pin Input -->
+  <div class="box">
+    <h2>pin input</h2>
+    <div class="pin-input" id="pin-input">
+      <input class="pin-cell" type="text" maxlength="1" inputmode="numeric" aria-label="digit 1">
+      <input class="pin-cell" type="text" maxlength="1" inputmode="numeric" aria-label="digit 2">
+      <input class="pin-cell" type="text" maxlength="1" inputmode="numeric" aria-label="digit 3">
+      <input class="pin-cell" type="text" maxlength="1" inputmode="numeric" aria-label="digit 4">
+      <input class="pin-cell" type="text" maxlength="1" inputmode="numeric" aria-label="digit 5">
+      <input class="pin-cell" type="text" maxlength="1" inputmode="numeric" aria-label="digit 6">
+    </div>
+  </div>
+
+  <!-- Avatar -->
+  <div class="box">
+    <h2>avatar</h2>
+    <div class="row">
+      <span class="avatar avatar-sm">cj</span>
+      <span class="avatar avatar-md">ab</span>
+      <span class="avatar avatar-lg">km</span>
+      <span class="avatar avatar-md" style="border-color:var(--color-accent);color:var(--color-accent)">on</span>
+      <span class="avatar avatar-md" style="border-color:var(--color-danger);color:var(--color-danger)">er</span>
+    </div>
+  </div>
+
+  <!-- Tooltip -->
+  <div class="box">
+    <h2>tooltip</h2>
+    <div class="row">
+      <span class="tooltip-wrap">
+        <button class="btn btn-sm">hover me</button>
+        <span class="tooltip-content">this is a tooltip</span>
+      </span>
+      <span class="tooltip-wrap">
+        <span class="badge badge-warning">pending</span>
+        <span class="tooltip-content">3 items awaiting review</span>
+      </span>
+      <span class="tooltip-wrap">
+        <span class="dot dot-on"></span>
+        <span class="tooltip-content">server is online</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- Popover -->
+  <div class="box">
+    <h2>popover</h2>
+    <div class="popover-wrap">
+      <button class="btn btn-sm" id="popover-trigger">show details</button>
+      <div class="popover-content" id="popover-content">
+        <p style="margin-bottom:0.5rem;color:var(--color-text)">server info</p>
+        <p>host: 192.168.1.1</p>
+        <p>port: 5353</p>
+        <p>uptime: 14d 6h 32m</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dropdown Menu -->
+  <div class="box">
+    <h2>dropdown menu</h2>
+    <div class="dropdown">
+      <button class="btn btn-sm" id="dropdown-trigger">actions</button>
+      <div class="dropdown-content" id="dropdown-content">
+        <div class="dropdown-label">blocklist</div>
+        <button class="dropdown-item">refresh all</button>
+        <button class="dropdown-item">add new source</button>
+        <div class="dropdown-sep"></div>
+        <div class="dropdown-label">cache</div>
+        <button class="dropdown-item">flush cache</button>
+        <button class="dropdown-item danger">reset to defaults</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Context Menu -->
+  <div class="box">
+    <h2>context menu</h2>
+    <div class="context-area" id="context-area">right-click in this area</div>
+  </div>
+
+  <!-- Command Palette -->
+  <div class="box">
+    <h2>command palette</h2>
+    <button class="btn btn-sm" id="command-trigger">open command palette <kbd style="font-family:inherit;font-size:var(--text-xs);color:var(--color-text-dim);margin-left:0.5rem;border:1px solid var(--color-btn-border);border-radius:var(--radius);padding:0.1rem 0.3rem">ctrl+k</kbd></button>
+  </div>
+
+  <!-- Calendar -->
+  <div class="box">
+    <h2>calendar</h2>
+    <div class="calendar" id="calendar"></div>
+  </div>
+
+  <!-- Alert Dialog -->
+  <div class="box">
+    <h2>alert dialog</h2>
+    <button class="btn btn-danger" id="alert-open">delete all data</button>
+  </div>
+
+  <!-- Combobox -->
+  <div class="box">
+    <h2>combobox</h2>
+    <div class="combobox" id="combobox" style="max-width:300px">
+      <input class="combobox-input" type="text" placeholder="search upstream..." id="combobox-input" autocomplete="off">
+      <div class="combobox-list" id="combobox-list">
+        <div class="combobox-item" data-value="cloudflare">1.1.1.1 — cloudflare</div>
+        <div class="combobox-item" data-value="google">8.8.8.8 — google</div>
+        <div class="combobox-item" data-value="quad9">9.9.9.9 — quad9</div>
+        <div class="combobox-item" data-value="opendns">208.67.222.222 — opendns</div>
+        <div class="combobox-item" data-value="adguard">94.140.14.14 — adguard</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toggle Button -->
+  <div class="box">
+    <h2>toggle button</h2>
+    <div class="row">
+      <button class="toggle-btn pressed" aria-pressed="true">bold</button>
+      <button class="toggle-btn" aria-pressed="false">italic</button>
+      <button class="toggle-btn" aria-pressed="false">underline</button>
+    </div>
+  </div>
+
+  <!-- Toggle Group -->
+  <div class="box">
+    <h2>toggle group</h2>
+    <div class="row" style="gap:1rem">
+      <div class="toggle-group" role="group" aria-label="view mode">
+        <button class="toggle-btn pressed">list</button>
+        <button class="toggle-btn">grid</button>
+        <button class="toggle-btn">table</button>
+      </div>
+      <div class="toggle-group" role="group" aria-label="protocol">
+        <button class="toggle-btn pressed">dns</button>
+        <button class="toggle-btn">doh</button>
+        <button class="toggle-btn">dot</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rating -->
+  <div class="box">
+    <h2>rating</h2>
+    <div class="row" style="gap:1rem">
+      <div class="rating" id="rating-demo" data-value="3">
+        <button class="rating-star filled" data-star="1">★</button>
+        <button class="rating-star filled" data-star="2">★</button>
+        <button class="rating-star filled" data-star="3">★</button>
+        <button class="rating-star" data-star="4">★</button>
+        <button class="rating-star" data-star="5">★</button>
+      </div>
+      <span class="dim" id="rating-label">3 / 5</span>
+    </div>
+  </div>
+
+  <!-- Toolbar -->
+  <div class="box">
+    <h2>toolbar</h2>
+    <div class="toolbar">
+      <button class="btn btn-sm btn-ghost">new</button>
+      <button class="btn btn-sm btn-ghost">open</button>
+      <button class="btn btn-sm btn-ghost">save</button>
+      <span class="toolbar-sep"></span>
+      <button class="btn btn-sm btn-ghost">cut</button>
+      <button class="btn btn-sm btn-ghost">copy</button>
+      <button class="btn btn-sm btn-ghost">paste</button>
+      <span class="toolbar-sep"></span>
+      <button class="btn btn-sm btn-ghost">undo</button>
+      <button class="btn btn-sm btn-ghost">redo</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal overlay (hidden) -->
+<div class="backdrop" id="modal-backdrop" style="display:none">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 style="border:0;margin:0;padding:0">confirm action</h2>
+      <button class="modal-close" id="modal-close">x</button>
+    </div>
+    <div class="modal-body">
+      <p>are you sure you want to proceed?</p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" id="modal-cancel">cancel</button>
+      <button class="btn btn-accent" id="modal-confirm">confirm</button>
+    </div>
+  </div>
+</div>
+
+<!-- Context menu (hidden) -->
+<div class="context-menu" id="context-menu">
+  <button class="dropdown-item">inspect</button>
+  <button class="dropdown-item">copy address</button>
+  <div class="dropdown-sep"></div>
+  <button class="dropdown-item">add to allowlist</button>
+  <button class="dropdown-item danger">block domain</button>
+</div>
+
+<!-- Command palette (hidden) -->
+<div class="command-backdrop" id="command-backdrop">
+  <div class="command-box">
+    <input class="command-input" type="text" placeholder="type a command..." id="command-input" autocomplete="off">
+    <div class="command-list" id="command-list">
+      <div class="command-group-label">navigation</div>
+      <div class="command-item" data-cmd="dashboard"><span>go to dashboard</span><kbd>g d</kbd></div>
+      <div class="command-item" data-cmd="settings"><span>go to settings</span><kbd>g s</kbd></div>
+      <div class="command-item" data-cmd="logs"><span>go to logs</span><kbd>g l</kbd></div>
+      <div class="command-group-label">actions</div>
+      <div class="command-item" data-cmd="flush"><span>flush cache</span><kbd>ctrl+shift+f</kbd></div>
+      <div class="command-item" data-cmd="refresh"><span>refresh blocklists</span><kbd>ctrl+shift+r</kbd></div>
+      <div class="command-item" data-cmd="theme"><span>toggle theme</span><kbd>ctrl+shift+t</kbd></div>
+    </div>
+    <div class="command-empty" style="display:none">no results found</div>
+  </div>
+</div>
+
+<!-- Alert dialog (hidden) -->
+<div class="backdrop" id="alert-backdrop" style="display:none">
+  <div class="modal" style="width:min(400px,90vw)">
+    <div class="modal-body">
+      <p class="alert-title">are you sure?</p>
+      <p class="alert-desc">this action will permanently delete all cached data, blocklists, and query history. this cannot be undone.</p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" id="alert-cancel">cancel</button>
+      <button class="btn btn-danger" id="alert-confirm">delete everything</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast (hidden) -->
+<div class="toast toast-success" id="toast" style="display:none">
+  <span>changes saved successfully</span>
+  <button class="toast-close" id="toast-close">x</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

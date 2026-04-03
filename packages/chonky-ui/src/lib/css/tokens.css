@@ -1,0 +1,99 @@
+/* --- Light theme (default) --- */
+:root {
+  --color-bg: #fff;
+  --color-surface: #f8f8f8;
+  --color-surface-raised: #f0f0f0;
+  --color-border: #ddd;
+  --color-border-subtle: #eee;
+
+  --color-text: #111;
+  --color-text-muted: #666;
+  --color-text-dim: #999;
+  --color-text-inverse: #fff;
+
+  --color-accent: #215e21;
+  --color-primary: #ffaa00;
+  --color-primary-hover: #ffbb33;
+  --color-primary-muted: rgba(255, 170, 0, 0.12);
+  --color-primary-fg: #000;
+  --color-danger: #c41010;
+  --color-danger-hover: #d42020;
+  --color-danger-muted: rgba(214, 2, 2, 0.12);
+  --color-danger-fg: #fff;
+  --color-success: #215e21;
+  --color-success-fill: #215e21;
+  --color-success-muted: rgba(33, 94, 33, 0.15);
+  --color-success-fg: #fff;
+  --color-warning: #ffaa00;
+  --color-warning-muted: rgba(255, 170, 0, 0.15);
+  --color-warning-fg: #000;
+  --color-info: #1a6e94;
+  --color-info-muted: rgba(35, 134, 176, 0.15);
+  --color-info-fg: #fff;
+
+  --color-btn-bg: #f0f0f0;
+  --color-btn-bg-hover: #e4e4e4;
+  --color-btn-border: #ccc;
+
+  --font-mono: 'Inconsolata', 'Courier New', monospace;
+  --text-xs: 0.72rem;
+  --text-sm: 0.8rem;
+  --text-base: 0.9rem;
+  --text-lg: 1rem;
+  --text-xl: 1.1rem;
+  --text-2xl: 1.4rem;
+
+  --radius: 2px;
+  --transition: 150ms ease;
+  --transition-slow: 200ms ease;
+}
+
+/* --- Dark theme --- */
+[data-theme="dark"] {
+  --color-bg: #0a0a0a;
+  --color-surface: #111;
+  --color-surface-raised: #1a1a1a;
+  --color-border: #222;
+  --color-border-subtle: #1a1a1a;
+
+  --color-text: #c8c8c8;
+  --color-text-muted: #555;
+  --color-text-dim: #444;
+  --color-text-inverse: #0a0a0a;
+
+  --color-accent: #2a8a2a;
+  --color-danger: #d60202;
+  --color-danger-hover: #e52222;
+  --color-success: #2a8a2a;
+  --color-info: #2386b0;
+
+  --color-btn-bg: #1a1a1a;
+  --color-btn-bg-hover: #252525;
+  --color-btn-border: #333;
+}
+
+/* --- OS dark preference (auto, before JS runs) --- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-bg: #0a0a0a;
+    --color-surface: #111;
+    --color-surface-raised: #1a1a1a;
+    --color-border: #222;
+    --color-border-subtle: #1a1a1a;
+
+    --color-text: #c8c8c8;
+    --color-text-muted: #555;
+    --color-text-dim: #444;
+    --color-text-inverse: #0a0a0a;
+
+    --color-accent: #2a8a2a;
+    --color-danger: #d60202;
+    --color-danger-hover: #e52222;
+    --color-success: #2a8a2a;
+    --color-info: #2386b0;
+
+    --color-btn-bg: #1a1a1a;
+    --color-btn-bg-hover: #252525;
+    --color-btn-border: #333;
+  }
+}
