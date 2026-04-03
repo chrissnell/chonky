@@ -4,7 +4,7 @@
   import type { HTMLAnchorAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface NavigationMenuLinkProps extends HTMLAnchorAttributes {
+  export interface NavigationMenuLinkProps extends HTMLAnchorAttributes {
     class?: string;
     children?: Snippet;
   }

@@ -4,7 +4,7 @@
   import type { HTMLButtonAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface ButtonProps extends HTMLButtonAttributes {
+  export interface ButtonProps extends HTMLButtonAttributes {
     variant?: 'default' | 'primary' | 'accent' | 'danger' | 'ghost';
     size?: 'sm' | 'md' | 'lg';
     class?: string;

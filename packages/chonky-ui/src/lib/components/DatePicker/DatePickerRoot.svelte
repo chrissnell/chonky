@@ -4,7 +4,7 @@
   import type { Snippet } from 'svelte';
   import type { DateMatcher } from 'bits-ui';
 
-  interface DatePickerRootProps {
+  export interface DatePickerRootProps {
     value?: DateValue;
     onValueChange?: (value: DateValue | undefined) => void;
     placeholder?: DateValue;

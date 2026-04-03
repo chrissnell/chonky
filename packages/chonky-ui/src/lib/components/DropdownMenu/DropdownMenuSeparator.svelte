@@ -2,7 +2,7 @@
   import { DropdownMenu as BitsDropdownMenu } from 'bits-ui';
   import { cn } from '../../internal/utils.js';
 
-  interface DropdownMenuSeparatorProps {
+  export interface DropdownMenuSeparatorProps {
     class?: string;
   }
 

@@ -4,7 +4,7 @@
   import type { HTMLAnchorAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface ToolbarLinkProps extends HTMLAnchorAttributes {
+  export interface ToolbarLinkProps extends HTMLAnchorAttributes {
     class?: string;
     children?: Snippet;
   }

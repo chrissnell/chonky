@@ -3,7 +3,7 @@
   import type { Snippet } from 'svelte';
   import { cn } from '../../internal/utils.js';
 
-  interface ContextMenuItemProps {
+  export interface ContextMenuItemProps {
     class?: string;
     children?: Snippet;
     onSelect?: () => void;

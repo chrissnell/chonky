@@ -3,7 +3,7 @@
   import type { HTMLTableAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface TableProps extends HTMLTableAttributes {
+  export interface TableProps extends HTMLTableAttributes {
     class?: string;
     children?: Snippet;
   }

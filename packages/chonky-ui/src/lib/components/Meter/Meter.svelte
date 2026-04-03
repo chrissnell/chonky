@@ -2,7 +2,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface MeterProps extends HTMLAttributes<HTMLDivElement> {
+  export interface MeterProps extends HTMLAttributes<HTMLDivElement> {
     value?: number;
     min?: number;
     max?: number;

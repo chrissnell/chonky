@@ -2,7 +2,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import Toggle from '../Toggle/Toggle.svelte';
 
-  interface ThemeToggleProps extends HTMLAttributes<HTMLElement> {
+  export interface ThemeToggleProps extends HTMLAttributes<HTMLElement> {
     theme?: 'dark' | 'light';
     onThemeChange?: (theme: 'dark' | 'light') => void;
     class?: string;

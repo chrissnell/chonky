@@ -3,7 +3,7 @@
   import type { Snippet } from 'svelte';
   import { cn } from '../../internal/utils.js';
 
-  interface ComboboxContentProps {
+  export interface ComboboxContentProps {
     class?: string;
     children?: Snippet;
     sideOffset?: number;

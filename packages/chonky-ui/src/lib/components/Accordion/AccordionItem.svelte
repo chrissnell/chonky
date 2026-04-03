@@ -4,7 +4,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface AccordionItemProps extends HTMLAttributes<HTMLDivElement> {
+  export interface AccordionItemProps extends HTMLAttributes<HTMLDivElement> {
     value: string;
     class?: string;
     children?: Snippet;

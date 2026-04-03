@@ -3,7 +3,7 @@
   import type { HTMLLiAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface BreadcrumbItemProps extends HTMLLiAttributes {
+  export interface BreadcrumbItemProps extends HTMLLiAttributes {
     class?: string;
     children?: Snippet;
   }

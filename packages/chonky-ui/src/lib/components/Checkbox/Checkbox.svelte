@@ -4,7 +4,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface CheckboxProps extends HTMLAttributes<HTMLButtonElement> {
+  export interface CheckboxProps extends HTMLAttributes<HTMLButtonElement> {
     checked?: boolean | 'indeterminate';
     onCheckedChange?: (checked: boolean | 'indeterminate') => void;
     disabled?: boolean;

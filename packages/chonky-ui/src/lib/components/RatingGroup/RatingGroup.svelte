@@ -3,7 +3,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface RatingGroupProps extends HTMLAttributes<HTMLDivElement> {
+  export interface RatingGroupProps extends HTMLAttributes<HTMLDivElement> {
     value?: number;
     onValueChange?: (value: number) => void;
     max?: number;

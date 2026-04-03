@@ -3,7 +3,7 @@
   import type { Snippet } from 'svelte';
   import { cn } from '../../internal/utils.js';
 
-  interface PopoverCloseProps {
+  export interface PopoverCloseProps {
     class?: string;
     children?: Snippet;
   }

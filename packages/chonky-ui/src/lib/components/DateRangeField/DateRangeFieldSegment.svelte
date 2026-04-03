@@ -2,7 +2,7 @@
   import { DateRangeField as BitsDateRangeField } from 'bits-ui';
   import { cn } from '../../internal/utils.js';
 
-  interface DateRangeFieldSegmentProps {
+  export interface DateRangeFieldSegmentProps {
     part: string;
     class?: string;
   }

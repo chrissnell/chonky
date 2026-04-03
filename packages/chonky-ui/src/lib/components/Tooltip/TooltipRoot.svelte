@@ -2,7 +2,7 @@
   import { Tooltip as BitsTooltip } from 'bits-ui';
   import type { Snippet } from 'svelte';
 
-  interface TooltipRootProps {
+  export interface TooltipRootProps {
     openDelay?: number;
     closeDelay?: number;
     children?: Snippet;

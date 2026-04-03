@@ -2,7 +2,7 @@
   import { Popover as BitsPopover } from 'bits-ui';
   import type { Snippet } from 'svelte';
 
-  interface PopoverRootProps {
+  export interface PopoverRootProps {
     open?: boolean;
     children?: Snippet;
   }

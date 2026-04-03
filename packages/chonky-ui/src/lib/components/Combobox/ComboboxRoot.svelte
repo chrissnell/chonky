@@ -2,7 +2,7 @@
   import { Combobox as BitsCombobox } from 'bits-ui';
   import type { Snippet } from 'svelte';
 
-  interface ComboboxRootProps {
+  export interface ComboboxRootProps {
     open?: boolean;
     value?: string;
     children?: Snippet;

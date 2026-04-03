@@ -3,7 +3,7 @@
   import type { Snippet } from 'svelte';
   import { cn } from '../../internal/utils.js';
 
-  interface DropdownMenuItemProps {
+  export interface DropdownMenuItemProps {
     class?: string;
     children?: Snippet;
     onSelect?: () => void;

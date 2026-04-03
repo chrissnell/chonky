@@ -4,7 +4,7 @@
   import type { HTMLDivAttributes } from 'bits-ui';
   import { cn } from '../../internal/utils.js';
 
-  interface MenubarItemProps {
+  export interface MenubarItemProps {
     class?: string;
     children?: Snippet;
     onSelect?: () => void;

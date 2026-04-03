@@ -2,7 +2,7 @@
   import { ContextMenu as BitsContextMenu } from 'bits-ui';
   import { cn } from '../../internal/utils.js';
 
-  interface ContextMenuSeparatorProps {
+  export interface ContextMenuSeparatorProps {
     class?: string;
   }
 

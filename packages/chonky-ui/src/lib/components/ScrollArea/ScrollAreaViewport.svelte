@@ -4,7 +4,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface ScrollAreaViewportProps extends HTMLAttributes<HTMLDivElement> {
+  export interface ScrollAreaViewportProps extends HTMLAttributes<HTMLDivElement> {
     class?: string;
     children?: Snippet;
   }

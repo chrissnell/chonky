@@ -3,7 +3,7 @@
   import { dismiss } from './toast.svelte.js';
   import { cn } from '../../internal/utils.js';
 
-  interface ToastProps {
+  export interface ToastProps {
     item: ToastItem;
     class?: string;
   }

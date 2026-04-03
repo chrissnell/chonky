@@ -7,7 +7,7 @@
 
   type DateRange = { start: DateValue; end: DateValue };
 
-  interface RangeCalendarRootProps {
+  export interface RangeCalendarRootProps {
     value?: DateRange;
     onValueChange?: (value: DateRange | undefined) => void;
     placeholder?: DateValue;

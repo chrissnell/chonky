@@ -2,7 +2,7 @@
   import { Calendar as BitsCalendar } from 'bits-ui';
   import { cn } from '../../internal/utils.js';
 
-  interface CalendarHeadingProps {
+  export interface CalendarHeadingProps {
     class?: string;
   }
 

@@ -3,7 +3,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface SliderProps extends HTMLAttributes<HTMLSpanElement> {
+  export interface SliderProps extends HTMLAttributes<HTMLSpanElement> {
     value?: number[];
     onValueChange?: (value: number[]) => void;
     min?: number;

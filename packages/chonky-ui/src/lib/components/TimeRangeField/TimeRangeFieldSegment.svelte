@@ -2,7 +2,7 @@
   import { TimeRangeField as BitsTimeRangeField } from 'bits-ui';
   import { cn } from '../../internal/utils.js';
 
-  interface TimeRangeFieldSegmentProps {
+  export interface TimeRangeFieldSegmentProps {
     part: string;
     class?: string;
   }

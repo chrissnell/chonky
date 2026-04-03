@@ -2,7 +2,7 @@
   import { AlertDialog as BitsAlertDialog } from 'bits-ui';
   import type { Snippet } from 'svelte';
 
-  interface AlertDialogRootProps {
+  export interface AlertDialogRootProps {
     open?: boolean;
     children?: Snippet;
   }

@@ -3,7 +3,7 @@
   import type { Snippet } from 'svelte';
   import { cn } from '../../internal/utils.js';
 
-  interface DateRangePickerLabelProps {
+  export interface DateRangePickerLabelProps {
     class?: string;
     children?: Snippet;
   }

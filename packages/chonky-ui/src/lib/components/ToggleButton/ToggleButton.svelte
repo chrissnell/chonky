@@ -4,7 +4,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface ToggleButtonProps extends HTMLAttributes<HTMLButtonElement> {
+  export interface ToggleButtonProps extends HTMLAttributes<HTMLButtonElement> {
     pressed?: boolean;
     onPressedChange?: (pressed: boolean) => void;
     disabled?: boolean;

@@ -6,7 +6,7 @@
 
   type DateRange = { start: DateValue; end: DateValue };
 
-  interface DateRangePickerRootProps {
+  export interface DateRangePickerRootProps {
     value?: DateRange;
     onValueChange?: (value: DateRange | undefined) => void;
     placeholder?: DateValue;

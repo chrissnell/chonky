@@ -3,7 +3,7 @@
   import type { Snippet } from 'svelte';
   import { cn } from '../../internal/utils.js';
 
-  interface AlertDialogDescriptionProps {
+  export interface AlertDialogDescriptionProps {
     class?: string;
     children?: Snippet;
   }

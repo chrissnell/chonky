@@ -2,7 +2,7 @@
   import { TimeRangeField as BitsTimeRangeField } from 'bits-ui';
   import { cn } from '../../internal/utils.js';
 
-  interface TimeRangeFieldInputProps {
+  export interface TimeRangeFieldInputProps {
     type: 'start' | 'end';
     name?: string;
     class?: string;

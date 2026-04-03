@@ -2,7 +2,7 @@
   import { DateRangePicker as BitsDateRangePicker } from 'bits-ui';
   import { cn } from '../../internal/utils.js';
 
-  interface DateRangePickerSegmentProps {
+  export interface DateRangePickerSegmentProps {
     part: string;
     class?: string;
   }

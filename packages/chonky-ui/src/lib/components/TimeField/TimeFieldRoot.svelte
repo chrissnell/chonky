@@ -3,7 +3,7 @@
   import type { Snippet } from 'svelte';
   import type { TimeValue } from 'bits-ui';
 
-  interface TimeFieldRootProps {
+  export interface TimeFieldRootProps {
     value?: TimeValue;
     onValueChange?: (value: TimeValue | undefined) => void;
     placeholder?: TimeValue;

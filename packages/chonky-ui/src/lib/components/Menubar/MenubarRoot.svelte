@@ -4,7 +4,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface MenubarRootProps extends HTMLAttributes<HTMLDivElement> {
+  export interface MenubarRootProps extends HTMLAttributes<HTMLDivElement> {
     class?: string;
     children?: Snippet;
   }

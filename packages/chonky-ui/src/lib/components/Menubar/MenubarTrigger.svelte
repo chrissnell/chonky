@@ -4,7 +4,7 @@
   import type { HTMLButtonAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface MenubarTriggerProps extends HTMLButtonAttributes {
+  export interface MenubarTriggerProps extends HTMLButtonAttributes {
     class?: string;
     children?: Snippet;
   }

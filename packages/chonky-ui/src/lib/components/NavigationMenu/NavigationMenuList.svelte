@@ -4,7 +4,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface NavigationMenuListProps extends HTMLAttributes<HTMLUListElement> {
+  export interface NavigationMenuListProps extends HTMLAttributes<HTMLUListElement> {
     class?: string;
     children?: Snippet;
   }

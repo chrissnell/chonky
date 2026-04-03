@@ -2,7 +2,7 @@
   import { Menubar as BitsMenubar } from 'bits-ui';
   import { cn } from '../../internal/utils.js';
 
-  interface MenubarSeparatorProps {
+  export interface MenubarSeparatorProps {
     class?: string;
   }
 

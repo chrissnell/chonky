@@ -2,7 +2,7 @@
   import { LinkPreview as BitsLinkPreview } from 'bits-ui';
   import type { Snippet } from 'svelte';
 
-  interface LinkPreviewRootProps {
+  export interface LinkPreviewRootProps {
     openDelay?: number;
     closeDelay?: number;
     children?: Snippet;

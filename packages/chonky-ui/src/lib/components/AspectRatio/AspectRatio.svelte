@@ -4,7 +4,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface AspectRatioProps extends HTMLAttributes<HTMLDivElement> {
+  export interface AspectRatioProps extends HTMLAttributes<HTMLDivElement> {
     ratio?: number;
     children?: Snippet;
     class?: string;

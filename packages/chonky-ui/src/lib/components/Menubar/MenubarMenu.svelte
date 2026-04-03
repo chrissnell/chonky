@@ -2,7 +2,7 @@
   import { Menubar as BitsMenubar } from 'bits-ui';
   import type { Snippet } from 'svelte';
 
-  interface MenubarMenuProps {
+  export interface MenubarMenuProps {
     value?: string;
     onOpenChange?: (open: boolean) => void;
     children?: Snippet;

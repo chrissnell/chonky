@@ -3,7 +3,7 @@
   import type { Snippet } from 'svelte';
   import { cn } from '../../internal/utils.js';
 
-  interface DropdownMenuCheckboxItemProps {
+  export interface DropdownMenuCheckboxItemProps {
     class?: string;
     children?: Snippet;
     checked?: boolean;

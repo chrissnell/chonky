@@ -4,7 +4,7 @@
   import type { HTMLButtonAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface CollapsibleTriggerProps extends HTMLButtonAttributes {
+  export interface CollapsibleTriggerProps extends HTMLButtonAttributes {
     class?: string;
     children?: Snippet;
   }

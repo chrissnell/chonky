@@ -4,7 +4,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface RadioGroupProps extends HTMLAttributes<HTMLDivElement> {
+  export interface RadioGroupProps extends HTMLAttributes<HTMLDivElement> {
     value?: string;
     onValueChange?: (value: string) => void;
     name?: string;

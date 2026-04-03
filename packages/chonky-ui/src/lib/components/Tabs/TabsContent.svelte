@@ -4,7 +4,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface TabsContentProps extends HTMLAttributes<HTMLDivElement> {
+  export interface TabsContentProps extends HTMLAttributes<HTMLDivElement> {
     value: string;
     class?: string;
     children?: Snippet;

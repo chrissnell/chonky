@@ -4,7 +4,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface ModalCloseProps extends HTMLAttributes<HTMLButtonElement> {
+  export interface ModalCloseProps extends HTMLAttributes<HTMLButtonElement> {
     class?: string;
     children?: Snippet;
   }

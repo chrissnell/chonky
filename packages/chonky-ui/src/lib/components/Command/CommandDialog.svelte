@@ -3,7 +3,7 @@
   import type { Snippet } from 'svelte';
   import { cn } from '../../internal/utils.js';
 
-  interface CommandDialogProps {
+  export interface CommandDialogProps {
     open?: boolean;
     class?: string;
     children?: Snippet;

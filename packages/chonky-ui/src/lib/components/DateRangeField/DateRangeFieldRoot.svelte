@@ -5,7 +5,7 @@
 
   type DateRange = { start: DateValue; end: DateValue };
 
-  interface DateRangeFieldRootProps {
+  export interface DateRangeFieldRootProps {
     value?: DateRange;
     onValueChange?: (value: DateRange | undefined) => void;
     placeholder?: DateValue;

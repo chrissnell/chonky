@@ -5,7 +5,7 @@
   import type { DateMatcher } from 'bits-ui';
   import { cn } from '../../internal/utils.js';
 
-  interface CalendarRootProps {
+  export interface CalendarRootProps {
     type?: 'single' | 'multiple';
     value?: DateValue | DateValue[];
     onValueChange?: (value: DateValue | DateValue[] | undefined) => void;

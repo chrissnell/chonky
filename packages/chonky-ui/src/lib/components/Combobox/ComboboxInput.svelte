@@ -2,7 +2,7 @@
   import { Combobox as BitsCombobox } from 'bits-ui';
   import { cn } from '../../internal/utils.js';
 
-  interface ComboboxInputProps {
+  export interface ComboboxInputProps {
     class?: string;
     placeholder?: string;
   }

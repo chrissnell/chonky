@@ -4,7 +4,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface TabsRootProps extends HTMLAttributes<HTMLDivElement> {
+  export interface TabsRootProps extends HTMLAttributes<HTMLDivElement> {
     value?: string;
     onValueChange?: (value: string) => void;
     class?: string;

@@ -3,7 +3,7 @@
   import type { SelectTriggerProps } from 'bits-ui';
   import { cn } from '../../internal/utils.js';
 
-  interface SelectProps extends SelectTriggerProps {
+  export interface SelectProps extends SelectTriggerProps {
     options: { value: string; label: string }[];
     value?: string;
     onValueChange?: (value: string) => void;

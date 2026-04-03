@@ -3,7 +3,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface AvatarProps extends HTMLAttributes<HTMLSpanElement> {
+  export interface AvatarProps extends HTMLAttributes<HTMLSpanElement> {
     src?: string;
     alt?: string;
     fallback?: string;

@@ -3,7 +3,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface RadioProps extends HTMLAttributes<HTMLButtonElement> {
+  export interface RadioProps extends HTMLAttributes<HTMLButtonElement> {
     value: string;
     label?: string;
     disabled?: boolean;

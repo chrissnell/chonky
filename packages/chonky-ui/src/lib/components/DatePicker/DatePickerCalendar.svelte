@@ -3,7 +3,7 @@
   import type { Snippet } from 'svelte';
   import { cn } from '../../internal/utils.js';
 
-  interface DatePickerCalendarProps {
+  export interface DatePickerCalendarProps {
     class?: string;
     children?: Snippet;
   }

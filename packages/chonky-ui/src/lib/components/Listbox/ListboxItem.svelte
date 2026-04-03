@@ -3,7 +3,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface ListboxItemProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onselect'> {
+  export interface ListboxItemProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onselect'> {
     class?: string;
     children?: Snippet;
     value: string;

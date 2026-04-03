@@ -3,7 +3,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface ModalFooterProps extends HTMLAttributes<HTMLDivElement> {
+  export interface ModalFooterProps extends HTMLAttributes<HTMLDivElement> {
     class?: string;
     children?: Snippet;
   }

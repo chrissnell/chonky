@@ -2,7 +2,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface BreadcrumbSeparatorProps extends HTMLAttributes<HTMLSpanElement> {
+  export interface BreadcrumbSeparatorProps extends HTMLAttributes<HTMLSpanElement> {
     class?: string;
   }
 

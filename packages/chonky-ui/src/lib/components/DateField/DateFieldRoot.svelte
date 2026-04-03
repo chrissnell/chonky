@@ -3,7 +3,7 @@
   import type { DateValue } from '@internationalized/date';
   import type { Snippet } from 'svelte';
 
-  interface DateFieldRootProps {
+  export interface DateFieldRootProps {
     value?: DateValue;
     onValueChange?: (value: DateValue | undefined) => void;
     placeholder?: DateValue;

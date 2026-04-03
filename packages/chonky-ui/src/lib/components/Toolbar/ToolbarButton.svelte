@@ -4,7 +4,7 @@
   import type { HTMLButtonAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface ToolbarButtonProps extends HTMLButtonAttributes {
+  export interface ToolbarButtonProps extends HTMLButtonAttributes {
     class?: string;
     children?: Snippet;
   }

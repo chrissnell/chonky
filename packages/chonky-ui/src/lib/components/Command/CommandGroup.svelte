@@ -3,7 +3,7 @@
   import type { Snippet } from 'svelte';
   import { cn } from '../../internal/utils.js';
 
-  interface CommandGroupProps {
+  export interface CommandGroupProps {
     class?: string;
     children?: Snippet;
   }

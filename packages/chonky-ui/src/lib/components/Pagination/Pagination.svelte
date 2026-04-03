@@ -3,7 +3,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface PaginationProps extends HTMLAttributes<HTMLDivElement> {
+  export interface PaginationProps extends HTMLAttributes<HTMLDivElement> {
     count: number;
     perPage?: number;
     page?: number;

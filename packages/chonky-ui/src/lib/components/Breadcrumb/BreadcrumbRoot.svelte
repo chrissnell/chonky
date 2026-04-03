@@ -3,7 +3,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface BreadcrumbRootProps extends HTMLAttributes<HTMLElement> {
+  export interface BreadcrumbRootProps extends HTMLAttributes<HTMLElement> {
     class?: string;
     children?: Snippet;
   }

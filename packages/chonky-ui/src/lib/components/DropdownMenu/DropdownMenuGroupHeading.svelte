@@ -3,7 +3,7 @@
   import type { Snippet } from 'svelte';
   import { cn } from '../../internal/utils.js';
 
-  interface DropdownMenuGroupHeadingProps {
+  export interface DropdownMenuGroupHeadingProps {
     class?: string;
     children?: Snippet;
   }

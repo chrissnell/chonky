@@ -4,7 +4,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface ToggleGroupProps extends HTMLAttributes<HTMLDivElement> {
+  export interface ToggleGroupProps extends HTMLAttributes<HTMLDivElement> {
     type?: 'single' | 'multiple';
     value?: string | string[];
     onValueChange?: (value: string | string[]) => void;

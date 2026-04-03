@@ -2,7 +2,7 @@
   import type { HTMLInputAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface InputProps extends HTMLInputAttributes {
+  export interface InputProps extends HTMLInputAttributes {
     type?: 'text' | 'password' | 'number';
     error?: string;
     class?: string;

@@ -3,7 +3,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
+  export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
     variant?: 'default' | 'success' | 'warning' | 'danger' | 'info';
     class?: string;
     children?: Snippet;

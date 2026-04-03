@@ -2,7 +2,7 @@
   import { RangeCalendar as BitsRangeCalendar } from 'bits-ui';
   import { cn } from '../../internal/utils.js';
 
-  interface Props {
+  export interface Props {
     class?: string;
   }
 

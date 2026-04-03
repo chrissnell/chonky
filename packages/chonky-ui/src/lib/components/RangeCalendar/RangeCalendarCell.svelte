@@ -4,7 +4,7 @@
   import type { Snippet } from 'svelte';
   import { cn } from '../../internal/utils.js';
 
-  interface Props {
+  export interface Props {
     date: DateValue;
     month: DateValue;
     class?: string;

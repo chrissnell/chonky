@@ -3,7 +3,7 @@
   import { cn } from '../../internal/utils.js';
   import Button from '../Button/Button.svelte';
 
-  interface ApplyBannerProps extends HTMLAttributes<HTMLDivElement> {
+  export interface ApplyBannerProps extends HTMLAttributes<HTMLDivElement> {
     count: number;
     onApply: () => void;
     class?: string;

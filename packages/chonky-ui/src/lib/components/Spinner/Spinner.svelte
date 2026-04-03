@@ -2,7 +2,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface SpinnerProps extends HTMLAttributes<HTMLSpanElement> {
+  export interface SpinnerProps extends HTMLAttributes<HTMLSpanElement> {
     size?: number;
     class?: string;
   }

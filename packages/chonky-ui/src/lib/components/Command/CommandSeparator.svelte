@@ -2,7 +2,7 @@
   import { Command as BitsCommand } from 'bits-ui';
   import { cn } from '../../internal/utils.js';
 
-  interface CommandSeparatorProps {
+  export interface CommandSeparatorProps {
     class?: string;
   }
 

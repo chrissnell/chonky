@@ -3,7 +3,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface ScrollAreaScrollbarProps extends HTMLAttributes<HTMLDivElement> {
+  export interface ScrollAreaScrollbarProps extends HTMLAttributes<HTMLDivElement> {
     orientation?: 'vertical' | 'horizontal';
     class?: string;
   }

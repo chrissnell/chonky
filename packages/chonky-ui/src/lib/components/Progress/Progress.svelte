@@ -2,7 +2,7 @@
   import { Progress as BitsProgress } from 'bits-ui';
   import { cn } from '../../internal/utils.js';
 
-  interface ProgressProps {
+  export interface ProgressProps {
     value?: number;
     max?: number;
     class?: string;

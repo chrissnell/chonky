@@ -2,7 +2,7 @@
   import { DatePicker as BitsDatePicker } from 'bits-ui';
   import { cn } from '../../internal/utils.js';
 
-  interface DatePickerInputProps {
+  export interface DatePickerInputProps {
     name?: string;
     class?: string;
   }

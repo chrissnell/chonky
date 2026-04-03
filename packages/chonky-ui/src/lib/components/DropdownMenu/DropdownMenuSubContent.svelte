@@ -3,7 +3,7 @@
   import type { Snippet } from 'svelte';
   import { cn } from '../../internal/utils.js';
 
-  interface DropdownMenuSubContentProps {
+  export interface DropdownMenuSubContentProps {
     class?: string;
     children?: Snippet;
     sideOffset?: number;

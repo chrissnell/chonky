@@ -15,7 +15,7 @@
     [key: string]: string;
   }
 
-  interface LogViewerProps extends HTMLAttributes<HTMLDivElement> {
+  export interface LogViewerProps extends HTMLAttributes<HTMLDivElement> {
     entries: LogEntry[];
     columns: LogColumn[];
     showHeader?: boolean;

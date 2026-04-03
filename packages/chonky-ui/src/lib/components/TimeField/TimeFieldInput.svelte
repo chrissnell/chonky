@@ -2,7 +2,7 @@
   import { TimeField as BitsTimeField } from 'bits-ui';
   import { cn } from '../../internal/utils.js';
 
-  interface TimeFieldInputProps {
+  export interface TimeFieldInputProps {
     name?: string;
     class?: string;
   }

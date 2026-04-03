@@ -4,7 +4,7 @@
   import type { HTMLLabelAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface LabelProps extends HTMLLabelAttributes {
+  export interface LabelProps extends HTMLLabelAttributes {
     class?: string;
     children?: Snippet;
   }

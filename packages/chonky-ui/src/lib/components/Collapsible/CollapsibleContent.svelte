@@ -4,7 +4,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface CollapsibleContentProps extends HTMLAttributes<HTMLDivElement> {
+  export interface CollapsibleContentProps extends HTMLAttributes<HTMLDivElement> {
     class?: string;
     children?: Snippet;
   }

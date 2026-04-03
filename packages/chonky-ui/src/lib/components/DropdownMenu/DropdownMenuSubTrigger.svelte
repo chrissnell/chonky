@@ -3,7 +3,7 @@
   import type { Snippet } from 'svelte';
   import { cn } from '../../internal/utils.js';
 
-  interface DropdownMenuSubTriggerProps {
+  export interface DropdownMenuSubTriggerProps {
     class?: string;
     children?: Snippet;
   }

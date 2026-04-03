@@ -4,7 +4,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface ToggleGroupItemProps extends HTMLAttributes<HTMLButtonElement> {
+  export interface ToggleGroupItemProps extends HTMLAttributes<HTMLButtonElement> {
     value: string;
     disabled?: boolean;
     children?: Snippet;

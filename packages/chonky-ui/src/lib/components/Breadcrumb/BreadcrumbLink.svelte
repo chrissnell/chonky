@@ -3,7 +3,7 @@
   import type { HTMLAnchorAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface BreadcrumbLinkProps extends HTMLAnchorAttributes {
+  export interface BreadcrumbLinkProps extends HTMLAnchorAttributes {
     class?: string;
     children?: Snippet;
   }

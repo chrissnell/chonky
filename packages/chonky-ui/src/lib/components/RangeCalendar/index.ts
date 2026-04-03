@@ -11,5 +11,7 @@ import Day from './RangeCalendarDay.svelte';
 import PrevButton from './RangeCalendarPrevButton.svelte';
 import NextButton from './RangeCalendarNextButton.svelte';
 
+export type { RangeCalendarRootProps } from './RangeCalendarRoot.svelte';
+
 const RangeCalendar = Object.assign(Root, { Header, Heading, Grid, GridHead, HeadCell, GridBody, GridRow, Cell, Day, PrevButton, NextButton });
 export { RangeCalendar };

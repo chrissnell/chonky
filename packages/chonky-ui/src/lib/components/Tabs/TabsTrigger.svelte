@@ -4,7 +4,7 @@
   import type { HTMLButtonAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface TabsTriggerProps extends HTMLButtonAttributes {
+  export interface TabsTriggerProps extends HTMLButtonAttributes {
     value: string;
     class?: string;
     children?: Snippet;

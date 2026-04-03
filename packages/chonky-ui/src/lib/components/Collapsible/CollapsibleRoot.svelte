@@ -4,7 +4,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface CollapsibleRootProps extends HTMLAttributes<HTMLDivElement> {
+  export interface CollapsibleRootProps extends HTMLAttributes<HTMLDivElement> {
     open?: boolean;
     onOpenChange?: (open: boolean) => void;
     disabled?: boolean;

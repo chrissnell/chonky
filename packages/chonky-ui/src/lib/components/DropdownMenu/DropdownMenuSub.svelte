@@ -2,7 +2,7 @@
   import { DropdownMenu as BitsDropdownMenu } from 'bits-ui';
   import type { Snippet } from 'svelte';
 
-  interface DropdownMenuSubProps {
+  export interface DropdownMenuSubProps {
     open?: boolean;
     children?: Snippet;
   }

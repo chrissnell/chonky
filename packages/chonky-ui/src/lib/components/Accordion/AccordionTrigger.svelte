@@ -4,7 +4,7 @@
   import type { HTMLButtonAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface AccordionTriggerProps extends HTMLButtonAttributes {
+  export interface AccordionTriggerProps extends HTMLButtonAttributes {
     class?: string;
     children?: Snippet;
   }

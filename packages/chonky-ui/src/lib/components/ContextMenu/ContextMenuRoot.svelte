@@ -2,7 +2,7 @@
   import { ContextMenu as BitsContextMenu } from 'bits-ui';
   import type { Snippet } from 'svelte';
 
-  interface ContextMenuRootProps {
+  export interface ContextMenuRootProps {
     children?: Snippet;
   }
 

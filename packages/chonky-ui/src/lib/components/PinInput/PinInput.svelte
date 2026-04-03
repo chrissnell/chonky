@@ -3,7 +3,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '../../internal/utils.js';
 
-  interface PinInputProps extends HTMLAttributes<HTMLDivElement> {
+  export interface PinInputProps extends HTMLAttributes<HTMLDivElement> {
     value?: string[];
     onValueChange?: (value: string[]) => void;
     length?: number;

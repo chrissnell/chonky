@@ -3,7 +3,7 @@
   import type { Snippet } from 'svelte';
   import { cn } from '../../internal/utils.js';
 
-  interface CalendarGridBodyProps {
+  export interface CalendarGridBodyProps {
     class?: string;
     children?: Snippet;
   }
