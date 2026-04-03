@@ -414,4 +414,217 @@
   ratingDemo.addEventListener('mouseleave', () => {
     setRating(parseInt(ratingDemo.dataset.value))
   })
+
+  // --- Collapsible ---
+  const collTrigger = document.getElementById('collapsible-trigger')
+  const collContent = document.getElementById('collapsible-content')
+  collTrigger.addEventListener('click', () => {
+    const isOpen = !collContent.hidden
+    collContent.hidden = isOpen
+    collTrigger.classList.toggle('open', !isOpen)
+    collTrigger.setAttribute('aria-expanded', String(!isOpen))
+  })
+
+  // --- Navigation Menu ---
+  document.querySelectorAll('.nav-menu-trigger').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation()
+      const content = document.getElementById(trigger.dataset.navmenu)
+      const wasOpen = content.classList.contains('open')
+      document.querySelectorAll('.nav-menu-content').forEach(c => c.classList.remove('open'))
+      if (!wasOpen) content.classList.add('open')
+    })
+  })
+
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.nav-menu-content').forEach(c => c.classList.remove('open'))
+  })
+
+  // --- Menubar ---
+  let menubarOpen = false
+  document.querySelectorAll('.menubar-trigger').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation()
+      const content = document.getElementById(trigger.dataset.menubar)
+      const wasOpen = content.classList.contains('open')
+      document.querySelectorAll('.menubar-content').forEach(c => c.classList.remove('open'))
+      document.querySelectorAll('.menubar-trigger').forEach(t => t.classList.remove('open'))
+      if (!wasOpen) {
+        content.classList.add('open')
+        trigger.classList.add('open')
+        menubarOpen = true
+      } else {
+        menubarOpen = false
+      }
+    })
+    trigger.addEventListener('mouseenter', () => {
+      if (!menubarOpen) return
+      document.querySelectorAll('.menubar-content').forEach(c => c.classList.remove('open'))
+      document.querySelectorAll('.menubar-trigger').forEach(t => t.classList.remove('open'))
+      const content = document.getElementById(trigger.dataset.menubar)
+      content.classList.add('open')
+      trigger.classList.add('open')
+    })
+  })
+
+  document.querySelectorAll('.menubar-content .dropdown-item').forEach(item => {
+    item.addEventListener('click', () => {
+      document.querySelectorAll('.menubar-content').forEach(c => c.classList.remove('open'))
+      document.querySelectorAll('.menubar-trigger').forEach(t => t.classList.remove('open'))
+      menubarOpen = false
+    })
+  })
+
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.menubar-content').forEach(c => c.classList.remove('open'))
+    document.querySelectorAll('.menubar-trigger').forEach(t => t.classList.remove('open'))
+    menubarOpen = false
+  })
+
+  // --- Listbox ---
+  const listbox = document.getElementById('listbox-demo')
+  listbox.querySelectorAll('.listbox-item:not(.disabled)').forEach(item => {
+    item.addEventListener('click', () => {
+      listbox.querySelectorAll('.listbox-item').forEach(i => {
+        i.classList.remove('selected')
+        i.setAttribute('aria-selected', 'false')
+      })
+      item.classList.add('selected')
+      item.setAttribute('aria-selected', 'true')
+    })
+  })
+
+  // --- Range Calendar ---
+  const rangeCalEl = document.getElementById('range-calendar')
+  let rcYear, rcMonth, rcStart = null, rcEnd = null
+
+  function initRangeCalendar() {
+    rcYear = today.getFullYear()
+    rcMonth = today.getMonth()
+    renderRangeCalendar()
+  }
+
+  function renderRangeCalendar() {
+    const months = ['january','february','march','april','may','june','july','august','september','october','november','december']
+    const days = ['su','mo','tu','we','th','fr','sa']
+    const first = new Date(rcYear, rcMonth, 1)
+    const lastDay = new Date(rcYear, rcMonth + 1, 0).getDate()
+    const startDay = first.getDay()
+    const prevLast = new Date(rcYear, rcMonth, 0).getDate()
+
+    let html = '<div class="cal-header">'
+    html += '<button class="cal-nav" id="rc-prev">&lsaquo;</button>'
+    html += '<span class="cal-title">' + months[rcMonth] + ' ' + rcYear + '</span>'
+    html += '<button class="cal-nav" id="rc-next">&rsaquo;</button>'
+    html += '</div>'
+    html += '<table class="cal-grid"><thead><tr>'
+    days.forEach(d => html += '<th>' + d + '</th>')
+    html += '</tr></thead><tbody>'
+
+    let day = 1, nextDay = 1
+    for (let row = 0; row < 6; row++) {
+      if (day > lastDay) break
+      html += '<tr>'
+      for (let col = 0; col < 7; col++) {
+        const cellIdx = row * 7 + col
+        if (cellIdx < startDay) {
+          html += '<td><button class="cal-day outside" disabled>' + (prevLast - startDay + cellIdx + 1) + '</button></td>'
+        } else if (day > lastDay) {
+          html += '<td><button class="cal-day outside" disabled>' + nextDay++ + '</button></td>'
+        } else {
+          const dt = new Date(rcYear, rcMonth, day).getTime()
+          const isToday = day === today.getDate() && rcMonth === today.getMonth() && rcYear === today.getFullYear()
+          let cls = 'cal-day'
+          if (isToday) cls += ' today'
+          if (rcStart && dt === rcStart.getTime()) cls += ' range-start selected'
+          if (rcEnd && dt === rcEnd.getTime()) cls += ' range-end selected'
+          if (rcStart && rcEnd && dt > rcStart.getTime() && dt < rcEnd.getTime()) cls += ' in-range'
+          html += '<td><button class="' + cls + '" data-day="' + day + '">' + day + '</button></td>'
+          day++
+        }
+      }
+      html += '</tr>'
+    }
+
+    html += '</tbody></table>'
+    rangeCalEl.innerHTML = html
+
+    document.getElementById('rc-prev').addEventListener('click', () => {
+      rcMonth--
+      if (rcMonth < 0) { rcMonth = 11; rcYear-- }
+      renderRangeCalendar()
+    })
+
+    document.getElementById('rc-next').addEventListener('click', () => {
+      rcMonth++
+      if (rcMonth > 11) { rcMonth = 0; rcYear++ }
+      renderRangeCalendar()
+    })
+
+    rangeCalEl.querySelectorAll('.cal-day[data-day]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const clicked = new Date(rcYear, rcMonth, parseInt(btn.dataset.day))
+        if (!rcStart || rcEnd || clicked < rcStart) {
+          rcStart = clicked
+          rcEnd = null
+        } else {
+          rcEnd = clicked
+        }
+        renderRangeCalendar()
+      })
+    })
+  }
+
+  initRangeCalendar()
+
+  // --- Date Picker Calendar Toggle ---
+  const dpTrigger = document.getElementById('datepicker-trigger')
+  const dpCal = document.getElementById('datepicker-calendar')
+  dpTrigger.addEventListener('click', () => {
+    dpCal.style.display = dpCal.style.display === 'none' ? '' : 'none'
+  })
+
+  // Render a simple calendar in the datepicker
+  function renderDatePickerCal() {
+    const months = ['january','february','march','april','may','june','july','august','september','october','november','december']
+    const days = ['su','mo','tu','we','th','fr','sa']
+    const y = today.getFullYear(), m = today.getMonth()
+    const lastDay = new Date(y, m + 1, 0).getDate()
+    const startDay = new Date(y, m, 1).getDay()
+    const prevLast = new Date(y, m, 0).getDate()
+
+    let html = '<div class="cal-header">'
+    html += '<span class="cal-nav" style="visibility:hidden">&lsaquo;</span>'
+    html += '<span class="cal-title">' + months[m] + ' ' + y + '</span>'
+    html += '<span class="cal-nav" style="visibility:hidden">&rsaquo;</span>'
+    html += '</div><table class="cal-grid"><thead><tr>'
+    days.forEach(d => html += '<th>' + d + '</th>')
+    html += '</tr></thead><tbody>'
+
+    let day = 1, nextDay = 1
+    for (let row = 0; row < 6; row++) {
+      if (day > lastDay) break
+      html += '<tr>'
+      for (let col = 0; col < 7; col++) {
+        const cellIdx = row * 7 + col
+        if (cellIdx < startDay) {
+          html += '<td><button class="cal-day outside" disabled>' + (prevLast - startDay + cellIdx + 1) + '</button></td>'
+        } else if (day > lastDay) {
+          html += '<td><button class="cal-day outside" disabled>' + nextDay++ + '</button></td>'
+        } else {
+          const isToday = day === today.getDate()
+          const sel = day === 3
+          let cls = 'cal-day'
+          if (isToday) cls += ' today'
+          if (sel) cls += ' selected'
+          html += '<td><button class="' + cls + '">' + day + '</button></td>'
+          day++
+        }
+      }
+      html += '</tr>'
+    }
+    html += '</tbody></table>'
+    dpCal.innerHTML = html
+  }
+  renderDatePickerCal()
 })()

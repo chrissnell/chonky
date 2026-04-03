@@ -527,6 +527,326 @@
       <button class="btn btn-sm btn-ghost">redo</button>
     </div>
   </div>
+
+  <!-- Separator -->
+  <div class="box">
+    <h2>separator</h2>
+    <p class="dim" style="margin-bottom:0.5rem">horizontal (default)</p>
+    <div class="separator"></div>
+    <p class="dim" style="margin-top:0.75rem;margin-bottom:0.5rem">dotted variant</p>
+    <div class="separator separator-dotted"></div>
+    <p class="dim" style="margin-top:0.75rem;margin-bottom:0.5rem">vertical (inline)</p>
+    <div class="row" style="height:2rem;align-items:stretch">
+      <span class="dim" style="display:flex;align-items:center">left</span>
+      <div class="separator separator-vertical"></div>
+      <span class="dim" style="display:flex;align-items:center">right</span>
+    </div>
+  </div>
+
+  <!-- Collapsible -->
+  <div class="box">
+    <h2>collapsible</h2>
+    <div class="collapsible">
+      <button class="collapsible-trigger" id="collapsible-trigger" aria-expanded="false">
+        <span>advanced settings</span>
+        <span class="collapsible-icon">+</span>
+      </button>
+      <div class="collapsible-content" id="collapsible-content" hidden>
+        <div style="padding:0.75rem;border:1px dotted var(--color-border-subtle);border-radius:var(--radius);margin-top:0.5rem">
+          <label class="checkbox"><input type="checkbox"><span class="checkbox-mark"></span> enable experimental features</label>
+          <label class="checkbox"><input type="checkbox" checked><span class="checkbox-mark"></span> verbose logging</label>
+          <label class="checkbox"><input type="checkbox"><span class="checkbox-mark"></span> developer mode</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Area -->
+  <div class="box">
+    <h2>scroll area</h2>
+    <div class="scroll-area" style="height:120px">
+      <div class="scroll-area-viewport">
+        <p class="dim">01 — upstream resolver: 1.1.1.1 (cloudflare)</p>
+        <p class="dim">02 — upstream resolver: 8.8.8.8 (google)</p>
+        <p class="dim">03 — upstream resolver: 9.9.9.9 (quad9)</p>
+        <p class="dim">04 — blocklist: ads.txt (24,891 entries)</p>
+        <p class="dim">05 — blocklist: malware.txt (8,432 entries)</p>
+        <p class="dim">06 — blocklist: tracking.txt (12,108 entries)</p>
+        <p class="dim">07 — cache size: 10,000 entries</p>
+        <p class="dim">08 — cache ttl: 300s</p>
+        <p class="dim">09 — rate limit: 100 req/s per client</p>
+        <p class="dim">10 — listen address: 0.0.0.0:5353</p>
+        <p class="dim">11 — doh endpoint: /dns-query</p>
+        <p class="dim">12 — dot port: 853</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Menu -->
+  <div class="box">
+    <h2>navigation menu</h2>
+    <nav class="nav-menu">
+      <ul class="nav-menu-list">
+        <li class="nav-menu-item">
+          <button class="nav-menu-trigger" data-navmenu="nav-getting-started">getting started</button>
+          <div class="nav-menu-content" id="nav-getting-started">
+            <a class="nav-menu-link" href="#">installation</a>
+            <a class="nav-menu-link" href="#">quick start</a>
+            <a class="nav-menu-link" href="#">configuration</a>
+          </div>
+        </li>
+        <li class="nav-menu-item">
+          <button class="nav-menu-trigger" data-navmenu="nav-components">components</button>
+          <div class="nav-menu-content" id="nav-components">
+            <a class="nav-menu-link" href="#">buttons</a>
+            <a class="nav-menu-link" href="#">forms</a>
+            <a class="nav-menu-link" href="#">overlays</a>
+          </div>
+        </li>
+        <li class="nav-menu-item">
+          <a class="nav-menu-link top-level" href="#">api reference</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Menubar -->
+  <div class="box">
+    <h2>menubar</h2>
+    <div class="menubar">
+      <div class="menubar-menu">
+        <button class="menubar-trigger" data-menubar="mb-file">file</button>
+        <div class="menubar-content" id="mb-file">
+          <button class="dropdown-item">new</button>
+          <button class="dropdown-item">open</button>
+          <button class="dropdown-item">save</button>
+          <div class="dropdown-sep"></div>
+          <button class="dropdown-item">exit</button>
+        </div>
+      </div>
+      <div class="menubar-menu">
+        <button class="menubar-trigger" data-menubar="mb-edit">edit</button>
+        <div class="menubar-content" id="mb-edit">
+          <button class="dropdown-item">undo</button>
+          <button class="dropdown-item">redo</button>
+          <div class="dropdown-sep"></div>
+          <button class="dropdown-item">cut</button>
+          <button class="dropdown-item">copy</button>
+          <button class="dropdown-item">paste</button>
+        </div>
+      </div>
+      <div class="menubar-menu">
+        <button class="menubar-trigger" data-menubar="mb-view">view</button>
+        <div class="menubar-content" id="mb-view">
+          <button class="dropdown-item">zoom in</button>
+          <button class="dropdown-item">zoom out</button>
+          <div class="dropdown-sep"></div>
+          <button class="dropdown-item">full screen</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Link Preview -->
+  <div class="box">
+    <h2>link preview</h2>
+    <div class="row" style="gap:1rem">
+      <span class="link-preview-wrap">
+        <a href="#" class="link-preview-trigger">bits-ui documentation</a>
+        <div class="link-preview-content">
+          <p style="font-weight:700;color:var(--color-text);margin-bottom:0.25rem">bits-ui</p>
+          <p>headless component primitives for svelte. accessible, unstyled, and composable building blocks.</p>
+        </div>
+      </span>
+      <span class="link-preview-wrap">
+        <a href="#" class="link-preview-trigger">svelte 5 runes</a>
+        <div class="link-preview-content">
+          <p style="font-weight:700;color:var(--color-text);margin-bottom:0.25rem">svelte 5</p>
+          <p>runes are a set of primitives for controlling reactivity inside svelte components and modules.</p>
+        </div>
+      </span>
+    </div>
+  </div>
+
+  <!-- Listbox -->
+  <div class="box">
+    <h2>listbox</h2>
+    <div class="listbox" id="listbox-demo" role="listbox" aria-label="select upstream">
+      <div class="listbox-item selected" role="option" aria-selected="true" tabindex="0" data-value="cloudflare">1.1.1.1 — cloudflare</div>
+      <div class="listbox-item" role="option" aria-selected="false" tabindex="0" data-value="google">8.8.8.8 — google</div>
+      <div class="listbox-item" role="option" aria-selected="false" tabindex="0" data-value="quad9">9.9.9.9 — quad9</div>
+      <div class="listbox-item disabled" role="option" aria-disabled="true" tabindex="-1" data-value="opendns">208.67.222.222 — opendns (disabled)</div>
+      <div class="listbox-item" role="option" aria-selected="false" tabindex="0" data-value="adguard">94.140.14.14 — adguard</div>
+    </div>
+  </div>
+
+  <!-- Aspect Ratio -->
+  <div class="box">
+    <h2>aspect ratio</h2>
+    <div class="grid-2">
+      <div>
+        <span class="dim">16:9</span>
+        <div class="aspect-ratio" style="--aspect-ratio:16/9">
+          <div class="aspect-ratio-content">16 : 9</div>
+        </div>
+      </div>
+      <div>
+        <span class="dim">4:3</span>
+        <div class="aspect-ratio" style="--aspect-ratio:4/3">
+          <div class="aspect-ratio-content">4 : 3</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Range Calendar -->
+  <div class="box">
+    <h2>range calendar</h2>
+    <div class="calendar" id="range-calendar"></div>
+  </div>
+
+  <!-- Date Field -->
+  <div class="box">
+    <h2>date field</h2>
+    <div class="grid-2">
+      <div>
+        <label>date</label>
+        <div class="date-field">
+          <span class="date-segment" contenteditable="true" data-placeholder="mm">mm</span>
+          <span class="date-sep">/</span>
+          <span class="date-segment" contenteditable="true" data-placeholder="dd">dd</span>
+          <span class="date-sep">/</span>
+          <span class="date-segment" contenteditable="true" data-placeholder="yyyy">yyyy</span>
+        </div>
+      </div>
+      <div>
+        <label>with value</label>
+        <div class="date-field">
+          <span class="date-segment filled" contenteditable="true">04</span>
+          <span class="date-sep">/</span>
+          <span class="date-segment filled" contenteditable="true">03</span>
+          <span class="date-sep">/</span>
+          <span class="date-segment filled" contenteditable="true">2026</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Date Picker -->
+  <div class="box">
+    <h2>date picker</h2>
+    <div style="max-width:300px">
+      <div class="date-picker">
+        <div class="date-field" style="margin-bottom:0">
+          <span class="date-segment filled" contenteditable="true">04</span>
+          <span class="date-sep">/</span>
+          <span class="date-segment filled" contenteditable="true">03</span>
+          <span class="date-sep">/</span>
+          <span class="date-segment filled" contenteditable="true">2026</span>
+        </div>
+        <button class="btn btn-sm" id="datepicker-trigger" style="flex-shrink:0">&#x1f4c5;</button>
+      </div>
+      <div class="calendar" id="datepicker-calendar" style="margin-top:0.5rem;display:none"></div>
+    </div>
+  </div>
+
+  <!-- Date Range Field -->
+  <div class="box">
+    <h2>date range field</h2>
+    <div style="max-width:400px">
+      <div class="date-range-field">
+        <div class="date-field" style="margin-bottom:0">
+          <span class="date-segment filled" contenteditable="true">03</span>
+          <span class="date-sep">/</span>
+          <span class="date-segment filled" contenteditable="true">15</span>
+          <span class="date-sep">/</span>
+          <span class="date-segment filled" contenteditable="true">2026</span>
+        </div>
+        <span class="date-range-arrow">&rarr;</span>
+        <div class="date-field" style="margin-bottom:0">
+          <span class="date-segment filled" contenteditable="true">04</span>
+          <span class="date-sep">/</span>
+          <span class="date-segment filled" contenteditable="true">15</span>
+          <span class="date-sep">/</span>
+          <span class="date-segment filled" contenteditable="true">2026</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Time Field -->
+  <div class="box">
+    <h2>time field</h2>
+    <div class="grid-2">
+      <div>
+        <label>time</label>
+        <div class="date-field">
+          <span class="date-segment" contenteditable="true" data-placeholder="hh">hh</span>
+          <span class="date-sep">:</span>
+          <span class="date-segment" contenteditable="true" data-placeholder="mm">mm</span>
+          <span class="date-sep">:</span>
+          <span class="date-segment" contenteditable="true" data-placeholder="ss">ss</span>
+        </div>
+      </div>
+      <div>
+        <label>with value</label>
+        <div class="date-field">
+          <span class="date-segment filled" contenteditable="true">14</span>
+          <span class="date-sep">:</span>
+          <span class="date-segment filled" contenteditable="true">30</span>
+          <span class="date-sep">:</span>
+          <span class="date-segment filled" contenteditable="true">00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Time Range Field -->
+  <div class="box">
+    <h2>time range field</h2>
+    <div style="max-width:400px">
+      <div class="date-range-field">
+        <div class="date-field" style="margin-bottom:0">
+          <span class="date-segment filled" contenteditable="true">09</span>
+          <span class="date-sep">:</span>
+          <span class="date-segment filled" contenteditable="true">00</span>
+        </div>
+        <span class="date-range-arrow">&rarr;</span>
+        <div class="date-field" style="margin-bottom:0">
+          <span class="date-segment filled" contenteditable="true">17</span>
+          <span class="date-sep">:</span>
+          <span class="date-segment filled" contenteditable="true">30</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Date Range Picker -->
+  <div class="box">
+    <h2>date range picker</h2>
+    <div style="max-width:400px">
+      <div class="date-picker">
+        <div class="date-range-field" style="flex:1">
+          <div class="date-field" style="margin-bottom:0">
+            <span class="date-segment filled" contenteditable="true">03</span>
+            <span class="date-sep">/</span>
+            <span class="date-segment filled" contenteditable="true">15</span>
+            <span class="date-sep">/</span>
+            <span class="date-segment filled" contenteditable="true">2026</span>
+          </div>
+          <span class="date-range-arrow">&rarr;</span>
+          <div class="date-field" style="margin-bottom:0">
+            <span class="date-segment filled" contenteditable="true">04</span>
+            <span class="date-sep">/</span>
+            <span class="date-segment filled" contenteditable="true">15</span>
+            <span class="date-sep">/</span>
+            <span class="date-segment filled" contenteditable="true">2026</span>
+          </div>
+        </div>
+        <button class="btn btn-sm" style="flex-shrink:0">&#x1f4c5;</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- Modal overlay (hidden) -->
