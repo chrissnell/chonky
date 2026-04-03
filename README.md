@@ -14,8 +14,16 @@ Chonky wraps [bits-ui](https://bits-ui.com) (headless, accessible primitives) wi
 
 ## Install
 
+The package is published to [GitHub Packages](https://github.com/chrissnell/chonky/pkgs/npm/chonky-ui). Configure your project to use the GitHub npm registry for the `@chrissnell` scope:
+
 ```bash
-npm install chonky-ui bits-ui @internationalized/date
+echo "@chrissnell:registry=https://npm.pkg.github.com" >> .npmrc
+```
+
+Then install:
+
+```bash
+npm install @chrissnell/chonky-ui bits-ui @internationalized/date
 ```
 
 ## Setup
@@ -25,7 +33,7 @@ Import the stylesheet in your root layout:
 ```svelte
 <!-- src/routes/+layout.svelte -->
 <script>
-  import 'chonky-ui/css';
+  import '@chrissnell/chonky-ui/css';
 </script>
 ```
 
@@ -33,7 +41,7 @@ To import only the design tokens (custom properties) without component styles:
 
 ```svelte
 <script>
-  import 'chonky-ui/tokens';
+  import '@chrissnell/chonky-ui/tokens';
 </script>
 ```
 
@@ -41,7 +49,7 @@ To import only the design tokens (custom properties) without component styles:
 
 ```svelte
 <script>
-  import { Button, Badge, Input, Modal, Toggle } from 'chonky-ui';
+  import { Button, Badge, Input, Modal, Toggle } from '@chrissnell/chonky-ui';
 
   let modalOpen = $state(false);
 </script>
@@ -82,7 +90,7 @@ Compound components (Tabs, Modal, Accordion, etc.) use the `Component.Sub` patte
 
 ```svelte
 <script>
-  import { Tabs } from 'chonky-ui';
+  import { Tabs } from '@chrissnell/chonky-ui';
 </script>
 
 <Tabs.Root value="one">
@@ -121,7 +129,7 @@ Or use the built-in `ThemeToggle` component which handles localStorage persisten
 ```
 chonky/
 ├── packages/
-│   ├── chonky-ui/      # the component library (published to npm)
+│   ├── chonky-ui/      # the component library (published to GitHub Packages)
 │   └── docs/           # SvelteKit documentation site
 ├── styleguide/         # pure HTML/CSS/JS design reference
 └── pnpm-workspace.yaml
@@ -142,6 +150,25 @@ pnpm dev
 ```
 
 To open the static style guide, open `styleguide/index.html` in a browser.
+
+## Releasing
+
+Releases are automated via GitHub Actions. When a `v*` tag is pushed, the workflow builds the package and publishes it to GitHub Packages.
+
+```bash
+make patch           # bump 0.1.0 → 0.1.1, commit, and tag
+make minor           # bump 0.1.0 → 0.2.0, commit, and tag
+make release         # build and verify before pushing
+make push            # push to GitHub, triggering the publish workflow
+```
+
+Typical release flow:
+
+```bash
+make patch           # or: make minor
+make release
+make push
+```
 
 ## License
 

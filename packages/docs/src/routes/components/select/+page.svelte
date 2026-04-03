@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Select } from 'chonky-ui';
+	import { Select } from '@chrissnell/chonky-ui';
 
 	let value = $state('');
 
@@ -33,7 +33,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { Select } from 'chonky-ui';
+  import { Select } from '@chrissnell/chonky-ui';
   let value = $state('');
 
   const options = [

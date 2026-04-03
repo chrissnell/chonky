@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ToggleGroup } from 'chonky-ui';
+	import { ToggleGroup } from '@chrissnell/chonky-ui';
 
 	let value = $state('center');
 </script>
@@ -44,7 +44,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { ToggleGroup } from 'chonky-ui';
+  import { ToggleGroup } from '@chrissnell/chonky-ui';
   let align = $state('left');
 </script>
 

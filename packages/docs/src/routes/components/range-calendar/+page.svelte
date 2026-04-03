@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { RangeCalendar } from 'chonky-ui';
+	import { RangeCalendar } from '@chrissnell/chonky-ui';
 	import { CalendarDate } from '@internationalized/date';
 
 	let value = $state({ start: new CalendarDate(2026, 4, 3), end: new CalendarDate(2026, 4, 10) });
@@ -89,7 +89,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { RangeCalendar } from 'chonky-ui';
+  import { RangeCalendar } from '@chrissnell/chonky-ui';
   import { CalendarDate } from '@internationalized/date';
 
   let value = $state({

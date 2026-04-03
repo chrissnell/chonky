@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Progress, Button } from 'chonky-ui';
+	import { Progress, Button } from '@chrissnell/chonky-ui';
 
 	let value = $state(30);
 </script>
@@ -29,7 +29,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { Progress } from 'chonky-ui';
+  import { Progress } from '@chrissnell/chonky-ui';
 </script>
 
 <Progress value={45} max={100} />`}</code></pre>

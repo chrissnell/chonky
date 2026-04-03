@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { StatusBar, Dot, Badge } from 'chonky-ui';
+	import { StatusBar, Dot, Badge } from '@chrissnell/chonky-ui';
 </script>
 
 <h1>StatusBar</h1>
@@ -26,7 +26,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { StatusBar, Dot } from 'chonky-ui';
+  import { StatusBar, Dot } from '@chrissnell/chonky-ui';
 </script>
 
 <StatusBar>

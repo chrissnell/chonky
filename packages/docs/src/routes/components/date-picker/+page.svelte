@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { DatePicker } from 'chonky-ui';
+	import { DatePicker } from '@chrissnell/chonky-ui';
 	import { CalendarDate } from '@internationalized/date';
 
 	let value: CalendarDate | undefined = $state(new CalendarDate(2026, 4, 3));
@@ -64,7 +64,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { DatePicker } from 'chonky-ui';
+  import { DatePicker } from '@chrissnell/chonky-ui';
   import { CalendarDate } from '@internationalized/date';
 
   let value = $state(new CalendarDate(2026, 4, 3));

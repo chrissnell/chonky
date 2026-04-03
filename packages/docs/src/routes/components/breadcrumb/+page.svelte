@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Breadcrumb } from 'chonky-ui';
+	import { Breadcrumb } from '@chrissnell/chonky-ui';
 </script>
 
 <h1>Breadcrumb</h1>
@@ -77,7 +77,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { Breadcrumb } from 'chonky-ui';
+  import { Breadcrumb } from '@chrissnell/chonky-ui';
 </script>
 
 <Breadcrumb.Root>

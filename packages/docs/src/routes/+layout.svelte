@@ -1,6 +1,6 @@
 <script lang="ts">
-	import 'chonky-ui/css';
-	import { ThemeToggle } from 'chonky-ui';
+	import '@chrissnell/chonky-ui/css';
+	import { ThemeToggle } from '@chrissnell/chonky-ui';
 	import type { Snippet } from 'svelte';
 
 	let { children }: { children: Snippet } = $props();

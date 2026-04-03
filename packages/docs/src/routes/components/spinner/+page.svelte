@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Spinner } from 'chonky-ui';
+	import { Spinner } from '@chrissnell/chonky-ui';
 </script>
 
 <h1>Spinner</h1>
@@ -23,7 +23,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { Spinner } from 'chonky-ui';
+  import { Spinner } from '@chrissnell/chonky-ui';
 </script>
 
 <Spinner size={24} />`}</code></pre>

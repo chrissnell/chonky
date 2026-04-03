@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { RatingGroup } from 'chonky-ui';
+	import { RatingGroup } from '@chrissnell/chonky-ui';
 
 	let value = $state(0);
 </script>
@@ -28,7 +28,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { RatingGroup } from 'chonky-ui';
+  import { RatingGroup } from '@chrissnell/chonky-ui';
   let rating = $state(0);
 </script>
 

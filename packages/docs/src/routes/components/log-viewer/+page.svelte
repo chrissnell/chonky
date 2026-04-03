@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { LogViewer } from 'chonky-ui';
+	import { LogViewer } from '@chrissnell/chonky-ui';
 
 	const columns = [
 		{ key: 'time', label: 'Time', width: '80px' },
@@ -50,7 +50,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { LogViewer } from 'chonky-ui';
+  import { LogViewer } from '@chrissnell/chonky-ui';
 
   const columns = [
     { key: 'time', label: 'Time', width: '80px' },

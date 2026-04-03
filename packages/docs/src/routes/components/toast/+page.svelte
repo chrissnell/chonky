@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Toaster, toast, Button } from 'chonky-ui';
+	import { Toaster, toast, Button } from '@chrissnell/chonky-ui';
 </script>
 
 <h1>Toast</h1>
@@ -44,7 +44,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { Toaster, toast, dismiss, Button } from 'chonky-ui';
+  import { Toaster, toast, dismiss, Button } from '@chrissnell/chonky-ui';
 </script>
 
 <!-- Place Toaster once in your layout -->

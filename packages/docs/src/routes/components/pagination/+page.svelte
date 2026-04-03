@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Pagination } from 'chonky-ui';
+	import { Pagination } from '@chrissnell/chonky-ui';
 
 	let page = $state(1);
 </script>
@@ -28,7 +28,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { Pagination } from 'chonky-ui';
+  import { Pagination } from '@chrissnell/chonky-ui';
 
   let page = $state(1);
 </script>

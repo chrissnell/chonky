@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Badge } from 'chonky-ui';
+	import { Badge } from '@chrissnell/chonky-ui';
 </script>
 
 <h1>Badge</h1>
@@ -26,7 +26,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { Badge } from 'chonky-ui';
+  import { Badge } from '@chrissnell/chonky-ui';
 </script>
 
 <Badge variant="success">online</Badge>`}</code></pre>

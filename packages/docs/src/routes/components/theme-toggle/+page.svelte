@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ThemeToggle } from 'chonky-ui';
+	import { ThemeToggle } from '@chrissnell/chonky-ui';
 
 	let theme: 'dark' | 'light' = $state('light');
 </script>
@@ -25,7 +25,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { ThemeToggle } from 'chonky-ui';
+  import { ThemeToggle } from '@chrissnell/chonky-ui';
   let theme = $state<'dark' | 'light'>('dark');
 </script>
 

@@ -1,23 +1,23 @@
 <script lang="ts">
-	import { Button, Badge, Box, BoxHeader, Spinner, Dot } from 'chonky-ui';
+	import { Button, Badge, Box, BoxHeader, Spinner, Dot } from '@chrissnell/chonky-ui';
 </script>
 
 <h1>chonky-ui</h1>
 <p>A Svelte 5 component library wrapping bits-ui with an opinionated monospace design system. Dark theme default, no shadows, no gradients — just clean borders and sharp type.</p>
 
 <h2>Install</h2>
-<pre><code>npm install chonky-ui bits-ui @internationalized/date</code></pre>
+<pre><code>npm install @chrissnell/chonky-ui bits-ui @internationalized/date</code></pre>
 
 <h2>Setup</h2>
 <p>Import the CSS once in your root layout:</p>
 <pre><code>{`// src/routes/+layout.svelte
 <script>
-  import 'chonky-ui/css';
+  import '@chrissnell/chonky-ui/css';
 </script>`}</code></pre>
 
 <h2>Quick start</h2>
 <pre><code>{`<script>
-  import { Button, Badge, Toggle } from 'chonky-ui';
+  import { Button, Badge, Toggle } from '@chrissnell/chonky-ui';
 </script>
 
 <Button variant="primary">save</Button>

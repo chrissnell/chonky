@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Table } from 'chonky-ui';
+	import { Table } from '@chrissnell/chonky-ui';
 </script>
 
 <h1>Table</h1>
@@ -28,7 +28,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { Table } from 'chonky-ui';
+  import { Table } from '@chrissnell/chonky-ui';
 </script>
 
 <Table>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ToggleButton } from 'chonky-ui';
+	import { ToggleButton } from '@chrissnell/chonky-ui';
 
 	let pressed = $state(false);
 </script>
@@ -30,7 +30,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { ToggleButton } from 'chonky-ui';
+  import { ToggleButton } from '@chrissnell/chonky-ui';
   let bold = $state(false);
 </script>
 

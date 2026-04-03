@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Label, Input } from 'chonky-ui';
+	import { Label, Input } from '@chrissnell/chonky-ui';
 </script>
 
 <h1>Label</h1>
@@ -23,7 +23,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { Label, Input } from 'chonky-ui';
+  import { Label, Input } from '@chrissnell/chonky-ui';
 </script>
 
 <Label for="email">Email</Label>

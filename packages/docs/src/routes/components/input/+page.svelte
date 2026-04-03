@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Input } from 'chonky-ui';
+	import { Input } from '@chrissnell/chonky-ui';
 
 	let value = $state('');
 </script>
@@ -29,7 +29,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { Input } from 'chonky-ui';
+  import { Input } from '@chrissnell/chonky-ui';
   let value = $state('');
 </script>
 

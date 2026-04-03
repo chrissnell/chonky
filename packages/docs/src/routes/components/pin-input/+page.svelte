@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { PinInput } from 'chonky-ui';
+	import { PinInput } from '@chrissnell/chonky-ui';
 
 	let value: string[] = $state([]);
 </script>
@@ -30,7 +30,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { PinInput } from 'chonky-ui';
+  import { PinInput } from '@chrissnell/chonky-ui';
   let code = $state<string[]>([]);
 </script>
 

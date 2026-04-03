@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { EmptyState } from 'chonky-ui';
+	import { EmptyState } from '@chrissnell/chonky-ui';
 </script>
 
 <h1>EmptyState</h1>
@@ -21,7 +21,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { EmptyState } from 'chonky-ui';
+  import { EmptyState } from '@chrissnell/chonky-ui';
 </script>
 
 <EmptyState>no results</EmptyState>`}</code></pre>

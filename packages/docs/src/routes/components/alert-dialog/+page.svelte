@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { AlertDialog, Button } from 'chonky-ui';
+	import { AlertDialog, Button } from '@chrissnell/chonky-ui';
 </script>
 
 <h1>AlertDialog</h1>
@@ -70,7 +70,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { AlertDialog, Button } from 'chonky-ui';
+  import { AlertDialog, Button } from '@chrissnell/chonky-ui';
 </script>
 
 <AlertDialog.Root>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Radio, RadioGroup } from 'chonky-ui';
+	import { Radio, RadioGroup } from '@chrissnell/chonky-ui';
 
 	let value = $state('');
 </script>
@@ -43,7 +43,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { Radio, RadioGroup } from 'chonky-ui';
+  import { Radio, RadioGroup } from '@chrissnell/chonky-ui';
   let size = $state('md');
 </script>
 

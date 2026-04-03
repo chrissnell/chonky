@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Accordion } from 'chonky-ui';
+	import { Accordion } from '@chrissnell/chonky-ui';
 </script>
 
 <h1>Accordion</h1>
@@ -63,7 +63,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { Accordion } from 'chonky-ui';
+  import { Accordion } from '@chrissnell/chonky-ui';
 </script>
 
 <Accordion.Root type="single" value="first">

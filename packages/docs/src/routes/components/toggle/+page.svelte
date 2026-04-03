@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Toggle } from 'chonky-ui';
+	import { Toggle } from '@chrissnell/chonky-ui';
 
 	let checked = $state(false);
 </script>
@@ -28,7 +28,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { Toggle } from 'chonky-ui';
+  import { Toggle } from '@chrissnell/chonky-ui';
   let checked = $state(false);
 </script>
 

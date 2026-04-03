@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Dot } from 'chonky-ui';
+	import { Dot } from '@chrissnell/chonky-ui';
 	let on = $state(false);
 </script>
 
@@ -25,7 +25,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { Dot } from 'chonky-ui';
+  import { Dot } from '@chrissnell/chonky-ui';
 </script>
 
 <Dot on={true} />`}</code></pre>

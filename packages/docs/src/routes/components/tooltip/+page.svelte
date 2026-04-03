@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Tooltip, Button } from 'chonky-ui';
+	import { Tooltip, Button } from '@chrissnell/chonky-ui';
 </script>
 
 <h1>Tooltip</h1>
@@ -55,7 +55,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { Tooltip, Button } from 'chonky-ui';
+  import { Tooltip, Button } from '@chrissnell/chonky-ui';
 </script>
 
 <Tooltip.Root>

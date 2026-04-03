@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Box, BoxHeader } from 'chonky-ui';
+	import { Box, BoxHeader } from '@chrissnell/chonky-ui';
 </script>
 
 <h1>BoxHeader</h1>
@@ -24,7 +24,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { Box, BoxHeader } from 'chonky-ui';
+  import { Box, BoxHeader } from '@chrissnell/chonky-ui';
 </script>
 
 <Box>

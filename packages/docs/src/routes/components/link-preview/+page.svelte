@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { LinkPreview } from 'chonky-ui';
+	import { LinkPreview } from '@chrissnell/chonky-ui';
 </script>
 
 <h1>LinkPreview</h1>
@@ -54,7 +54,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { LinkPreview } from 'chonky-ui';
+  import { LinkPreview } from '@chrissnell/chonky-ui';
 </script>
 
 <LinkPreview.Root>

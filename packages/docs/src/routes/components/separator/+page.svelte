@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Separator } from 'chonky-ui';
+	import { Separator } from '@chrissnell/chonky-ui';
 </script>
 
 <h1>Separator</h1>
@@ -28,7 +28,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { Separator } from 'chonky-ui';
+  import { Separator } from '@chrissnell/chonky-ui';
 </script>
 
 <Separator />

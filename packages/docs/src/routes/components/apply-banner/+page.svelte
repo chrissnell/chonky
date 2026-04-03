@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ApplyBanner } from 'chonky-ui';
+	import { ApplyBanner } from '@chrissnell/chonky-ui';
 	let count = $state(3);
 </script>
 
@@ -23,7 +23,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { ApplyBanner } from 'chonky-ui';
+  import { ApplyBanner } from '@chrissnell/chonky-ui';
 </script>
 
 <ApplyBanner count={5} onapply={() => save()} />`}</code></pre>

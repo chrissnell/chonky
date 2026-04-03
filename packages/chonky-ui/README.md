@@ -4,8 +4,16 @@ A Svelte 5 component library with an opinionated monospace design system. Wraps 
 
 ## Install
 
+Configure your project to use the GitHub npm registry for the `@chrissnell` scope:
+
 ```bash
-npm install chonky-ui bits-ui @internationalized/date
+echo "@chrissnell:registry=https://npm.pkg.github.com" >> .npmrc
+```
+
+Then install:
+
+```bash
+npm install @chrissnell/chonky-ui bits-ui @internationalized/date
 ```
 
 ## Setup
@@ -15,7 +23,7 @@ Import the stylesheet in your root layout:
 ```svelte
 <!-- src/routes/+layout.svelte -->
 <script>
-  import 'chonky-ui/css';
+  import '@chrissnell/chonky-ui/css';
 </script>
 ```
 
@@ -23,7 +31,7 @@ Optionally import just the design tokens:
 
 ```svelte
 <script>
-  import 'chonky-ui/tokens';
+  import '@chrissnell/chonky-ui/tokens';
 </script>
 ```
 
@@ -31,7 +39,7 @@ Optionally import just the design tokens:
 
 ```svelte
 <script>
-  import { Button, Badge, Input, Modal } from 'chonky-ui';
+  import { Button, Badge, Input, Modal } from '@chrissnell/chonky-ui';
 
   let modalOpen = $state(false);
 </script>

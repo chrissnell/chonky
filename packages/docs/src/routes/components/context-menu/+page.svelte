@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ContextMenu } from 'chonky-ui';
+	import { ContextMenu } from '@chrissnell/chonky-ui';
 </script>
 
 <h1>ContextMenu</h1>
@@ -83,7 +83,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { ContextMenu } from 'chonky-ui';
+  import { ContextMenu } from '@chrissnell/chonky-ui';
 </script>
 
 <ContextMenu.Root>

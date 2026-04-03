@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { TimeField } from 'chonky-ui';
+	import { TimeField } from '@chrissnell/chonky-ui';
 	import { Time } from '@internationalized/date';
 
 	let value = $state(new Time(14, 30));
@@ -48,7 +48,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { TimeField } from 'chonky-ui';
+  import { TimeField } from '@chrissnell/chonky-ui';
   import { Time } from '@internationalized/date';
 
   let value = $state(new Time(14, 30));

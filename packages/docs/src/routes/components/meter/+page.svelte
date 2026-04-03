@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Meter } from 'chonky-ui';
+	import { Meter } from '@chrissnell/chonky-ui';
 
 	let value = $state(50);
 </script>
@@ -33,7 +33,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { Meter } from 'chonky-ui';
+  import { Meter } from '@chrissnell/chonky-ui';
 </script>
 
 <Meter value={25} low={33} high={66} />

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button } from 'chonky-ui';
+	import { Button } from '@chrissnell/chonky-ui';
 </script>
 
 <h1>Button</h1>
@@ -30,7 +30,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { Button } from 'chonky-ui';
+  import { Button } from '@chrissnell/chonky-ui';
 </script>
 
 <Button variant="primary" onclick={() => alert('clicked')}>

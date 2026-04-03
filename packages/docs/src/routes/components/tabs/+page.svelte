@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Tabs } from 'chonky-ui';
+	import { Tabs } from '@chrissnell/chonky-ui';
 </script>
 
 <h1>Tabs</h1>
@@ -59,7 +59,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { Tabs } from 'chonky-ui';
+  import { Tabs } from '@chrissnell/chonky-ui';
 </script>
 
 <Tabs.Root value="first">

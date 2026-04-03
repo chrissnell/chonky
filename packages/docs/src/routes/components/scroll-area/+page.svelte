@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ScrollArea } from 'chonky-ui';
+	import { ScrollArea } from '@chrissnell/chonky-ui';
 </script>
 
 <h1>ScrollArea</h1>
@@ -48,7 +48,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { ScrollArea } from 'chonky-ui';
+  import { ScrollArea } from '@chrissnell/chonky-ui';
 </script>
 
 <ScrollArea.Root style="height: 200px;">

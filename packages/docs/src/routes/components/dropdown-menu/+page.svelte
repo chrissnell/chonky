@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { DropdownMenu, Button } from 'chonky-ui';
+	import { DropdownMenu, Button } from '@chrissnell/chonky-ui';
 
 	let open = $state(false);
 </script>
@@ -86,7 +86,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { DropdownMenu, Button } from 'chonky-ui';
+  import { DropdownMenu, Button } from '@chrissnell/chonky-ui';
 
   let open = $state(false);
 </script>

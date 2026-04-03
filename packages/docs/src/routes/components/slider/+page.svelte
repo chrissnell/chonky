@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Slider } from 'chonky-ui';
+	import { Slider } from '@chrissnell/chonky-ui';
 
 	let value = $state([50]);
 </script>
@@ -31,7 +31,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { Slider } from 'chonky-ui';
+  import { Slider } from '@chrissnell/chonky-ui';
   let value = $state([50]);
 </script>
 

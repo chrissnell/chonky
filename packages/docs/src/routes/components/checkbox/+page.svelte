@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Checkbox } from 'chonky-ui';
+	import { Checkbox } from '@chrissnell/chonky-ui';
 
 	let checked: boolean | 'indeterminate' = $state(false);
 </script>
@@ -30,7 +30,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { Checkbox } from 'chonky-ui';
+  import { Checkbox } from '@chrissnell/chonky-ui';
   let agreed = $state(false);
 </script>
 

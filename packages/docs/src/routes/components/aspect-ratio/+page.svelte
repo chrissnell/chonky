@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { AspectRatio } from 'chonky-ui';
+	import { AspectRatio } from '@chrissnell/chonky-ui';
 </script>
 
 <h1>AspectRatio</h1>
@@ -26,7 +26,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { AspectRatio } from 'chonky-ui';
+  import { AspectRatio } from '@chrissnell/chonky-ui';
 </script>
 
 <AspectRatio ratio={4 / 3}>

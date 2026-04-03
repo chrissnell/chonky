@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Command, Button } from 'chonky-ui';
+	import { Command, Button } from '@chrissnell/chonky-ui';
 
 	let open = $state(false);
 </script>
@@ -100,7 +100,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { Command, Button } from 'chonky-ui';
+  import { Command, Button } from '@chrissnell/chonky-ui';
 
   let open = $state(false);
 </script>

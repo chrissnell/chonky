@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Toolbar } from 'chonky-ui';
+	import { Toolbar } from '@chrissnell/chonky-ui';
 </script>
 
 <h1>Toolbar</h1>
@@ -67,7 +67,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { Toolbar } from 'chonky-ui';
+  import { Toolbar } from '@chrissnell/chonky-ui';
 </script>
 
 <Toolbar.Root>

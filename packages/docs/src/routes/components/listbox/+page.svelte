@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Listbox } from 'chonky-ui';
+	import { Listbox } from '@chrissnell/chonky-ui';
 
 	let selected = $state('opt-1');
 
@@ -56,7 +56,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { Listbox } from 'chonky-ui';
+  import { Listbox } from '@chrissnell/chonky-ui';
 
   let selected = $state('opt-1');
 

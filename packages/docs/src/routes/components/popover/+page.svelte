@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Popover, Button } from 'chonky-ui';
+	import { Popover, Button } from '@chrissnell/chonky-ui';
 
 	let open = $state(false);
 </script>
@@ -63,7 +63,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { Popover, Button } from 'chonky-ui';
+  import { Popover, Button } from '@chrissnell/chonky-ui';
 
   let open = $state(false);
 </script>

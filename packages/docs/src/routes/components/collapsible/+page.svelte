@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Collapsible } from 'chonky-ui';
+	import { Collapsible } from '@chrissnell/chonky-ui';
 </script>
 
 <h1>Collapsible</h1>
@@ -46,7 +46,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { Collapsible } from 'chonky-ui';
+  import { Collapsible } from '@chrissnell/chonky-ui';
 </script>
 
 <Collapsible.Root>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Avatar } from 'chonky-ui';
+	import { Avatar } from '@chrissnell/chonky-ui';
 </script>
 
 <h1>Avatar</h1>
@@ -26,7 +26,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { Avatar } from 'chonky-ui';
+  import { Avatar } from '@chrissnell/chonky-ui';
 </script>
 
 <Avatar fallback="Jim" size={40} />`}</code></pre>

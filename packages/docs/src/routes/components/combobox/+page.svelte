@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Combobox, Button } from 'chonky-ui';
+	import { Combobox, Button } from '@chrissnell/chonky-ui';
 
 	let open = $state(false);
 	let value = $state('');
@@ -88,7 +88,7 @@
 
 <h2>Usage</h2>
 <pre><code>{`<script>
-  import { Combobox, Button } from 'chonky-ui';
+  import { Combobox, Button } from '@chrissnell/chonky-ui';
 
   let open = $state(false);
   let value = $state('');
