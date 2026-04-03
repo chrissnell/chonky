@@ -48,9 +48,9 @@ jobs:
         run: |
           PREV_TAG=$(git tag --sort=-v:refname | grep '^v' | sed -n '2p')
           if [ -n "$PREV_TAG" ]; then
-            NOTES=$(git log --pretty=format:'- %s' "$PREV_TAG".."$GITHUB_REF_NAME" -- . ':!.github' | grep -v '^- release:')
+            NOTES=$(git log --pretty=format:'- %s' "$PREV_TAG".."$GITHUB_REF_NAME" -- . ':!.github' | grep -v '^- release:' || true)
           else
-            NOTES=$(git log --pretty=format:'- %s' "$GITHUB_REF_NAME" -- . ':!.github' | grep -v '^- release:')
+            NOTES=$(git log --pretty=format:'- %s' "$GITHUB_REF_NAME" -- . ':!.github' | grep -v '^- release:' || true)
           fi
           {
             echo 'RELEASE_NOTES<<EOF'
