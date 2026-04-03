@@ -1,10 +1,17 @@
 PKG_DIR := packages/chonky-ui
+DOCS_DIR := packages/docs
+DOCS_DEST := /Volumes/NFS/static-sites/chrissnell.com/styles/chonky/docs
 VERSION := $(shell node -p "require('./$(PKG_DIR)/package.json').version")
 
-.PHONY: build patch minor release push
+.PHONY: build docs patch minor release push
 
 build:
 	pnpm --filter chonky-ui build
+
+docs:
+	BASE_PATH=/styles/chonky/docs pnpm --filter chonky-docs build
+	rsync -a --delete $(DOCS_DIR)/build/ $(DOCS_DEST)/
+	@echo "Docs deployed to $(DOCS_DEST)"
 
 patch:
 	cd $(PKG_DIR) && npm version patch --no-git-tag-version
@@ -22,8 +29,8 @@ minor:
 	git tag "v$(NEW_VERSION)"
 	@echo "Tagged v$(NEW_VERSION)"
 
-release: build
-	@echo "Built chonky-ui $(VERSION) — ready to push"
+release: build docs
+	@echo "Built chonky-ui $(VERSION) and docs — ready to push"
 
 push:
 	git push origin main --tags
