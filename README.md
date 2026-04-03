@@ -1,15 +1,19 @@
+<p align="center">
+  <img src="chonky-logo.gif" alt="chonky" width="949">
+</p>
+
 # chonky
 
 A monospace-first UI component library for Svelte 5.
 
 **[See it in action — live style guide with all components](https://chrissnell.com/styles/chonky/)**
 
-Chonky wraps [bits-ui](https://bits-ui.com) (headless, accessible primitives) with an opinionated design system: Inconsolata everywhere, sharp 2px corners, no shadows, no gradients, dark theme by default.
+Chonky wraps [bits-ui](https://bits-ui.com) (headless, accessible primitives) with an opinionated design system: Inconsolata everywhere, sharp 2px corners, no shadows, no gradients.
 
 ## Design principles
 
 - **Monospace everything** — Inconsolata across all text, inputs, and UI chrome
-- **Dark-first** — dark theme is default, light via `data-theme="light"` on `<html>`
+- **Themeable** — light and dark themes via `data-theme` on `<html>`, with localStorage persistence
 - **Minimal decoration** — 1px solid borders, 1px dotted for subtle separators, no box shadows
 - **CSS custom properties** — all tokens (colors, spacing, typography, radii) are overridable
 - **Accessible** — keyboard navigation and ARIA via bits-ui
