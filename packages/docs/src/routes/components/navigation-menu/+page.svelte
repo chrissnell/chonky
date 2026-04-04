@@ -10,7 +10,7 @@
 	<NavigationMenu.Root>
 		<NavigationMenu.List>
 			<NavigationMenu.Item>
-				<NavigationMenu.Link href="/">Home</NavigationMenu.Link>
+				<NavigationMenu.Link href="#home">Home</NavigationMenu.Link>
 			</NavigationMenu.Item>
 			<NavigationMenu.Item>
 				<NavigationMenu.Trigger>Products</NavigationMenu.Trigger>
@@ -19,7 +19,7 @@
 				</NavigationMenu.Content>
 			</NavigationMenu.Item>
 			<NavigationMenu.Item>
-				<NavigationMenu.Link href="/about">About</NavigationMenu.Link>
+				<NavigationMenu.Link href="#about">About</NavigationMenu.Link>
 			</NavigationMenu.Item>
 		</NavigationMenu.List>
 	</NavigationMenu.Root>

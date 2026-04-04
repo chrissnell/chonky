@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Tooltip, Button } from '@chrissnell/chonky-ui';
+	import { browser } from '$app/environment';
 </script>
 
 <h1>Tooltip</h1>
@@ -7,19 +8,21 @@
 
 <h2>Example</h2>
 <div class="example" style="display: flex; gap: 1rem; align-items: center;">
-	<Tooltip.Root>
-		<Tooltip.Trigger>
-			<Button>Hover me</Button>
-		</Tooltip.Trigger>
-		<Tooltip.Content>This is a tooltip</Tooltip.Content>
-	</Tooltip.Root>
+	{#if browser}
+		<Tooltip.Root>
+			<Tooltip.Trigger>
+				<Button>Hover me</Button>
+			</Tooltip.Trigger>
+			<Tooltip.Content>This is a tooltip</Tooltip.Content>
+		</Tooltip.Root>
 
-	<Tooltip.Root>
-		<Tooltip.Trigger>
-			<Button variant="primary">Bottom tooltip</Button>
-		</Tooltip.Trigger>
-		<Tooltip.Content side="bottom">Appears below</Tooltip.Content>
-	</Tooltip.Root>
+		<Tooltip.Root>
+			<Tooltip.Trigger>
+				<Button variant="primary">Bottom tooltip</Button>
+			</Tooltip.Trigger>
+			<Tooltip.Content side="bottom">Appears below</Tooltip.Content>
+		</Tooltip.Root>
+	{/if}
 </div>
 
 <h2>Props</h2>

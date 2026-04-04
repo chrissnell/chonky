@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build",
+    "build": "BASE_PATH=/styles/chonky/docs vite build",
+    "deploy": "rsync -av --delete build/ /Volumes/NFS/static-sites/chrissnell.com/styles/chonky/docs/",
+    "build:deploy": "pnpm build && pnpm deploy",
     "preview": "vite preview"
   },
   "dependencies": {

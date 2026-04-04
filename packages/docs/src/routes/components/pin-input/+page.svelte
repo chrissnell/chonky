@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { PinInput } from '@chrissnell/chonky-ui';
+	import { browser } from '$app/environment';
 
 	let value: string[] = $state([]);
 </script>
@@ -9,9 +10,11 @@
 
 <h2>Example</h2>
 <div class="example" style="display: flex; flex-direction: column; gap: 0.75rem;">
-	<PinInput bind:value length={4} />
-	<p>Value: <code>{value.join('')}</code></p>
-	<PinInput length={6} type="password" placeholder="*" />
+	{#if browser}
+		<PinInput bind:value length={4} />
+		<p>Value: <code>{value.join('')}</code></p>
+		<PinInput length={6} type="password" placeholder="*" />
+	{/if}
 </div>
 
 <h2>Props</h2>

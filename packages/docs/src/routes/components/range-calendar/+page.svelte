@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { RangeCalendar } from '@chrissnell/chonky-ui';
 	import { CalendarDate } from '@internationalized/date';
+	import { browser } from '$app/environment';
 
 	let value = $state({ start: new CalendarDate(2026, 4, 3), end: new CalendarDate(2026, 4, 10) });
 </script>
@@ -10,35 +11,37 @@
 
 <h2>Example</h2>
 <div class="example">
-	<RangeCalendar.Root bind:value>
-		{#snippet children({ months, weekdays })}
-			<RangeCalendar.Header>
-				<RangeCalendar.PrevButton>&larr;</RangeCalendar.PrevButton>
-				<RangeCalendar.Heading />
-				<RangeCalendar.NextButton>&rarr;</RangeCalendar.NextButton>
-			</RangeCalendar.Header>
-			{#each months as month}
-				<RangeCalendar.Grid>
-					<RangeCalendar.GridHead>
-						<RangeCalendar.GridRow>
-							{#each weekdays as day}
-								<RangeCalendar.HeadCell>{day}</RangeCalendar.HeadCell>
-							{/each}
-						</RangeCalendar.GridRow>
-					</RangeCalendar.GridHead>
-					<RangeCalendar.GridBody>
-						{#each month.weeks as week}
+	{#if browser}
+		<RangeCalendar.Root bind:value>
+			{#snippet children({ months, weekdays })}
+				<RangeCalendar.Header>
+					<RangeCalendar.PrevButton>&larr;</RangeCalendar.PrevButton>
+					<RangeCalendar.Heading />
+					<RangeCalendar.NextButton>&rarr;</RangeCalendar.NextButton>
+				</RangeCalendar.Header>
+				{#each months as month}
+					<RangeCalendar.Grid>
+						<RangeCalendar.GridHead>
 							<RangeCalendar.GridRow>
-								{#each week as date}
-									<RangeCalendar.Cell {date} month={month.value} />
+								{#each weekdays as day}
+									<RangeCalendar.HeadCell>{day}</RangeCalendar.HeadCell>
 								{/each}
 							</RangeCalendar.GridRow>
-						{/each}
-					</RangeCalendar.GridBody>
-				</RangeCalendar.Grid>
-			{/each}
-		{/snippet}
-	</RangeCalendar.Root>
+						</RangeCalendar.GridHead>
+						<RangeCalendar.GridBody>
+							{#each month.weeks as week}
+								<RangeCalendar.GridRow>
+									{#each week as date}
+										<RangeCalendar.Cell {date} month={month.value} />
+									{/each}
+								</RangeCalendar.GridRow>
+							{/each}
+						</RangeCalendar.GridBody>
+					</RangeCalendar.Grid>
+				{/each}
+			{/snippet}
+		</RangeCalendar.Root>
+	{/if}
 	<p>Range: {value?.start ? `${value.start.year}-${String(value.start.month).padStart(2, '0')}-${String(value.start.day).padStart(2, '0')}` : '?'} to {value?.end ? `${value.end.year}-${String(value.end.month).padStart(2, '0')}-${String(value.end.day).padStart(2, '0')}` : '?'}</p>
 </div>
 

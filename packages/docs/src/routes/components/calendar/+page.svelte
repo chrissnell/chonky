@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Calendar } from '@chrissnell/chonky-ui';
 	import { CalendarDate } from '@internationalized/date';
+	import { browser } from '$app/environment';
 
 	let value: CalendarDate | undefined = $state(new CalendarDate(2026, 4, 3));
 </script>
@@ -10,35 +11,37 @@
 
 <h2>Example</h2>
 <div class="example">
-	<Calendar.Root bind:value>
-		{#snippet children({ months, weekdays })}
-			<Calendar.Header>
-				<Calendar.PrevButton>&larr;</Calendar.PrevButton>
-				<Calendar.Heading />
-				<Calendar.NextButton>&rarr;</Calendar.NextButton>
-			</Calendar.Header>
-			{#each months as month}
-				<Calendar.Grid>
-					<Calendar.GridHead>
-						<Calendar.GridRow>
-							{#each weekdays as day}
-								<Calendar.HeadCell>{day}</Calendar.HeadCell>
-							{/each}
-						</Calendar.GridRow>
-					</Calendar.GridHead>
-					<Calendar.GridBody>
-						{#each month.weeks as week}
+	{#if browser}
+		<Calendar.Root bind:value>
+			{#snippet children({ months, weekdays })}
+				<Calendar.Header>
+					<Calendar.PrevButton>&larr;</Calendar.PrevButton>
+					<Calendar.Heading />
+					<Calendar.NextButton>&rarr;</Calendar.NextButton>
+				</Calendar.Header>
+				{#each months as month}
+					<Calendar.Grid>
+						<Calendar.GridHead>
 							<Calendar.GridRow>
-								{#each week as date}
-									<Calendar.Cell {date} month={month.value} />
+								{#each weekdays as day}
+									<Calendar.HeadCell>{day}</Calendar.HeadCell>
 								{/each}
 							</Calendar.GridRow>
-						{/each}
-					</Calendar.GridBody>
-				</Calendar.Grid>
-			{/each}
-		{/snippet}
-	</Calendar.Root>
+						</Calendar.GridHead>
+						<Calendar.GridBody>
+							{#each month.weeks as week}
+								<Calendar.GridRow>
+									{#each week as date}
+										<Calendar.Cell {date} month={month.value} />
+									{/each}
+								</Calendar.GridRow>
+							{/each}
+						</Calendar.GridBody>
+					</Calendar.Grid>
+				{/each}
+			{/snippet}
+		</Calendar.Root>
+	{/if}
 	<p>Selected: {value ? `${value.year}-${String(value.month).padStart(2, '0')}-${String(value.day).padStart(2, '0')}` : 'none'}</p>
 </div>
 
