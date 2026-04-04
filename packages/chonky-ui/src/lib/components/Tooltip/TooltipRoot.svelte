@@ -16,6 +16,8 @@
   }: TooltipRootProps = $props();
 </script>
 
-<BitsTooltip.Root {openDelay} {closeDelay} {...restProps}>
-  {@render children()}
-</BitsTooltip.Root>
+<BitsTooltip.Provider delayDuration={openDelay} skipDelayDuration={closeDelay}>
+  <BitsTooltip.Root {...restProps}>
+    {@render children?.()}
+  </BitsTooltip.Root>
+</BitsTooltip.Provider>

@@ -8,6 +8,7 @@
     max?: number;
     low?: number;
     high?: number;
+    invert?: boolean;
     class?: string;
   }
 
@@ -17,6 +18,7 @@
     max = 100,
     low = 33,
     high = 66,
+    invert = false,
     class: className,
     ...restProps
   }: MeterProps = $props();
@@ -26,7 +28,7 @@
 </script>
 
 <div
-  class={cn('meter', className)}
+  class={cn('meter', invert && 'meter-invert', className)}
   role="meter"
   aria-valuenow={value}
   aria-valuemin={min}

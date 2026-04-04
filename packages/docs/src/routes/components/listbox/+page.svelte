@@ -23,7 +23,7 @@
 				value={item.value}
 				selected={selected === item.value}
 				disabled={item.disabled ?? false}
-				onselect={(v) => (selected = v)}
+				onSelect={(v) => (selected = v)}
 			>
 				{item.label}
 			</Listbox.Item>
@@ -48,7 +48,7 @@
 		<tr><td><code>value</code></td><td><code>string</code></td><td>—</td><td>Item value (required)</td></tr>
 		<tr><td><code>selected</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Whether the item is selected</td></tr>
 		<tr><td><code>disabled</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Disables the item</td></tr>
-		<tr><td><code>onselect</code></td><td><code>(value: string) =&gt; void</code></td><td>—</td><td>Callback when item is selected</td></tr>
+		<tr><td><code>onSelect</code></td><td><code>(value: string) =&gt; void</code></td><td>—</td><td>Callback when item is selected</td></tr>
 		<tr><td><code>class</code></td><td><code>string</code></td><td>—</td><td>Additional CSS classes</td></tr>
 		<tr><td><code>children</code></td><td><code>Snippet</code></td><td>—</td><td>Item content</td></tr>
 	</tbody>
@@ -72,7 +72,7 @@
     <Listbox.Item
       value={item.value}
       selected={selected === item.value}
-      onselect={(v) => (selected = v)}
+      onSelect={(v) => (selected = v)}
     >
       {item.label}
     </Listbox.Item>

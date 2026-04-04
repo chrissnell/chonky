@@ -21,7 +21,7 @@
   class={cn(className)}
 >
   <div
-    data-bits-progress-indicator
+    data-progress-indicator
     style="width: {Math.min(100, Math.max(0, (value / max) * 100))}%"
   ></div>
 </BitsProgress.Root>

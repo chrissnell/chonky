@@ -5,6 +5,11 @@
   import type { DateMatcher } from 'bits-ui';
   import { cn } from '../../internal/utils.js';
 
+  type CalendarChildrenSnippetProps = {
+    months: Array<{ value: DateValue; dates: DateValue[]; weeks: DateValue[][] }>;
+    weekdays: string[];
+  };
+
   export interface CalendarRootProps {
     type?: 'single' | 'multiple';
     value?: DateValue | DateValue[];
@@ -28,7 +33,7 @@
     calendarLabel?: string;
     initialFocus?: boolean;
     class?: string;
-    children?: Snippet;
+    children?: Snippet<[CalendarChildrenSnippetProps]>;
   }
 
   let {
@@ -54,7 +59,7 @@
     calendarLabel,
     initialFocus = false,
     class: className,
-    children,
+    children: childrenProp,
     ...restProps
   }: CalendarRootProps = $props();
 </script>
@@ -85,7 +90,9 @@
     class={cn(className)}
     {...restProps}
   >
-    {@render children()}
+    {#snippet children({ months, weekdays })}
+      {@render childrenProp?.({ months, weekdays } as CalendarChildrenSnippetProps)}
+    {/snippet}
   </BitsCalendar.Root>
 {:else}
   <BitsCalendar.Root
@@ -113,6 +120,8 @@
     class={cn(className)}
     {...restProps}
   >
-    {@render children()}
+    {#snippet children({ months, weekdays })}
+      {@render childrenProp?.({ months, weekdays } as CalendarChildrenSnippetProps)}
+    {/snippet}
   </BitsCalendar.Root>
 {/if}

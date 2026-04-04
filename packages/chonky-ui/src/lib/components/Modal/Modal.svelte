@@ -27,10 +27,8 @@
     if (!o) onClose?.();
   }}
 >
-  <Dialog.Portal>
-    <Dialog.Overlay class="backdrop" />
-    <Dialog.Content class={cn('modal', className)}>
-      {@render children()}
-    </Dialog.Content>
-  </Dialog.Portal>
+  <Dialog.Overlay class="backdrop" />
+  <Dialog.Content class={cn('modal', className)}>
+    {@render children()}
+  </Dialog.Content>
 </Dialog.Root>

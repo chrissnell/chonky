@@ -7,6 +7,11 @@
 
   type DateRange = { start: DateValue; end: DateValue };
 
+  type RangeCalendarChildrenSnippetProps = {
+    months: Array<{ value: DateValue; dates: DateValue[]; weeks: DateValue[][] }>;
+    weekdays: string[];
+  };
+
   export interface RangeCalendarRootProps {
     value?: DateRange;
     onValueChange?: (value: DateRange | undefined) => void;
@@ -29,9 +34,8 @@
     maxDays?: number;
     locale?: string;
     calendarLabel?: string;
-    initialFocus?: boolean;
     class?: string;
-    children?: Snippet;
+    children?: Snippet<[RangeCalendarChildrenSnippetProps]>;
   }
 
   let {
@@ -56,9 +60,8 @@
     maxDays,
     locale = 'en',
     calendarLabel,
-    initialFocus = false,
     class: className,
-    children,
+    children: childrenProp,
     ...restProps
   }: RangeCalendarRootProps = $props();
 </script>
@@ -85,9 +88,10 @@
   {maxDays}
   {locale}
   {calendarLabel}
-  {initialFocus}
   class={cn(className)}
   {...restProps}
 >
-  {@render children()}
+  {#snippet children({ months, weekdays })}
+    {@render childrenProp?.({ months, weekdays } as RangeCalendarChildrenSnippetProps)}
+  {/snippet}
 </BitsRangeCalendar.Root>

@@ -19,8 +19,6 @@
   }: TooltipContentProps = $props();
 </script>
 
-<BitsTooltip.Portal>
-  <BitsTooltip.Content class={cn(className)} {side} {sideOffset} {...restProps}>
-    {@render children()}
-  </BitsTooltip.Content>
-</BitsTooltip.Portal>
+<BitsTooltip.Content class={cn(className)} {side} {sideOffset} {...restProps}>
+  {@render children()}
+</BitsTooltip.Content>

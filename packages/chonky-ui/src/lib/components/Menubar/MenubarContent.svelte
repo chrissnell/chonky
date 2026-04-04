@@ -16,8 +16,12 @@
   }: MenubarContentProps = $props();
 </script>
 
-<BitsMenubar.Portal>
-  <BitsMenubar.Content class={cn(className)} {...restProps}>
-    {@render children()}
-  </BitsMenubar.Content>
-</BitsMenubar.Portal>
+<BitsMenubar.Content
+  class={cn(className)}
+  side="bottom"
+  align="start"
+  sideOffset={4}
+  {...restProps}
+>
+  {@render children()}
+</BitsMenubar.Content>

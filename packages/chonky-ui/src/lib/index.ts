@@ -1,3 +1,12 @@
+// Auto-install workaround for bits-ui focus-scroll bug. Inlined here (rather
+// than imported as a side-effect module) because bundler sideEffects globs
+// were being tree-shaken in some configurations. See initFloatingScrollFix
+// for details.
+import { initFloatingScrollFix as __initChonkyFloatingScrollFix } from './internal/utils.js';
+if (typeof globalThis !== 'undefined' && typeof (globalThis as { window?: unknown }).window !== 'undefined') {
+	__initChonkyFloatingScrollFix();
+}
+
 export { Button } from './components/Button/index.js';
 export { Badge } from './components/Badge/index.js';
 export { Input } from './components/Input/index.js';
@@ -54,3 +63,4 @@ export { DateRangePicker } from './components/DateRangePicker/index.js';
 export { TimeField } from './components/TimeField/index.js';
 export { TimeRangeField } from './components/TimeRangeField/index.js';
 export { LogViewer } from './components/LogViewer/index.js';
+export { initFloatingScrollFix } from './internal/utils.js';

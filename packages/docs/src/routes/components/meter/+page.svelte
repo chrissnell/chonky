@@ -18,6 +18,14 @@
 	<Meter value={80} min={0} max={100} low={33} high={66} />
 </div>
 
+<h2>Inverted (higher is better)</h2>
+<p>Use <code>invert</code> when high values are good (e.g. battery, score) and low values are bad.</p>
+<div class="example" style="display: flex; flex-direction: column; gap: 0.75rem; max-width: 320px;">
+	<Meter value={20} min={0} max={100} low={33} high={66} invert />
+	<Meter value={50} min={0} max={100} low={33} high={66} invert />
+	<Meter value={80} min={0} max={100} low={33} high={66} invert />
+</div>
+
 <h2>Props</h2>
 <table class="props-table">
 	<thead><tr><th>Prop</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>

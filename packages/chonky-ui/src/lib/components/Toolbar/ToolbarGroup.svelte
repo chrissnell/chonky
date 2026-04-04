@@ -18,6 +18,6 @@
   }: ToolbarGroupProps = $props();
 </script>
 
-<BitsToolbar.Group {type} class={cn(className)} {...restProps}>
+<BitsToolbar.Group {type} class={cn('btn-group', className)} {...restProps}>
   {@render children()}
 </BitsToolbar.Group>

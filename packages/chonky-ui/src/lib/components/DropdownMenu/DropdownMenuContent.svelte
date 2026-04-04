@@ -19,8 +19,6 @@
   }: DropdownMenuContentProps = $props();
 </script>
 
-<BitsDropdownMenu.Portal>
-  <BitsDropdownMenu.Content class={cn(className)} {side} {sideOffset} {...restProps}>
-    {@render children()}
-  </BitsDropdownMenu.Content>
-</BitsDropdownMenu.Portal>
+<BitsDropdownMenu.Content class={cn(className)} {side} {sideOffset} {...restProps}>
+  {@render children()}
+</BitsDropdownMenu.Content>

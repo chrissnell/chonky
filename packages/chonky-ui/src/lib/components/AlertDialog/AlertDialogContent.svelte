@@ -15,9 +15,7 @@
   }: AlertDialogContentProps = $props();
 </script>
 
-<BitsAlertDialog.Portal>
-  <BitsAlertDialog.Overlay />
-  <BitsAlertDialog.Content class={cn(className)} {...restProps}>
-    {@render children()}
-  </BitsAlertDialog.Content>
-</BitsAlertDialog.Portal>
+<BitsAlertDialog.Overlay />
+<BitsAlertDialog.Content class={cn(className)} {...restProps}>
+  {@render children()}
+</BitsAlertDialog.Content>

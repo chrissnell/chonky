@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { AlertDialog, Button } from '@chrissnell/chonky-ui';
+	import { AlertDialog } from '@chrissnell/chonky-ui';
 </script>
 
 <h1>AlertDialog</h1>
@@ -8,13 +8,11 @@
 <h2>Example</h2>
 <div class="example">
 	<AlertDialog.Root>
-		<AlertDialog.Trigger>
-			<Button variant="danger">Delete Item</Button>
-		</AlertDialog.Trigger>
+		<AlertDialog.Trigger class="btn btn-danger">Delete Item</AlertDialog.Trigger>
 		<AlertDialog.Content>
 			<AlertDialog.Title>Are you sure?</AlertDialog.Title>
 			<AlertDialog.Description>This action cannot be undone. This will permanently delete the item.</AlertDialog.Description>
-			<div style="display: flex; gap: 0.5rem; justify-content: flex-end; margin-top: 1rem;">
+			<div class="modal-footer">
 				<AlertDialog.Cancel>Cancel</AlertDialog.Cancel>
 				<AlertDialog.Action>Delete</AlertDialog.Action>
 			</div>

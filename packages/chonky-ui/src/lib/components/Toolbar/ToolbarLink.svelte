@@ -16,6 +16,6 @@
   }: ToolbarLinkProps = $props();
 </script>
 
-<BitsToolbar.Link class={cn(className)} {...restProps}>
+<BitsToolbar.Link class={cn('btn', 'btn-sm', className)} {...restProps}>
   {@render children()}
 </BitsToolbar.Link>

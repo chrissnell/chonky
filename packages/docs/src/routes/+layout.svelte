@@ -9,6 +9,12 @@
 
 	const nav = [
 		{
+			label: '',
+			items: [
+				['All Components', '/components']
+			]
+		},
+		{
 			label: 'Core',
 			items: [
 				['Button', '/components/button'],
