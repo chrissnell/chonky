@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="chonky-logo.gif" alt="chonky" width="949">
+  <img src="chonky-logo.png" alt="chonky" width="949">
 </p>
 
 # chonky
