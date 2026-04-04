@@ -12,5 +12,5 @@ export type { NavigationMenuTriggerProps } from './NavigationMenuTrigger.svelte'
 export type { NavigationMenuContentProps } from './NavigationMenuContent.svelte';
 export type { NavigationMenuLinkProps } from './NavigationMenuLink.svelte';
 
-const NavigationMenu = Object.assign(Root, { List, Item, Trigger, Content, Link });
+const NavigationMenu = Object.assign(Root, { Root, List, Item, Trigger, Content, Link });
 export { NavigationMenu };

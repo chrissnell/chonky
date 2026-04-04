@@ -8,5 +8,5 @@ export type { TabsListProps } from './TabsList.svelte';
 export type { TabsTriggerProps } from './TabsTrigger.svelte';
 export type { TabsContentProps } from './TabsContent.svelte';
 
-const Tabs = Object.assign(Root, { List, Trigger, Content });
+const Tabs = Object.assign(Root, { Root, List, Trigger, Content });
 export { Tabs };

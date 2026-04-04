@@ -12,5 +12,5 @@ export type { BreadcrumbLinkProps } from './BreadcrumbLink.svelte';
 export type { BreadcrumbSeparatorProps } from './BreadcrumbSeparator.svelte';
 export type { BreadcrumbPageProps } from './BreadcrumbPage.svelte';
 
-const Breadcrumb = Object.assign(Root, { List, Item, Link, Separator, Page });
+const Breadcrumb = Object.assign(Root, { Root, List, Item, Link, Separator, Page });
 export { Breadcrumb };

@@ -22,5 +22,5 @@ export type { DropdownMenuSubTriggerProps } from './DropdownMenuSubTrigger.svelt
 export type { DropdownMenuSubContentProps } from './DropdownMenuSubContent.svelte';
 export type { DropdownMenuCheckboxItemProps } from './DropdownMenuCheckboxItem.svelte';
 
-const DropdownMenu = Object.assign(Root, { Trigger, Content, Item, Separator, Group, GroupHeading, Sub, SubTrigger, SubContent, CheckboxItem });
+const DropdownMenu = Object.assign(Root, { Root, Trigger, Content, Item, Separator, Group, GroupHeading, Sub, SubTrigger, SubContent, CheckboxItem });
 export { DropdownMenu };

@@ -13,5 +13,5 @@ import NextButton from './RangeCalendarNextButton.svelte';
 
 export type { RangeCalendarRootProps } from './RangeCalendarRoot.svelte';
 
-const RangeCalendar = Object.assign(Root, { Header, Heading, Grid, GridHead, HeadCell, GridBody, GridRow, Cell, Day, PrevButton, NextButton });
+const RangeCalendar = Object.assign(Root, { Root, Header, Heading, Grid, GridHead, HeadCell, GridBody, GridRow, Cell, Day, PrevButton, NextButton });
 export { RangeCalendar };

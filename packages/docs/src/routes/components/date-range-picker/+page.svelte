@@ -13,7 +13,9 @@
 	<DateRangePicker.Root bind:value>
 		<DateRangePicker.Label>Select range</DateRangePicker.Label>
 		<div style="display: flex; align-items: center; gap: 0.25rem;">
-			<DateRangePicker.Input />
+			<DateRangePicker.Input type="start" />
+			<span class="date-range-field-separator">–</span>
+			<DateRangePicker.Input type="end" />
 			<DateRangePicker.Trigger />
 		</div>
 		<DateRangePicker.Content>
@@ -57,7 +59,7 @@
 	<thead><tr><th>Component</th><th>Key Props</th><th>Description</th></tr></thead>
 	<tbody>
 		<tr><td><code>DateRangePicker.Label</code></td><td><code>class</code></td><td>Label for the picker</td></tr>
-		<tr><td><code>DateRangePicker.Input</code></td><td><code>name</code>, <code>class</code></td><td>Segmented range input</td></tr>
+		<tr><td><code>DateRangePicker.Input</code></td><td><code>type</code>, <code>name</code>, <code>class</code></td><td>Segmented date input for start or end (<code>type="start" | "end"</code>)</td></tr>
 		<tr><td><code>DateRangePicker.Segment</code></td><td><code>part</code>, <code>class</code></td><td>Individual date segment</td></tr>
 		<tr><td><code>DateRangePicker.Trigger</code></td><td><code>class</code></td><td>Button to open the calendar popover</td></tr>
 		<tr><td><code>DateRangePicker.Content</code></td><td><code>side</code>, <code>sideOffset</code>, <code>class</code></td><td>Popover container</td></tr>
@@ -79,7 +81,9 @@
 <DateRangePicker.Root bind:value>
   <DateRangePicker.Label>Select range</DateRangePicker.Label>
   <div style="display: flex; align-items: center; gap: 0.25rem;">
-    <DateRangePicker.Input />
+    <DateRangePicker.Input type="start" />
+    <span class="date-range-field-separator">–</span>
+    <DateRangePicker.Input type="end" />
     <DateRangePicker.Trigger />
   </div>
   <DateRangePicker.Content>

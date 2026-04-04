@@ -12,5 +12,5 @@ export type { MenubarContentProps } from './MenubarContent.svelte';
 export type { MenubarItemProps } from './MenubarItem.svelte';
 export type { MenubarSeparatorProps } from './MenubarSeparator.svelte';
 
-const Menubar = Object.assign(Root, { Menu, Trigger, Content, Item, Separator });
+const Menubar = Object.assign(Root, { Root, Menu, Trigger, Content, Item, Separator });
 export { Menubar };

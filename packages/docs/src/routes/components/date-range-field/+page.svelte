@@ -12,7 +12,11 @@
 <div class="example">
 	<DateRangeField.Root bind:value>
 		<DateRangeField.Label>Date range</DateRangeField.Label>
-		<DateRangeField.Input />
+		<div style="display: flex; align-items: center; gap: 0.25rem;">
+			<DateRangeField.Input type="start" />
+			<span class="date-range-field-separator">–</span>
+			<DateRangeField.Input type="end" />
+		</div>
 	</DateRangeField.Root>
 	<p>Range: {value?.start ? `${value.start.year}-${String(value.start.month).padStart(2, '0')}-${String(value.start.day).padStart(2, '0')}` : '?'} to {value?.end ? `${value.end.year}-${String(value.end.month).padStart(2, '0')}-${String(value.end.day).padStart(2, '0')}` : '?'}</p>
 </div>
@@ -43,7 +47,7 @@
 	<thead><tr><th>Component</th><th>Key Props</th><th>Description</th></tr></thead>
 	<tbody>
 		<tr><td><code>DateRangeField.Label</code></td><td><code>class</code></td><td>Label for the field</td></tr>
-		<tr><td><code>DateRangeField.Input</code></td><td><code>name</code>, <code>class</code></td><td>Container that renders start and end date segments</td></tr>
+		<tr><td><code>DateRangeField.Input</code></td><td><code>type</code>, <code>name</code>, <code>class</code></td><td>Segmented date input for start or end (<code>type="start" | "end"</code>)</td></tr>
 		<tr><td><code>DateRangeField.Segment</code></td><td><code>part</code>, <code>class</code></td><td>Individual date segment</td></tr>
 	</tbody>
 </table>
@@ -61,5 +65,9 @@
 
 <DateRangeField.Root bind:value>
   <DateRangeField.Label>Date range</DateRangeField.Label>
-  <DateRangeField.Input />
+  <div style="display: flex; align-items: center; gap: 0.25rem;">
+    <DateRangeField.Input type="start" />
+    <span class="date-range-field-separator">–</span>
+    <DateRangeField.Input type="end" />
+  </div>
 </DateRangeField.Root>`}</code></pre>

@@ -8,5 +8,5 @@ export type { AccordionItemProps } from './AccordionItem.svelte';
 export type { AccordionTriggerProps } from './AccordionTrigger.svelte';
 export type { AccordionContentProps } from './AccordionContent.svelte';
 
-const Accordion = Object.assign(Root, { Item, Trigger, Content });
+const Accordion = Object.assign(Root, { Root, Item, Trigger, Content });
 export { Accordion };

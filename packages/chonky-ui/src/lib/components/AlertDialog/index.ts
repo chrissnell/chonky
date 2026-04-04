@@ -14,5 +14,5 @@ export type { AlertDialogDescriptionProps } from './AlertDialogDescription.svelt
 export type { AlertDialogActionProps } from './AlertDialogAction.svelte';
 export type { AlertDialogCancelProps } from './AlertDialogCancel.svelte';
 
-const AlertDialog = Object.assign(Root, { Trigger, Content, Title, Description, Action, Cancel });
+const AlertDialog = Object.assign(Root, { Root, Trigger, Content, Title, Description, Action, Cancel });
 export { AlertDialog };

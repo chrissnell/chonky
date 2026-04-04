@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '@chrissnell/chonky-ui/css';
 	import { ThemeToggle } from '@chrissnell/chonky-ui';
+	import { base } from '$app/paths';
 	import type { Snippet } from 'svelte';
 
 	let { children }: { children: Snippet } = $props();
@@ -103,7 +104,7 @@
 
 	<nav class="docs-sidebar" class:open={sidebarOpen}>
 		<div class="docs-sidebar-header">
-			<a href="/" class="docs-logo">chonky-ui</a>
+			<a href="{base}/" class="docs-logo">chonky-ui</a>
 			<ThemeToggle />
 		</div>
 
@@ -112,7 +113,7 @@
 			<ul class="docs-nav-list">
 				{#each group.items as [label, href]}
 					<li>
-						<a {href} class="docs-nav-link" onclick={() => (sidebarOpen = false)}>{label}</a>
+						<a href="{base}{href}" class="docs-nav-link" onclick={() => (sidebarOpen = false)}>{label}</a>
 					</li>
 				{/each}
 			</ul>

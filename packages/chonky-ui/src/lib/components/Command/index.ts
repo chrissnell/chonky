@@ -18,5 +18,5 @@ export type { CommandGroupHeadingProps } from './CommandGroupHeading.svelte';
 export type { CommandSeparatorProps } from './CommandSeparator.svelte';
 export type { CommandDialogProps } from './CommandDialog.svelte';
 
-const Command = Object.assign(Root, { Input, List, Item, Empty, Group, GroupHeading, Separator, Dialog });
+const Command = Object.assign(Root, { Root, Input, List, Item, Empty, Group, GroupHeading, Separator, Dialog });
 export { Command };

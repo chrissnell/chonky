@@ -8,5 +8,5 @@ export type { PopoverTriggerProps } from './PopoverTrigger.svelte';
 export type { PopoverContentProps } from './PopoverContent.svelte';
 export type { PopoverCloseProps } from './PopoverClose.svelte';
 
-const Popover = Object.assign(Root, { Trigger, Content, Close });
+const Popover = Object.assign(Root, { Root, Trigger, Content, Close });
 export { Popover };

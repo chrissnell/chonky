@@ -8,5 +8,5 @@ export type { DateRangeFieldInputProps } from './DateRangeFieldInput.svelte';
 export type { DateRangeFieldLabelProps } from './DateRangeFieldLabel.svelte';
 export type { DateRangeFieldSegmentProps } from './DateRangeFieldSegment.svelte';
 
-const DateRangeField = Object.assign(Root, { Input, Label, Segment });
+const DateRangeField = Object.assign(Root, { Root, Input, Label, Segment });
 export { DateRangeField };

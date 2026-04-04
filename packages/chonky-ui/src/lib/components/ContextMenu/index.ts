@@ -14,5 +14,5 @@ export type { ContextMenuSeparatorProps } from './ContextMenuSeparator.svelte';
 export type { ContextMenuGroupProps } from './ContextMenuGroup.svelte';
 export type { ContextMenuGroupHeadingProps } from './ContextMenuGroupHeading.svelte';
 
-const ContextMenu = Object.assign(Root, { Trigger, Content, Item, Separator, Group, GroupHeading });
+const ContextMenu = Object.assign(Root, { Root, Trigger, Content, Item, Separator, Group, GroupHeading });
 export { ContextMenu };

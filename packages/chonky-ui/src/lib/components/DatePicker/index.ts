@@ -14,5 +14,5 @@ export type { DatePickerCalendarProps } from './DatePickerCalendar.svelte';
 export type { DatePickerLabelProps } from './DatePickerLabel.svelte';
 export type { DatePickerSegmentProps } from './DatePickerSegment.svelte';
 
-const DatePicker = Object.assign(Root, { Input, Trigger, Content, Calendar, Label, Segment });
+const DatePicker = Object.assign(Root, { Root, Input, Trigger, Content, Calendar, Label, Segment });
 export { DatePicker };

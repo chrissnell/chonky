@@ -10,5 +10,5 @@ export type { ModalBodyProps } from './ModalBody.svelte';
 export type { ModalFooterProps } from './ModalFooter.svelte';
 export type { ModalCloseProps } from './ModalClose.svelte';
 
-const Modal = Object.assign(Root, { Header, Body, Footer, Close });
+const Modal = Object.assign(Root, { Root, Header, Body, Footer, Close });
 export { Modal };

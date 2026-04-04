@@ -12,7 +12,11 @@
 <div class="example">
 	<TimeRangeField.Root bind:value>
 		<TimeRangeField.Label>Time range</TimeRangeField.Label>
-		<TimeRangeField.Input />
+		<div style="display: flex; align-items: center; gap: 0.25rem;">
+			<TimeRangeField.Input type="start" />
+			<span class="time-range-field-separator">–</span>
+			<TimeRangeField.Input type="end" />
+		</div>
 	</TimeRangeField.Root>
 	<p>Range: {value?.start ? `${String(value.start.hour).padStart(2, '0')}:${String(value.start.minute).padStart(2, '0')}` : '?'} to {value?.end ? `${String(value.end.hour).padStart(2, '0')}:${String(value.end.minute).padStart(2, '0')}` : '?'}</p>
 </div>
@@ -43,7 +47,7 @@
 	<thead><tr><th>Component</th><th>Key Props</th><th>Description</th></tr></thead>
 	<tbody>
 		<tr><td><code>TimeRangeField.Label</code></td><td><code>class</code></td><td>Label for the field</td></tr>
-		<tr><td><code>TimeRangeField.Input</code></td><td><code>name</code>, <code>class</code></td><td>Container that renders start and end time segments</td></tr>
+		<tr><td><code>TimeRangeField.Input</code></td><td><code>type</code>, <code>name</code>, <code>class</code></td><td>Segmented time input for start or end (<code>type="start" | "end"</code>)</td></tr>
 		<tr><td><code>TimeRangeField.Segment</code></td><td><code>part</code>, <code>class</code></td><td>Individual time segment</td></tr>
 	</tbody>
 </table>
@@ -61,5 +65,9 @@
 
 <TimeRangeField.Root bind:value>
   <TimeRangeField.Label>Time range</TimeRangeField.Label>
-  <TimeRangeField.Input />
+  <div style="display: flex; align-items: center; gap: 0.25rem;">
+    <TimeRangeField.Input type="start" />
+    <span class="time-range-field-separator">–</span>
+    <TimeRangeField.Input type="end" />
+  </div>
 </TimeRangeField.Root>`}</code></pre>

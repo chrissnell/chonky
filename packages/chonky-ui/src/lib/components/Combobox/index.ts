@@ -14,5 +14,5 @@ export type { ComboboxItemProps } from './ComboboxItem.svelte';
 export type { ComboboxGroupProps } from './ComboboxGroup.svelte';
 export type { ComboboxGroupHeadingProps } from './ComboboxGroupHeading.svelte';
 
-const Combobox = Object.assign(Root, { Input, Trigger, Content, Item, Group, GroupHeading });
+const Combobox = Object.assign(Root, { Root, Input, Trigger, Content, Item, Group, GroupHeading });
 export { Combobox };

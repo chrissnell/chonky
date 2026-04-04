@@ -6,5 +6,5 @@ export type { CollapsibleRootProps } from './CollapsibleRoot.svelte';
 export type { CollapsibleTriggerProps } from './CollapsibleTrigger.svelte';
 export type { CollapsibleContentProps } from './CollapsibleContent.svelte';
 
-const Collapsible = Object.assign(Root, { Trigger, Content });
+const Collapsible = Object.assign(Root, { Root, Trigger, Content });
 export { Collapsible };

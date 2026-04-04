@@ -8,5 +8,5 @@ export type { TimeRangeFieldInputProps } from './TimeRangeFieldInput.svelte';
 export type { TimeRangeFieldLabelProps } from './TimeRangeFieldLabel.svelte';
 export type { TimeRangeFieldSegmentProps } from './TimeRangeFieldSegment.svelte';
 
-const TimeRangeField = Object.assign(Root, { Input, Label, Segment });
+const TimeRangeField = Object.assign(Root, { Root, Input, Label, Segment });
 export { TimeRangeField };

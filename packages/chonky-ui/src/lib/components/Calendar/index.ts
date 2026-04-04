@@ -24,5 +24,5 @@ export type { CalendarDayProps } from './CalendarDay.svelte';
 export type { CalendarPrevButtonProps } from './CalendarPrevButton.svelte';
 export type { CalendarNextButtonProps } from './CalendarNextButton.svelte';
 
-const Calendar = Object.assign(Root, { Header, Heading, Grid, GridHead, HeadCell, GridBody, GridRow, Cell, Day, PrevButton, NextButton });
+const Calendar = Object.assign(Root, { Root, Header, Heading, Grid, GridHead, HeadCell, GridBody, GridRow, Cell, Day, PrevButton, NextButton });
 export { Calendar };

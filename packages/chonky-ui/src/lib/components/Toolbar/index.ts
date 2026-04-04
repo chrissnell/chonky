@@ -10,5 +10,5 @@ export type { ToolbarLinkProps } from './ToolbarLink.svelte';
 export type { ToolbarGroupProps } from './ToolbarGroup.svelte';
 export type { ToolbarGroupItemProps } from './ToolbarGroupItem.svelte';
 
-const Toolbar = Object.assign(Root, { Button, Link, Group, GroupItem });
+const Toolbar = Object.assign(Root, { Root, Button, Link, Group, GroupItem });
 export { Toolbar };
