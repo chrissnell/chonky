@@ -4,14 +4,6 @@ A Svelte 5 component library with an opinionated monospace design system. Wraps 
 
 ## Install
 
-Configure your project to use the GitHub npm registry for the `@chrissnell` scope:
-
-```bash
-echo "@chrissnell:registry=https://npm.pkg.github.com" >> .npmrc
-```
-
-Then install:
-
 ```bash
 npm install @chrissnell/chonky-ui bits-ui @internationalized/date
 ```

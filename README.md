@@ -20,13 +20,7 @@ Chonky wraps [bits-ui](https://bits-ui.com) (headless, accessible primitives) wi
 
 ## Install
 
-The package is published to [GitHub Packages](https://github.com/chrissnell/chonky/pkgs/npm/chonky-ui). Configure your project to use the GitHub npm registry for the `@chrissnell` scope:
-
-```bash
-echo "@chrissnell:registry=https://npm.pkg.github.com" >> .npmrc
-```
-
-Then install:
+The package is published to [npm](https://www.npmjs.com/package/@chrissnell/chonky-ui):
 
 ```bash
 npm install @chrissnell/chonky-ui bits-ui @internationalized/date
@@ -135,7 +129,7 @@ Or use the built-in `ThemeToggle` component which handles localStorage persisten
 ```
 chonky/
 ├── packages/
-│   ├── chonky-ui/      # the component library (published to GitHub Packages)
+│   ├── chonky-ui/      # the component library (published to npm)
 │   └── docs/           # SvelteKit documentation site
 ├── styleguide/         # pure HTML/CSS/JS design reference
 └── pnpm-workspace.yaml
@@ -159,7 +153,7 @@ To open the static style guide, open `styleguide/index.html` in a browser.
 
 ## Releasing
 
-Releases are automated via GitHub Actions. When a `v*` tag is pushed, the workflow builds the package and publishes it to GitHub Packages.
+Releases are automated via GitHub Actions. When a `v*` tag is pushed, the workflow builds the package and publishes it to npm.
 
 ```bash
 make patch           # bump 0.1.0 → 0.1.1, commit, and tag
