@@ -15,6 +15,7 @@ export { Toggle } from './components/Toggle/index.js';
 export { Radio, RadioGroup } from './components/Radio/index.js';
 export { Box } from './components/Box/index.js';
 export { BoxHeader } from './components/BoxHeader/index.js';
+export { StatCard } from './components/StatCard/index.js';
 export { Table } from './components/Table/index.js';
 export { Modal } from './components/Modal/index.js';
 export { Toast, Toaster, toast, dismiss } from './components/Toast/index.js';

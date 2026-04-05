@@ -21,6 +21,7 @@
 				['Badge', '/components/badge'],
 				['Box', '/components/box'],
 				['BoxHeader', '/components/box-header'],
+				['StatCard', '/components/stat-card'],
 				['Table', '/components/table'],
 				['Separator', '/components/separator'],
 				['Label', '/components/label'],

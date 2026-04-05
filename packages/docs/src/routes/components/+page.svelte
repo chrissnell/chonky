@@ -6,7 +6,7 @@
 	let mounted = $state(false);
 	onMount(() => { mounted = true; });
 	import {
-		Button, Badge, Box, BoxHeader, Table, Separator, Label, Input, Spinner, Dot,
+		Button, Badge, Box, BoxHeader, StatCard, Table, Separator, Label, Input, Spinner, Dot,
 		StatusBar, EmptyState, ApplyBanner, Avatar, AspectRatio,
 		Tabs, Breadcrumb, Pagination, Accordion, Collapsible, Toolbar, ScrollArea,
 		NavigationMenu, Menubar,
@@ -149,6 +149,9 @@
 		<Box>
 			<div style="padding: 0.75rem; font-size: var(--text-sm);">Content inside a box</div>
 		</Box>
+		<Box title="top permitted domains">
+			<div style="font-size: var(--text-sm);">Content inside a titled box</div>
+		</Box>
 	</div>
 </section>
 
@@ -159,6 +162,16 @@
 			<BoxHeader>section title</BoxHeader>
 			<div style="padding: 0.75rem; font-size: var(--text-sm);">Content below the header</div>
 		</Box>
+	</div>
+</section>
+
+<section class="overview-section" id="stat-card">
+	<h3><a href="{base}/components/stat-card/">StatCard</a></h3>
+	<div class="example" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.75rem;">
+		<StatCard label="status" value="running" variant="success" />
+		<StatCard label="total queries" value="30,476" variant="info" />
+		<StatCard label="queries blocked" value="1,338" variant="danger" />
+		<StatCard label="block rate" value="4.4%" variant="warning" />
 	</div>
 </section>
 

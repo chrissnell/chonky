@@ -5,12 +5,20 @@
 
   export interface BoxProps extends HTMLAttributes<HTMLDivElement> {
     class?: string;
+    title?: string;
     children?: Snippet;
   }
 
-  let { class: className, children, ...restProps }: BoxProps = $props();
+  let { class: className, title, children, ...restProps }: BoxProps = $props();
 </script>
 
-<div class={cn('box', className)} {...restProps}>
-  {@render children()}
+<div class={cn('box', title ? 'box--titled' : '', className)} {...restProps}>
+  {#if title}
+    <div class="box-title">{title}</div>
+    <div class="box-body">
+      {@render children()}
+    </div>
+  {:else}
+    {@render children()}
+  {/if}
 </div>
