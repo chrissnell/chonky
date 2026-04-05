@@ -23,7 +23,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          registry-url: https://npm.pkg.github.com
+          registry-url: https://registry.npmjs.org
           scope: '@chrissnell'
 
       - name: Install dependencies
@@ -41,7 +41,7 @@ jobs:
       - name: Publish
         run: pnpm --filter chonky-ui publish --no-git-checks --access public
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Generate release notes
         id: notes
@@ -69,4 +69,4 @@ jobs:
             ${{ steps.notes.outputs.RELEASE_NOTES }}
 
             ---
-            Published to [GitHub Packages](https://github.com/${{ github.repository }}/pkgs/npm/chonky-ui) as `@chrissnell/chonky-ui@${{ github.ref_name }}`
+            Published to [npm](https://www.npmjs.com/package/@chrissnell/chonky-ui) as `@chrissnell/chonky-ui@${{ github.ref_name }}`

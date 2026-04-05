@@ -17,7 +17,8 @@
     "directory": "packages/chonky-ui"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "sideEffects": [
     "**/*.css",
