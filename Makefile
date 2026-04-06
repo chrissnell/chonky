@@ -15,19 +15,19 @@ docs:
 
 patch:
 	cd $(PKG_DIR) && npm version patch --no-git-tag-version
-	$(eval NEW_VERSION := $(shell node -p "require('./$(PKG_DIR)/package.json').version"))
-	git add $(PKG_DIR)/package.json
-	git commit -m "v$(NEW_VERSION)"
-	git tag "v$(NEW_VERSION)"
-	@echo "Tagged v$(NEW_VERSION)"
+	@V=$$(node -p "require('./$(PKG_DIR)/package.json').version"); \
+	git add $(PKG_DIR)/package.json; \
+	git commit -m "v$$V"; \
+	git tag "v$$V"; \
+	echo "Tagged v$$V"
 
 minor:
 	cd $(PKG_DIR) && npm version minor --no-git-tag-version
-	$(eval NEW_VERSION := $(shell node -p "require('./$(PKG_DIR)/package.json').version"))
-	git add $(PKG_DIR)/package.json
-	git commit -m "v$(NEW_VERSION)"
-	git tag "v$(NEW_VERSION)"
-	@echo "Tagged v$(NEW_VERSION)"
+	@V=$$(node -p "require('./$(PKG_DIR)/package.json').version"); \
+	git add $(PKG_DIR)/package.json; \
+	git commit -m "v$$V"; \
+	git tag "v$$V"; \
+	echo "Tagged v$$V"
 
 release: build docs
 	@echo "Built chonky-ui $(VERSION) and docs — ready to push"
