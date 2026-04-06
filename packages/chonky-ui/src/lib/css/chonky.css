@@ -666,7 +666,7 @@ td.actions { text-align: right; white-space: nowrap; }
   padding: 0.25rem 0;
   font-family: var(--font-mono);
   font-size: var(--text-base);
-  z-index: 50;
+  z-index: 200;
 }
 [data-select-item] {
   padding: 0.35rem 0.5rem;
@@ -959,7 +959,7 @@ td.actions { text-align: right; white-space: nowrap; }
   padding: 0.5rem;
   font-family: var(--font-mono);
   font-size: var(--text-sm);
-  z-index: 50;
+  z-index: 200;
   min-width: 200px;
 }
 
@@ -1001,7 +1001,7 @@ td.actions { text-align: right; white-space: nowrap; }
   font-family: var(--font-mono);
   font-size: var(--text-sm);
   min-width: 160px;
-  z-index: 50;
+  z-index: 200;
 }
 [data-menubar-item] {
   padding: 0.35rem 0.75rem;
@@ -1033,7 +1033,7 @@ td.actions { text-align: right; white-space: nowrap; }
   font-size: var(--text-xs);
   line-height: 1.2;
   color: var(--color-text-inverse);
-  z-index: 50;
+  z-index: 200;
 }
 
 /* --- bits-ui Popover --- */
@@ -1044,7 +1044,7 @@ td.actions { text-align: right; white-space: nowrap; }
   padding: 1rem;
   font-family: var(--font-mono);
   font-size: var(--text-sm);
-  z-index: 50;
+  z-index: 200;
 }
 
 /* --- bits-ui DropdownMenu --- */
@@ -1069,7 +1069,7 @@ td.actions { text-align: right; white-space: nowrap; }
   font-family: var(--font-mono);
   font-size: var(--text-sm);
   min-width: 160px;
-  z-index: 50;
+  z-index: 200;
 }
 [data-dropdown-menu-content]:focus,
 [data-dropdown-menu-content]:focus-visible,
@@ -1128,7 +1128,7 @@ td.actions { text-align: right; white-space: nowrap; }
   font-family: var(--font-mono);
   font-size: var(--text-sm);
   min-width: 160px;
-  z-index: 50;
+  z-index: 200;
 }
 
 /* --- bits-ui ContextMenu --- */
@@ -1140,7 +1140,7 @@ td.actions { text-align: right; white-space: nowrap; }
   font-family: var(--font-mono);
   font-size: var(--text-sm);
   min-width: 160px;
-  z-index: 50;
+  z-index: 200;
 }
 [data-context-menu-item] {
   padding: 0.35rem 0.75rem;
@@ -1193,7 +1193,7 @@ td.actions { text-align: right; white-space: nowrap; }
   font-family: var(--font-mono);
   font-size: var(--text-sm);
   min-width: 160px;
-  z-index: 50;
+  z-index: 200;
 }
 
 /* --- bits-ui Command --- */
@@ -1299,7 +1299,7 @@ td.actions { text-align: right; white-space: nowrap; }
   padding: 1rem;
   font-family: var(--font-mono);
   font-size: var(--text-sm);
-  z-index: 50;
+  z-index: 200;
   max-width: 320px;
 }
 
@@ -1329,7 +1329,7 @@ td.actions { text-align: right; white-space: nowrap; }
   padding: 0.25rem 0;
   font-family: var(--font-mono);
   font-size: var(--text-base);
-  z-index: 50;
+  z-index: 200;
 }
 [data-combobox-item] {
   padding: 0.35rem 0.5rem;
