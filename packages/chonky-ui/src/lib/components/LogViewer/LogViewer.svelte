@@ -1,18 +1,21 @@
 <script lang="ts">
   import type { HTMLAttributes } from 'svelte/elements';
+  import type { Snippet } from 'svelte';
   import { cn } from '../../internal/utils.js';
   import Dot from '../Dot/Dot.svelte';
 
-  interface LogColumn {
+  export interface LogColumn {
     key: string;
     label?: string;
     align?: 'left' | 'right' | 'center';
     width?: string;
+    class?: string;
+    render?: Snippet<[value: any, entry: LogEntry]>;
   }
 
-  interface LogEntry {
-    level: 'info' | 'error' | 'warn' | 'debug';
-    [key: string]: string;
+  export interface LogEntry {
+    level?: 'info' | 'error' | 'warn' | 'debug';
+    [key: string]: any;
   }
 
   export interface LogViewerProps extends HTMLAttributes<HTMLDivElement> {
@@ -105,10 +108,14 @@
       {#each entries as entry}
         {#each columns as col}
           <div
-            class={cn('log-grid-cell', levelClass[entry.level])}
+            class={cn('log-grid-cell', levelClass[entry.level ?? 'info'], col.class)}
             style:text-align={col.align ?? 'left'}
           >
-            {entry[col.key] ?? ''}
+            {#if col.render}
+              {@render col.render(entry[col.key], entry)}
+            {:else}
+              {entry[col.key] ?? ''}
+            {/if}
           </div>
         {/each}
       {/each}
