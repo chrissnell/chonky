@@ -65,9 +65,14 @@
   }
 
   $effect(() => {
-    entries.length;
+    // Track the full array reference so autoscroll fires when entries are
+    // replaced with a same-length array (e.g. polling with a fixed limit)
+    void entries;
     if (autoscroll && isAtBottom && bodyEl) {
-      bodyEl.scrollTop = bodyEl.scrollHeight;
+      // Defer to next microtask so the DOM has rendered the new entries
+      requestAnimationFrame(() => {
+        if (bodyEl) bodyEl.scrollTop = bodyEl.scrollHeight;
+      });
     }
   });
 </script>
@@ -96,16 +101,18 @@
         </div>
       {/each}
     {/if}
-    {#each entries as entry}
-      {#each columns as col}
-        <div
-          class={cn('log-grid-cell', levelClass[entry.level])}
-          style:text-align={col.align ?? 'left'}
-        >
-          {entry[col.key] ?? ''}
-        </div>
+    {#key entries}
+      {#each entries as entry}
+        {#each columns as col}
+          <div
+            class={cn('log-grid-cell', levelClass[entry.level])}
+            style:text-align={col.align ?? 'left'}
+          >
+            {entry[col.key] ?? ''}
+          </div>
+        {/each}
       {/each}
-    {/each}
+    {/key}
   </div>
   {#if !isAtBottom}
     <button class="log-jump-bottom" onclick={scrollToBottom}>
