@@ -37,6 +37,7 @@
   }: LogViewerProps = $props();
 
   let bodyEl: HTMLDivElement | undefined = $state();
+  let isAtBottom = $state(true);
 
   const gridTemplateColumns = $derived(
     columns.map((c) => c.width ?? '1fr').join(' ')
@@ -49,10 +50,23 @@
     debug: 'log-dim'
   };
 
+  function checkAtBottom() {
+    if (!bodyEl) return;
+    // 2px tolerance for fractional pixels
+    isAtBottom =
+      bodyEl.scrollHeight - bodyEl.scrollTop - bodyEl.clientHeight < 2;
+  }
+
+  function scrollToBottom() {
+    if (bodyEl) {
+      bodyEl.scrollTop = bodyEl.scrollHeight;
+      isAtBottom = true;
+    }
+  }
+
   $effect(() => {
-    // track entries length to trigger scroll
     entries.length;
-    if (autoscroll && bodyEl) {
+    if (autoscroll && isAtBottom && bodyEl) {
       bodyEl.scrollTop = bodyEl.scrollHeight;
     }
   });
@@ -70,6 +84,7 @@
     style:grid-template-columns={gridTemplateColumns}
     style:white-space="normal"
     bind:this={bodyEl}
+    onscroll={checkAtBottom}
   >
     {#if showHeader}
       {#each columns as col}
@@ -92,4 +107,9 @@
       {/each}
     {/each}
   </div>
+  {#if !isAtBottom}
+    <button class="log-jump-bottom" onclick={scrollToBottom}>
+      ↓ Jump to bottom
+    </button>
+  {/if}
 </div>
