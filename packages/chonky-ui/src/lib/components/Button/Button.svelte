@@ -14,6 +14,7 @@
   let {
     variant = 'default',
     size = 'md',
+    type = 'button',
     class: className,
     children,
     ...restProps
@@ -28,7 +29,10 @@
     size === 'lg' && 'btn-lg',
     className
   )}
+  {type}
   {...restProps}
 >
-  {@render children()}
+  {#if children}
+    {@render children()}
+  {/if}
 </BitsButton.Root>

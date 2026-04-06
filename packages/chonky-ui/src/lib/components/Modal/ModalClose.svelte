@@ -12,7 +12,7 @@
   let { class: className, children, ...restProps }: ModalCloseProps = $props();
 </script>
 
-<Dialog.Close class={cn('modal-close', className)} {...restProps}>
+<Dialog.Close type="button" class={cn('modal-close', className)} {...restProps}>
   {#if children}
     {@render children()}
   {:else}
