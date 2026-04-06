@@ -4,12 +4,14 @@
 
   export interface InputProps extends HTMLInputAttributes {
     type?: 'text' | 'password' | 'number';
+    value?: string;
     error?: string;
     class?: string;
   }
 
   let {
     type = 'text',
+    value = $bindable(''),
     error,
     class: className,
     ...restProps
@@ -17,6 +19,6 @@
 </script>
 
 <div class="input-wrapper">
-  <input {type} class={cn('input', error && 'input-error', className)} {...restProps} />
+  <input {type} bind:value class={cn('input', error && 'input-error', className)} {...restProps} />
   {#if error}<span class="error">{error}</span>{/if}
 </div>
