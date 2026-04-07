@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { HTMLAttributes } from 'svelte/elements';
   import type { Snippet } from 'svelte';
+  import { onMount, tick } from 'svelte';
   import { cn } from '../../internal/utils.js';
   import Dot from '../Dot/Dot.svelte';
 
@@ -67,14 +68,20 @@
     }
   }
 
+  onMount(() => {
+    if (autoscroll && bodyEl) {
+      requestAnimationFrame(() => scrollToBottom());
+    }
+  });
+
   $effect(() => {
-    // Track the full array reference so autoscroll fires when entries are
-    // replaced with a same-length array (e.g. polling with a fixed limit)
     void entries;
     if (autoscroll && isAtBottom && bodyEl) {
-      // Defer to next microtask so the DOM has rendered the new entries
-      requestAnimationFrame(() => {
-        if (bodyEl) bodyEl.scrollTop = bodyEl.scrollHeight;
+      tick().then(() => {
+        if (bodyEl) {
+          bodyEl.scrollTop = bodyEl.scrollHeight;
+          isAtBottom = true;
+        }
       });
     }
   });
@@ -104,22 +111,20 @@
         </div>
       {/each}
     {/if}
-    {#key entries}
-      {#each entries as entry}
-        {#each columns as col}
-          <div
-            class={cn('log-grid-cell', levelClass[entry.level ?? 'info'], col.class)}
-            style:text-align={col.align ?? 'left'}
-          >
-            {#if col.render}
-              {@render col.render(entry[col.key], entry)}
-            {:else}
-              {entry[col.key] ?? ''}
-            {/if}
-          </div>
-        {/each}
+    {#each entries as entry}
+      {#each columns as col}
+        <div
+          class={cn('log-grid-cell', levelClass[entry.level ?? 'info'], col.class)}
+          style:text-align={col.align ?? 'left'}
+        >
+          {#if col.render}
+            {@render col.render(entry[col.key], entry)}
+          {:else}
+            {entry[col.key] ?? ''}
+          {/if}
+        </div>
       {/each}
-    {/key}
+    {/each}
   </div>
   {#if !isAtBottom}
     <button class="log-jump-bottom" onclick={scrollToBottom}>
