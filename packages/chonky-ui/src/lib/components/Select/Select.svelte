@@ -35,7 +35,7 @@
     {options.find((o) => o.value === value)?.label ?? placeholder}
   </BitsSelect.Trigger>
   <BitsSelect.Portal>
-    <BitsSelect.Content>
+    <BitsSelect.Content align="start">
       <BitsSelect.Viewport>
         {#each options as option}
           <BitsSelect.Item value={option.value} label={option.label}>

@@ -691,6 +691,7 @@ td.actions { text-align: right; white-space: nowrap; }
   font-family: var(--font-mono);
   font-size: var(--text-base);
   z-index: 200;
+  min-width: var(--bits-select-anchor-width);
 }
 [data-select-item] {
   padding: 0.35rem 0.5rem;
