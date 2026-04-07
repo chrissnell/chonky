@@ -496,6 +496,7 @@ td.actions { text-align: right; white-space: nowrap; }
 
 .log-body {
   height: 220px;
+  overflow-x: auto;
   overflow-y: auto;
   font-size: var(--text-xs);
   line-height: 1.2;
