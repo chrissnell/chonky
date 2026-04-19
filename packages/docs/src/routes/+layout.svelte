@@ -27,6 +27,7 @@
 				['Label', '/components/label'],
 				['Spinner', '/components/spinner'],
 				['Dot', '/components/dot'],
+				['Icon', '/components/icon'],
 				['StatusBar', '/components/status-bar'],
 				['EmptyState', '/components/empty-state'],
 				['ApplyBanner', '/components/apply-banner'],
