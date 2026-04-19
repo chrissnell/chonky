@@ -2082,6 +2082,23 @@ td.actions { text-align: right; white-space: nowrap; }
   }
 }
 
+/* --- NotificationBadge --- */
+.notification-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--color-danger);
+  color: var(--color-danger-fg, white);
+}
+
 /* --- Responsive --- */
 @media (max-width: 768px) {
   .container { padding: 1rem 0.5rem; }

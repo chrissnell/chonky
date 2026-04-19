@@ -69,4 +69,6 @@ export { Icon } from './components/Icon/index.js';
 export type { IconName, IconProps, IconSize } from './components/Icon/index.js';
 export { Drawer } from './components/Drawer/index.js';
 export type { DrawerAnchor, DrawerProps } from './components/Drawer/index.js';
+export { NotificationBadge } from './components/NotificationBadge/index.js';
+export type { NotificationBadgeProps } from './components/NotificationBadge/index.js';
 export { initFloatingScrollFix } from './internal/utils.js';
