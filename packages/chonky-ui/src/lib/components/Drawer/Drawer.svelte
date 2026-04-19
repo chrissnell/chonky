@@ -11,6 +11,8 @@
     class: className,
     children,
     onOpenAutoFocus,
+    id,
+    ...restProps
   }: DrawerProps = $props();
 </script>
 
@@ -21,10 +23,12 @@
     if (!o) onClose?.();
   }}
 >
-  <Dialog.Overlay class="backdrop" />
+  <Dialog.Overlay class="backdrop drawer-backdrop" />
   <Dialog.Content
+    {id}
     class={cn('drawer', `drawer-${anchor}`, className)}
     onOpenAutoFocus={onOpenAutoFocus}
+    {...restProps}
   >
     {@render children?.()}
   </Dialog.Content>

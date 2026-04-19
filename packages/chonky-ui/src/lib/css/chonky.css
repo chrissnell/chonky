@@ -541,6 +541,128 @@ td.actions { text-align: right; white-space: nowrap; }
   text-overflow: ellipsis;
 }
 
+/* Per-entry footer row (desktop grid mode). Spans every column. */
+.log-grid-footer {
+  grid-column: 1 / -1;
+  padding: 0 0.5rem 0.25rem;
+  font-size: var(--text-xs);
+  line-height: 1.2;
+  color: var(--color-text-dim);
+  white-space: normal;
+  overflow-wrap: anywhere;
+  border-bottom: 1px dotted var(--color-border);
+}
+
+/* --- Log Viewer: card mode (mobile / narrow embed) --- */
+.log-body-card {
+  display: block;
+  height: 220px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0.25rem 0.5rem 0.5rem;
+  font-size: var(--text-xs);
+  line-height: 1.3;
+  background: var(--color-bg);
+  color: var(--color-text-muted);
+  white-space: normal;
+}
+
+.log-card {
+  padding: 0.4rem 0.5rem;
+  border-bottom: 1px dotted var(--color-border);
+}
+
+.log-card:last-child {
+  border-bottom: none;
+}
+
+.log-card-primary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: baseline;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.log-card-primary-cell {
+  display: inline-block;
+  overflow-wrap: anywhere;
+}
+
+.log-card-row {
+  display: flex;
+  gap: 0.4rem;
+  align-items: baseline;
+  line-height: 1.3;
+}
+
+.log-card-label {
+  color: var(--color-text-dim);
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+
+.log-card-value {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.log-card-footer {
+  margin-top: 0.3rem;
+  padding-top: 0.25rem;
+  border-top: 1px dotted var(--color-border);
+  font-size: var(--text-xs);
+  color: var(--color-text-dim);
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+/* Card-mode jump-to-bottom: 44x44 hit target, sticky bottom-right with badge. */
+.log-jump-bottom-card {
+  left: auto;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  transform: none;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-sm);
+  line-height: 1;
+  border-radius: var(--radius);
+}
+
+.log-jump-bottom-card .log-jump-bottom-arrow {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.log-jump-bottom-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--color-danger);
+  color: var(--color-danger-fg, white);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1;
+  pointer-events: none;
+}
+
 /* --- Dots --- */
 .dot {
   display: inline-block;
@@ -1968,10 +2090,32 @@ td.actions { text-align: right; white-space: nowrap; }
 
 /* --- Drawer --- */
 /*
- * bits-ui Dialog.Content unmounts on close, so slide-out transitions
- * aren't possible without forceMount + JS presence state. We use CSS
- * keyframes to animate entry only (200ms transform); exit is immediate.
+ * Animations: bits-ui Dialog uses a PresenceManager that holds the DOM until
+ * `getAnimations()` Promises resolve, so CSS-driven exit animations work via
+ * the `data-state="open"|"closed"` attribute set by Dialog.Content/Overlay.
+ * No `forceMount` needed.
+ *
+ * Entry: 200ms ease-out. Exit: 150ms ease-in. (Per Phase 2 plan.)
+ *
+ * Sizing: side-anchored is `min(85vw, 320px)`; edge-anchored caps at 70vh
+ * with min(85vh, 320px) baseline so it doesn't visually swallow narrow viewports.
+ *
+ * Safe-area: padding-top/bottom always uses env(safe-area-inset-*); side-anchored
+ * variants additionally pad the leading edge so notched devices in landscape
+ * don't crop the drawer.
  */
+
+/* Backdrop overrides the global .backdrop (which is rgba(0,0,0,0.7)) so the
+   drawer scrim matches the spec rgba(0,0,0,0.5), and adds fade in/out. */
+.drawer-backdrop {
+  background: rgba(0, 0, 0, 0.5);
+  animation: chonky-drawer-fade-in 200ms ease-out;
+}
+
+.drawer-backdrop[data-state='closed'] {
+  animation: chonky-drawer-fade-out 150ms ease-in;
+}
+
 .drawer {
   position: fixed;
   z-index: 101;
@@ -1980,46 +2124,71 @@ td.actions { text-align: right; white-space: nowrap; }
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  /* Universal safe-area padding so iOS notch / home indicator never crop content. */
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
-/* Side-anchored: fixed width, full height */
+/* Side-anchored: fixed width, full height. */
 .drawer-right,
 .drawer-left {
   top: 0;
   bottom: 0;
-  width: 320px;
-  max-width: 100vw;
+  width: min(85vw, 320px);
 }
 
 .drawer-right {
   right: 0;
-  animation: chonky-drawer-slide-in-right 200ms ease;
+  /* Pad the inset side so landscape-notched devices don't crop. */
+  padding-right: env(safe-area-inset-right);
+  animation: chonky-drawer-slide-in-right 200ms ease-out;
 }
 
 .drawer-left {
   left: 0;
-  animation: chonky-drawer-slide-in-left 200ms ease;
+  padding-left: env(safe-area-inset-left);
+  animation: chonky-drawer-slide-in-left 200ms ease-out;
 }
 
-/* Edge-anchored (top/bottom): full width, content-height, capped */
+.drawer-right[data-state='closed'] {
+  animation: chonky-drawer-slide-out-right 150ms ease-in;
+}
+
+.drawer-left[data-state='closed'] {
+  animation: chonky-drawer-slide-out-left 150ms ease-in;
+}
+
+/* Edge-anchored (top/bottom): full width, capped height. */
 .drawer-top,
 .drawer-bottom {
   left: 0;
   right: 0;
   width: 100%;
   height: auto;
-  max-height: 70vh;
+  /* Default min(85vh, 320px) baseline; never exceed 70vh. */
+  max-height: min(85vh, 70vh);
   overflow-y: auto;
+  /* Pad both side insets in case the device has rounded edges in landscape. */
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
 }
 
 .drawer-top {
   top: 0;
-  animation: chonky-drawer-slide-in-top 200ms ease;
+  animation: chonky-drawer-slide-in-top 200ms ease-out;
 }
 
 .drawer-bottom {
   bottom: 0;
-  animation: chonky-drawer-slide-in-bottom 200ms ease;
+  animation: chonky-drawer-slide-in-bottom 200ms ease-out;
+}
+
+.drawer-top[data-state='closed'] {
+  animation: chonky-drawer-slide-out-top 150ms ease-in;
+}
+
+.drawer-bottom[data-state='closed'] {
+  animation: chonky-drawer-slide-out-bottom 150ms ease-in;
 }
 
 @keyframes chonky-drawer-slide-in-right {
@@ -2037,6 +2206,44 @@ td.actions { text-align: right; white-space: nowrap; }
 @keyframes chonky-drawer-slide-in-bottom {
   from { transform: translateY(100%); }
   to { transform: translateY(0); }
+}
+
+@keyframes chonky-drawer-slide-out-right {
+  from { transform: translateX(0); }
+  to { transform: translateX(100%); }
+}
+@keyframes chonky-drawer-slide-out-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+@keyframes chonky-drawer-slide-out-top {
+  from { transform: translateY(0); }
+  to { transform: translateY(-100%); }
+}
+@keyframes chonky-drawer-slide-out-bottom {
+  from { transform: translateY(0); }
+  to { transform: translateY(100%); }
+}
+
+@keyframes chonky-drawer-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes chonky-drawer-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* Reduced-motion: collapse animations to a hard cut. PresenceManager still
+   waits for getAnimations() to settle, so a 1ms duration is safe. */
+@media (prefers-reduced-motion: reduce) {
+  .drawer,
+  .drawer[data-state='closed'],
+  .drawer-backdrop,
+  .drawer-backdrop[data-state='closed'] {
+    animation-duration: 1ms;
+  }
 }
 
 .drawer-header {
@@ -2073,13 +2280,6 @@ td.actions { text-align: right; white-space: nowrap; }
   padding: 1rem 1.5rem;
   border-top: 1px dotted var(--color-border);
   flex-shrink: 0;
-}
-
-@media (max-width: 640px) {
-  .drawer-right,
-  .drawer-left {
-    width: 100vw;
-  }
 }
 
 /* --- NotificationBadge --- */
