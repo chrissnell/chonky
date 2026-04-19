@@ -67,4 +67,6 @@ export { LogViewer } from './components/LogViewer/index.js';
 export type { LogColumn, LogEntry, LogViewerProps } from './components/LogViewer/index.js';
 export { Icon } from './components/Icon/index.js';
 export type { IconName, IconProps, IconSize } from './components/Icon/index.js';
+export { Drawer } from './components/Drawer/index.js';
+export type { DrawerAnchor, DrawerProps } from './components/Drawer/index.js';
 export { initFloatingScrollFix } from './internal/utils.js';

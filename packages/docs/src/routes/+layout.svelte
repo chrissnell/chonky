@@ -53,6 +53,7 @@
 			label: 'Overlay',
 			items: [
 				['Modal', '/components/modal'],
+				['Drawer', '/components/drawer'],
 				['AlertDialog', '/components/alert-dialog'],
 				['Tooltip', '/components/tooltip'],
 				['Popover', '/components/popover'],
