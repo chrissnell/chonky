@@ -6,6 +6,11 @@
 
 <h1>Modal</h1>
 <p>Dialog overlay with header, body, footer, and close sub-components. Wraps bits-ui Dialog.</p>
+<p>
+	The body scrolls internally when its content overflows the modal's max-height; the
+	<code>Modal.Header</code> and <code>Modal.Footer</code> stay pinned to the top and bottom respectively,
+	so action rows remain visible no matter how long the body content is.
+</p>
 
 <h2>Example</h2>
 <div class="example">
