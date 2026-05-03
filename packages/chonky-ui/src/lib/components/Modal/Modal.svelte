@@ -7,6 +7,19 @@
     open?: boolean;
     onOpenChange?: (open: boolean) => void;
     onClose?: () => void;
+    /**
+     * Forwarded to the underlying bits-ui `Dialog.Content`. Call
+     * `e.preventDefault()` to keep the modal open when the user
+     * presses Escape -- useful for destructive-by-close flows like
+     * one-shot secret reveal.
+     */
+    onEscapeKeydown?: (e: KeyboardEvent) => void;
+    /**
+     * Forwarded to the underlying bits-ui `Dialog.Content`. Call
+     * `e.preventDefault()` to keep the modal open when the user
+     * clicks the backdrop.
+     */
+    onInteractOutside?: (e: PointerEvent) => void;
     class?: string;
     children?: Snippet;
   }
@@ -15,6 +28,8 @@
     open = $bindable(false),
     onOpenChange,
     onClose,
+    onEscapeKeydown,
+    onInteractOutside,
     class: className,
     children,
   }: ModalProps = $props();
@@ -28,7 +43,11 @@
   }}
 >
   <Dialog.Overlay class="backdrop" />
-  <Dialog.Content class={cn('modal', className)}>
+  <Dialog.Content
+    class={cn('modal', className)}
+    {onEscapeKeydown}
+    {onInteractOutside}
+  >
     {@render children()}
   </Dialog.Content>
 </Dialog.Root>
