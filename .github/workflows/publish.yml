@@ -10,7 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      packages: write
+      # Required for npm trusted publishing (OIDC): lets the job mint a
+      # short-lived id-token that npm exchanges for publish rights, so no
+      # NPM_TOKEN secret is needed and 2FA is satisfied automatically.
+      id-token: write
     steps:
       - uses: actions/checkout@v4
         with:
@@ -38,10 +41,14 @@ jobs:
           cd packages/chonky-ui
           npm version "$VERSION" --no-git-tag-version --allow-same-version
 
+      # Trusted publishing (OIDC) needs npm >= 11.5.1; Node 22 still ships
+      # npm 10.x, so upgrade before publishing.
+      - name: Upgrade npm for trusted publishing
+        run: npm install -g npm@latest
+
       - name: Publish
-        run: pnpm --filter chonky-ui publish --no-git-checks --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish --access public
+        working-directory: packages/chonky-ui
 
       - name: Generate release notes
         id: notes
