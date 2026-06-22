@@ -19,6 +19,22 @@
     [key: string]: any;
   }
 
+  /**
+   * A compact switch rendered in the toolbar, between the live indicator and
+   * the entry count. The viewer owns the look; the consumer owns the meaning,
+   * supplying the label, current state, and a handler for the next state.
+   */
+  export interface LogToolbarToggle {
+    /** Short label shown beside the switch (rendered uppercase). */
+    label: string;
+    /** Whether the switch currently reads as on. */
+    checked: boolean;
+    /** Called with the next value when the operator flips the switch. */
+    onChange: (checked: boolean) => void;
+    /** Optional tooltip / accessible description. */
+    title?: string;
+  }
+
   export interface LogViewerProps extends HTMLAttributes<HTMLDivElement> {
     entries: LogEntry[];
     columns: LogColumn[];
@@ -26,6 +42,8 @@
     live?: boolean;
     height?: string;
     autoscroll?: boolean;
+    /** Compact switches rendered in the toolbar (e.g. pause / auto-scroll). */
+    toolbarToggles?: LogToolbarToggle[];
     /** CSS pixel width threshold below which the card layout activates. Default `'640px'`. */
     mobileBreakpoint?: string;
     /** Layout used when observed width <= `mobileBreakpoint`. `'card'` (default) stacks fields; `'scroll'` keeps the grid with horizontal overflow. */
@@ -42,6 +60,7 @@
     live = false,
     height = '220px',
     autoscroll = true,
+    toolbarToggles,
     mobileBreakpoint = '640px',
     mobileLayout = 'card',
     footer,
@@ -230,7 +249,28 @@
   <div class="log-toolbar">
     <Dot on={live} />
     <span>{live ? 'live' : 'paused'}</span>
-    <span class="ml-auto">{entries.length} entries</span>
+    {#if toolbarToggles && toolbarToggles.length > 0}
+      <div class="log-toolbar-toggles ml-auto">
+        {#each toolbarToggles as toggle (toggle.label)}
+          <button
+            type="button"
+            role="switch"
+            aria-checked={toggle.checked}
+            class="log-toolbar-toggle"
+            title={toggle.title}
+            onclick={() => toggle.onChange(!toggle.checked)}
+          >
+            <span class="log-toolbar-switch" aria-hidden="true">
+              <span class="log-toolbar-switch-thumb"></span>
+            </span>
+            <span class="log-toolbar-toggle-label">{toggle.label}</span>
+          </button>
+        {/each}
+      </div>
+      <span class="log-toolbar-count">{entries.length} entries</span>
+    {:else}
+      <span class="ml-auto">{entries.length} entries</span>
+    {/if}
   </div>
 
   {#if isCardMode}

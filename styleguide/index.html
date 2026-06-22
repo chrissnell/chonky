@@ -167,7 +167,17 @@
       <div class="log-toolbar">
         <span class="dot dot-on"></span>
         <span>live</span>
-        <span class="ml-auto">15 entries</span>
+        <div class="log-toolbar-toggles ml-auto">
+          <button type="button" role="switch" aria-checked="true" class="log-toolbar-toggle" title="Auto-refresh">
+            <span class="log-toolbar-switch" aria-hidden="true"><span class="log-toolbar-switch-thumb"></span></span>
+            <span class="log-toolbar-toggle-label">Auto-refresh</span>
+          </button>
+          <button type="button" role="switch" aria-checked="false" class="log-toolbar-toggle" title="Auto-scroll">
+            <span class="log-toolbar-switch" aria-hidden="true"><span class="log-toolbar-switch-thumb"></span></span>
+            <span class="log-toolbar-toggle-label">Auto-scroll</span>
+          </button>
+        </div>
+        <span class="log-toolbar-count">15 entries</span>
       </div>
       <div class="log-body" id="log-body"><span class="log-ok">12:00:01.000  info   Server started on :4000</span><span class="log-dim">12:00:01.012  debug  Loading blocklist from https://example.com/list.txt</span><span class="log-warn">12:00:02.300  warn   Slow upstream response: 2.3s</span><span class="log-err">12:00:03.100  error  Failed to refresh list: connection timeout</span><span class="log-ok">12:00:04.042  info   Query google.com from 192.168.1.42 -> RESOLVED (12ms)</span><span class="log-ok">12:00:04.100  info   Query github.com from 192.168.1.10 -> RESOLVED (8ms)</span><span class="log-dim">12:00:04.200  debug  Cache hit for cdn.example.com</span><span class="log-ok">12:00:04.310  info   Query api.stripe.com from 192.168.1.42 -> RESOLVED (15ms)</span><span class="log-warn">12:00:05.100  warn   Upstream 1.1.1.1 latency: 450ms</span><span class="log-err">12:00:05.500  error  Blocklist update failed: DNS resolution error</span><span class="log-ok">12:00:06.042  info   Query example.org from 192.168.1.55 -> RESOLVED (3ms)</span><span class="log-dim">12:00:06.100  debug  Refreshing blocklist: ads.txt (24891 entries)</span><span class="log-ok">12:00:06.500  info   Query fonts.googleapis.com from 192.168.1.10 -> RESOLVED (11ms)</span><span class="log-warn">12:00:07.200  warn   Rate limit approaching for 192.168.1.99</span><span class="log-ok">12:00:07.800  info   Blocklist refresh complete: 3 lists, 148201 entries</span></div>
     </div>
