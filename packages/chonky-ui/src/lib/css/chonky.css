@@ -494,6 +494,68 @@ td.actions { text-align: right; white-space: nowrap; }
   color: var(--color-text-muted);
 }
 
+/* Toolbar toggles: compact switches grouped on the right, just before the
+   entry count. Sized down from the standalone .toggle switch and labelled in
+   the same uppercase, letter-spaced style as the grid column headers so they
+   read as part of the table chrome rather than bolted on. */
+.log-toolbar-toggles {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.log-toolbar-count { margin-left: 0.75rem; }
+
+.log-toolbar-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0;
+  background: none;
+  border: none;
+  font: inherit;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+.log-toolbar-toggle:hover .log-toolbar-toggle-label { color: var(--color-text); }
+.log-toolbar-toggle:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: var(--radius);
+}
+.log-toolbar-toggle-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  transition: color var(--transition);
+}
+.log-toolbar-switch {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  width: 26px;
+  height: 14px;
+  background: var(--color-btn-border);
+  border-radius: var(--radius);
+  transition: background var(--transition);
+}
+.log-toolbar-toggle[aria-checked='true'] .log-toolbar-switch {
+  background: var(--color-accent);
+}
+.log-toolbar-switch-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 10px;
+  height: 10px;
+  background: var(--color-bg);
+  border-radius: var(--radius);
+  transition: transform var(--transition);
+}
+.log-toolbar-toggle[aria-checked='true'] .log-toolbar-switch-thumb {
+  transform: translateX(12px);
+}
+
 .log-body {
   height: 220px;
   overflow-x: auto;

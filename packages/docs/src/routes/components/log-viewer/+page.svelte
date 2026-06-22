@@ -16,6 +16,26 @@
 		{ level: 'info' as const, time: '10:05', message: 'Redis reconnected' }
 	];
 
+	// --- Toolbar toggles demo -----------------------------------------------
+	// The viewer renders the switches; the page owns their meaning. Here they
+	// drive `live` (the indicator dot) and `autoscroll` (scroll following).
+	let toolbarLive = $state(true);
+	let toolbarAutoscroll = $state(true);
+	const toolbarToggles = $derived([
+		{
+			label: 'Live',
+			checked: toolbarLive,
+			onChange: (v: boolean) => (toolbarLive = v),
+			title: 'Pause or resume the live indicator'
+		},
+		{
+			label: 'Auto-scroll',
+			checked: toolbarAutoscroll,
+			onChange: (v: boolean) => (toolbarAutoscroll = v),
+			title: 'Follow new entries to the bottom'
+		}
+	]);
+
 	// --- Mobile/card demo: more columns + a footer snippet -----------------
 	// First 3 columns become the primary line in card mode (default ordering).
 	// Remaining columns render as labeled rows. The footer snippet renders
@@ -83,6 +103,24 @@
 <h2>Example</h2>
 <div class="example">
 	<LogViewer {columns} {entries} showHeader live />
+</div>
+
+<h2>Toolbar toggles</h2>
+<p>
+	Pass <code>toolbarToggles</code> to render compact switches in the toolbar, between the live
+	indicator and the entry count. The viewer owns the look (sized and labeled to match the column
+	headers); the consumer owns the meaning. A common pairing is a pause control bound to
+	<code>live</code> and a follow control bound to <code>autoscroll</code>.
+</p>
+<div class="example">
+	<LogViewer
+		{columns}
+		{entries}
+		showHeader
+		live={toolbarLive}
+		autoscroll={toolbarAutoscroll}
+		{toolbarToggles}
+	/>
 </div>
 
 <h2>Mobile-aware: card layout + per-entry footer</h2>
@@ -155,6 +193,7 @@
 		<tr><td><code>live</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Show live/paused indicator dot</td></tr>
 		<tr><td><code>height</code></td><td><code>string</code></td><td><code>'220px'</code></td><td>Height of the scrollable log body</td></tr>
 		<tr><td><code>autoscroll</code></td><td><code>boolean</code></td><td><code>true</code></td><td>Auto-scroll to bottom on new entries (debounced ~250ms in card mode)</td></tr>
+		<tr><td><code>toolbarToggles</code></td><td><code>LogToolbarToggle[]</code></td><td>—</td><td>Compact switches rendered in the toolbar (e.g. pause / auto-scroll). The viewer styles them; the consumer supplies label, state, and handler.</td></tr>
 		<tr><td><code>mobileBreakpoint</code></td><td><code>string</code></td><td><code>'640px'</code></td><td>Width threshold (CSS px or rem) below which card layout activates. Compared against the component's observed width via <code>ResizeObserver</code>, not <code>matchMedia</code>.</td></tr>
 		<tr><td><code>mobileLayout</code></td><td><code>'card' | 'scroll'</code></td><td><code>'card'</code></td><td><code>'card'</code> stacks each entry into a card. <code>'scroll'</code> keeps the grid and lets it scroll horizontally.</td></tr>
 		<tr><td><code>footer</code></td><td><code>{`Snippet<[entry: LogEntry]>`}</code></td><td>—</td><td>Optional per-entry footer. Spans all grid columns on desktop; renders below the card body on mobile.</td></tr>
@@ -168,6 +207,7 @@
 	<tbody>
 		<tr><td><code>LogEntry</code></td><td><code>{`{ level?: 'info' | 'error' | 'warn' | 'debug'; [key: string]: any }`}</code></td></tr>
 		<tr><td><code>LogColumn</code></td><td><code>{`{ key: string; label?: string; align?: 'left' | 'right' | 'center'; width?: string; class?: string; render?: Snippet<[value, entry]> }`}</code></td></tr>
+		<tr><td><code>LogToolbarToggle</code></td><td><code>{`{ label: string; checked: boolean; onChange: (checked: boolean) => void; title?: string }`}</code></td></tr>
 	</tbody>
 </table>
 

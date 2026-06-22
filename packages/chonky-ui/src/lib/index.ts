@@ -64,7 +64,7 @@ export { DateRangePicker } from './components/DateRangePicker/index.js';
 export { TimeField } from './components/TimeField/index.js';
 export { TimeRangeField } from './components/TimeRangeField/index.js';
 export { LogViewer } from './components/LogViewer/index.js';
-export type { LogColumn, LogEntry, LogViewerProps } from './components/LogViewer/index.js';
+export type { LogColumn, LogEntry, LogToolbarToggle, LogViewerProps } from './components/LogViewer/index.js';
 export { Icon } from './components/Icon/index.js';
 export type { IconName, IconProps, IconSize } from './components/Icon/index.js';
 export { Drawer } from './components/Drawer/index.js';
