@@ -429,7 +429,52 @@ td {
   border-bottom: 1px dotted var(--color-border-subtle);
 }
 
-td.actions { text-align: right; white-space: nowrap; }
+/* An action column. The header is right-aligned too: aligning only the cells left a
+   column whose heading sat at one end and whose buttons sat at the other.
+
+   The gap is here rather than in each consumer because the obvious way to space two
+   buttons in a cell -- making it `display: flex` -- silently discards the `text-align`
+   above, so rows with one button and rows with two stop lining up with each other. With
+   the spacing provided, the cell can stay inline and keep its alignment. */
+th.actions,
+td.actions {
+  text-align: right;
+  white-space: nowrap;
+}
+
+td.actions > * + * {
+  margin-inline-start: 0.4rem;
+}
+
+/* A control inside a table cell must not carry the page's vertical rhythm: the bottom
+   margin below is for a stacked form, and in a row it just pushes the control off the
+   baseline of whatever sits next to it. */
+td :is(input, select, textarea) {
+  margin-bottom: 0;
+}
+
+/* --- Control row --- */
+
+/* A control and the button that acts on it, on one line and actually aligned.
+
+   `input` and `select` carry `margin-bottom: 1rem` for stacked forms and `.btn` does
+   not, so putting the two in a flex row leaves the button sitting half a rem high
+   against the control it belongs to. This neutralises the rhythm margin for the row and
+   lets the control take the slack. */
+.control-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.control-row > :is(input, select, textarea, .btn, button) {
+  margin-bottom: 0;
+}
+
+.control-row > :is(input, select, textarea) {
+  flex: 1 1 auto;
+  min-width: 0;
+}
 
 /* --- Swatches --- */
 .swatch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 0.5rem; }

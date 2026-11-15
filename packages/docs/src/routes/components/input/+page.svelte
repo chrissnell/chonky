@@ -16,6 +16,20 @@
 	<Input disabled placeholder="Disabled" />
 </div>
 
+<h2>With an action button</h2>
+<p>
+	An <code>Input</code> carries a bottom margin so that stacked forms have a rhythm, which
+	leaves it off-centre next to a button that has none. Wrap the pair in
+	<code>class="control-row"</code>: the margin is dropped for the row, the control takes the
+	spare width, and the two line up.
+</p>
+<div class="example">
+	<div class="control-row">
+		<Input placeholder="postgresql://…" />
+		<button class="btn">Test</button>
+	</div>
+</div>
+
 <h2>Props</h2>
 <table class="props-table">
 	<thead><tr><th>Prop</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
