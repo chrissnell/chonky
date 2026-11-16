@@ -1,4 +1,9 @@
-/* --- Light theme (default) --- */
+/* --- Light theme (default) ---
+
+   Every colour used as text here clears WCAG AA (4.5:1) against BOTH surfaces it can
+   land on -- `--color-bg` #fff and `--color-surface` #f8f8f8 -- because a token that
+   passes on the page and fails on a panel fails wherever it is actually used. The ratio
+   against the panel is the binding one and is the one noted below. */
 :root {
   --color-bg: #fff;
   --color-surface: #f8f8f8;
@@ -8,14 +13,17 @@
 
   --color-text: #111;
   --color-text-muted: #666;
-  --color-text-dim: #999;
+  --color-text-dim: #717171; /* 4.60:1; #999 was 2.68:1 */
   --color-text-inverse: #fff;
 
   --color-accent: #215e21;
-  --color-primary: #ffaa00;
-  --color-primary-hover: #ffbb33;
-  --color-primary-muted: rgba(255, 170, 0, 0.12);
-  --color-primary-fg: #000;
+  /* Amber at #ffaa00 was 1.80:1 -- under half of what body text needs, and this is the
+     colour every link is painted in. Same hue, dark enough to read; the foreground flips
+     to white so the pair still works where primary is a fill rather than text. */
+  --color-primary: #8a5500; /* 5.85:1 */
+  --color-primary-hover: #6b4200;
+  --color-primary-muted: rgba(138, 85, 0, 0.1);
+  --color-primary-fg: #fff; /* 6.21:1 on the fill above */
   --color-danger: #c41010;
   --color-danger-hover: #d42020;
   --color-danger-muted: rgba(214, 2, 2, 0.12);
@@ -24,9 +32,9 @@
   --color-success-fill: #215e21;
   --color-success-muted: rgba(33, 94, 33, 0.15);
   --color-success-fg: #fff;
-  --color-warning: #ffaa00;
-  --color-warning-muted: rgba(255, 170, 0, 0.15);
-  --color-warning-fg: #000;
+  --color-warning: #8a5500; /* 5.85:1; #ffaa00 was 1.80:1 */
+  --color-warning-muted: rgba(138, 85, 0, 0.12);
+  --color-warning-fg: #fff;
   --color-info: #1a6e94;
   --color-info-muted: rgba(35, 134, 176, 0.15);
   --color-info-fg: #fff;
@@ -57,15 +65,32 @@
   --color-border-subtle: #1a1a1a;
 
   --color-text: #c8c8c8;
-  --color-text-muted: #555;
-  --color-text-dim: #444;
+  --color-text-muted: #8a8a8a; /* 5.47:1; #555 was 2.53:1 */
+  --color-text-dim: #808080; /* 4.78:1; #444 was 1.94:1 */
   --color-text-inverse: #0a0a0a;
 
-  --color-accent: #2a8a2a;
-  --color-danger: #d60202;
-  --color-danger-hover: #e52222;
-  --color-success: #2a8a2a;
+  --color-accent: #34a334; /* 5.79:1; #2a8a2a was 4.29:1 */
+  --color-danger: #ef4444; /* 5.02:1; #d60202 was 3.48:1 */
+  --color-danger-hover: #f87171;
+  --color-success: #34a334;
   --color-info: #2386b0;
+
+  /* Restated rather than inherited: these are only declared on :root, so the light
+     theme's deliberately-dark amber would otherwise follow the page into dark mode and
+     land at about 1.6:1 on #111. #ffaa00 has ~9.9:1 here and was never the problem. */
+  --color-primary: #ffaa00;
+  --color-primary-hover: #ffbb33;
+  --color-primary-muted: rgba(255, 170, 0, 0.12);
+  --color-primary-fg: #000;
+  --color-warning: #ffaa00;
+  --color-warning-muted: rgba(255, 170, 0, 0.15);
+  --color-warning-fg: #000;
+
+  /* A fill light enough to read against #111 is too light to carry white text, so the
+     dark theme's danger and info take a dark foreground instead. `--color-info-fg`
+     was already failing at 4.11:1 before danger was touched. */
+  --color-danger-fg: #0a0a0a; /* 5.26:1 on the fill */
+  --color-info-fg: #0a0a0a; /* 4.82:1, was #fff at 4.11:1 */
 
   --color-btn-bg: #1a1a1a;
   --color-btn-bg-hover: #252525;
@@ -82,15 +107,32 @@
     --color-border-subtle: #1a1a1a;
 
     --color-text: #c8c8c8;
-    --color-text-muted: #555;
-    --color-text-dim: #444;
+    --color-text-muted: #8a8a8a; /* 5.47:1; #555 was 2.53:1 */
+    --color-text-dim: #808080; /* 4.78:1; #444 was 1.94:1 */
     --color-text-inverse: #0a0a0a;
 
-    --color-accent: #2a8a2a;
-    --color-danger: #d60202;
-    --color-danger-hover: #e52222;
-    --color-success: #2a8a2a;
+    --color-accent: #34a334; /* 5.79:1; #2a8a2a was 4.29:1 */
+    --color-danger: #ef4444; /* 5.02:1; #d60202 was 3.48:1 */
+    --color-danger-hover: #f87171;
+    --color-success: #34a334;
     --color-info: #2386b0;
+
+    /* Restated rather than inherited: these are only declared on :root, so the light
+       theme's deliberately-dark amber would otherwise follow the page into dark mode and
+       land at about 1.6:1 on #111. #ffaa00 has ~9.9:1 here and was never the problem. */
+    --color-primary: #ffaa00;
+    --color-primary-hover: #ffbb33;
+    --color-primary-muted: rgba(255, 170, 0, 0.12);
+    --color-primary-fg: #000;
+    --color-warning: #ffaa00;
+    --color-warning-muted: rgba(255, 170, 0, 0.15);
+    --color-warning-fg: #000;
+
+    /* A fill light enough to read against #111 is too light to carry white text, so the
+       dark theme's danger and info take a dark foreground instead. `--color-info-fg`
+       was already failing at 4.11:1 before danger was touched. */
+    --color-danger-fg: #0a0a0a; /* 5.26:1 on the fill */
+    --color-info-fg: #0a0a0a; /* 4.82:1, was #fff at 4.11:1 */
 
     --color-btn-bg: #1a1a1a;
     --color-btn-bg-hover: #252525;
